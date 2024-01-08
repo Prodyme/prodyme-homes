@@ -12,6 +12,7 @@ const Step3: React.FC<step3Type> = ({
   quality,
   rateSum,
 }) => {
+  const [info, setInfo] = useState({ desc: "", name: "" });
   const [showOptions, setShowOptions] =
     useState<{ sectionId: number; showOptions: boolean }[]>();
 
@@ -34,12 +35,12 @@ const Step3: React.FC<step3Type> = ({
   // }, [data]);
 
   const handleProceed = () => {
-    setStep(step + 1)
+    setStep(step + 1);
   };
 
   const handleOptions = (items: GroupedItemType) => {
-    let temp = [...groupedItems]
-    
+    let temp = [...groupedItems];
+
     temp.map((d) => {
       if (d.itemName === items.itemName) {
         d.Selected = true;
@@ -54,7 +55,7 @@ const Step3: React.FC<step3Type> = ({
     let temp = [...groupedItems];
 
     temp.map((d) => {
-      if(d.Selected === true){
+      if (d.Selected === true) {
         d.Selected = false;
         d.Category = item.Category;
       }
@@ -66,23 +67,23 @@ const Step3: React.FC<step3Type> = ({
     let temp = [...groupedItems];
 
     temp.map((d) => {
-      let q = ''
-      if(quality === 1){
-        q = 'Base'
-      }else if(quality === 2){
-        q = 'Classic'
-      }else if(quality === 3){
-        q = 'Premium'
-      }else if(quality === 4){
-        q = 'Luxury'
-      }else{
-        q = 'Ultra-luxury'
+      let q = "";
+      if (quality === 1) {
+        q = "Base";
+      } else if (quality === 2) {
+        q = "Classic";
+      } else if (quality === 3) {
+        q = "Premium";
+      } else if (quality === 4) {
+        q = "Luxury";
+      } else {
+        q = "Ultra-luxury";
       }
       d.Selected = false;
       d.Category = q;
     });
     setGroupedItems(temp);
-  }
+  };
 
   // const readUploadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   e.preventDefault();
@@ -99,6 +100,18 @@ const Step3: React.FC<step3Type> = ({
   //     reader.readAsArrayBuffer(e.target.files[0]);
   //   }
   // };
+
+  const showDesc = (items: GroupedItemType) => {
+    items.items.map((item) => {
+      if (items.Category === item.Category) {
+        if (items.itemName === info.name) {
+          setInfo({ desc: "", name: "" });
+          return;
+        }
+        setInfo({ desc: item["Long Description"], name: items.itemName });
+      }
+    });
+  };
 
   return (
     <div
@@ -124,12 +137,31 @@ const Step3: React.FC<step3Type> = ({
                       Rathi, Kamdhenu or equivalent
                     </div> */}
                   </div>
-                  <button
-                    onClick={() => handleOptions(d)}
-                    className="transition-transform transform hover:scale-110 w-[30px] object-contain"
-                  >
-                    <img src="images/pen.svg" alt="pen" />
-                  </button>
+                  <div className="flex">
+                    <button
+                      onClick={() => handleOptions(d)}
+                      className="transition-transform transform hover:scale-110 w-[30px] object-contain"
+                    >
+                      <img src="images/pen.svg" alt="pen" />
+                    </button>
+                    <button
+                      onClick={() => showDesc(d)}
+                      className="transition-transform transform hover:scale-110 w-[30px] object-contain"
+                    >
+                      <img src="images/info.svg" alt="Detailed Description" />
+                    </button>
+                    {info.name === d.itemName && (
+                      <div
+                        className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
+                          (i + 1) % 2 === 0
+                            ? "ml-[-350px] max-xl:ml-[-25vw]"
+                            : ""
+                        }`}
+                      >
+                        {info.desc}
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <button
                   onClick={() => handleOptions(d)}
@@ -207,7 +239,10 @@ const Step3: React.FC<step3Type> = ({
       </div>
       <div className="w-[800px] h-[0px] max-xl:w-[80vw] border border-stone-300"></div>
 
-      <button onClick={handleReset} className="h-10 px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110">
+      <button
+        onClick={handleReset}
+        className="h-10 px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
+      >
         <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
           Reset Estimate
         </div>

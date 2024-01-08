@@ -11,7 +11,7 @@ import { Step4 } from "./Step4";
 
 const Estimator = () => {
   const [groupedItems, setGroupedItems] = useState<GroupedItemType[]>([]);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
   const [bua, setBua] = useState(0);
   const [ua, setUa] = useState(0);
   const [quality, setQuality] = useState(0);
@@ -103,7 +103,7 @@ const Estimator = () => {
   };
 
   const reset = () => {
-    setStep(1);
+    setStep(0);
     setBua(0);
     setUa(0);
     setQuality(0);
