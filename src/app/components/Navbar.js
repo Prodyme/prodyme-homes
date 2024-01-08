@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
@@ -144,11 +145,24 @@ const Navbar = () => {
                                 </div>
                                 <div>
                                     <ul className='flex cursor-pointer'>
-                                        <li className='mx-4 text-white hover:text-[orange] font-bold'>Home</li>
-                                        <li className='mx-4 text-white hover:text-[orange] font-bold'>About</li>
-                                        <li className='mx-4 text-white hover:text-[orange] font-bold'>Services</li>
-                                        <li className='mx-4 text-white hover:text-[orange] font-bold'>Work</li>
-                                        <li className='mx-4 text-white hover:text-[orange] font-bold'>Contact</li>
+                                        <Link href="/">
+                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Home</li>
+                                        </Link>
+                                        <Link href="/about">
+                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>About</li>
+                                        </Link>
+
+                                        <Link href="/service">
+                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Services</li>
+                                        </Link>
+
+                                        <Link href="/work">
+                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Work</li>
+                                        </Link>
+
+                                        <Link href="/contact">
+                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Contact</li>
+                                        </Link>
                                         <li className='mx-4'>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
                                                 <g clipPath="url(#clip0_1359_788)">
