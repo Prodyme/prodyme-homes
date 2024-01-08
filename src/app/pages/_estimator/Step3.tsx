@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { GroupedItemType, ItemDetails, step3Type } from "./_myTypes";
 // import * as xlsx from "xlsx";
 
@@ -10,8 +10,19 @@ const Step3: React.FC<step3Type> = ({
   groupedItems,
   setGroupedItems,
   quality,
-  rateSum,
+  totalRate,
 }) => {
+  const [popUpFormFlag, setPopUpFormFlag] = useState(false);
+  const [popUpFormData, setPopUpFormData] = useState({
+    username: "",
+    email: "",
+    phoneNo: "",
+  });
+  const [errors, setErrors] = useState({
+    username: "",
+    email: "",
+    phoneNo: "",
+  });
   const [info, setInfo] = useState({ desc: "", name: "" });
   const [showOptions, setShowOptions] =
     useState<{ sectionId: number; showOptions: boolean }[]>();
@@ -33,16 +44,136 @@ const Step3: React.FC<step3Type> = ({
   //   });
   //   setShowOptions(options);
   // }, [data]);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setPopUpFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
+  useEffect(() => {
+    console.log(popUpFormData);
+  }, [popUpFormData]);
+
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = { username: "", email: "", phoneNo: "" };
+
+    if (!popUpFormData.username.trim()) {
+      newErrors.username = "Username is required";
+      valid = false;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popUpFormData.email)) {
+      newErrors.email = "Invalid email format";
+      valid = false;
+    }
+
+    if (!/^\d{10}$/.test(popUpFormData.phoneNo)) {
+      newErrors.phoneNo = "Invalid phone number format";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Perform actions with the form data here
+      console.log("Form Data:", popUpFormData);
+      setStep(step + 1)
+    } else {
+      console.log("Form validation failed");
+    }
+  };
+  const popUpForm = () => {
+    return (
+      <div className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
+        <form
+          className="flex flex-col justify-center items-center w-[300px] h-[500px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
+          onSubmit={handleSubmit}
+        >
+          <div className="justify-center items-center flex flex-col m-3 ">
+            <label className="my-1" htmlFor="username">
+              Username:
+            </label>
+            <input
+              placeholder="Username"
+              className="border rounded-lg p-1 text-black"
+              type="text"
+              id="username"
+              name="username"
+              defaultValue={popUpFormData.username}
+              onChange={handleChange}
+            />
+            <span className="text-red-500">{errors.username}</span>
+          </div>
+
+          <div className="justify-center items-center flex flex-col m-3 ">
+            <label className="my-1" htmlFor="email">
+              Email:{" "}
+            </label>
+            <input
+              placeholder="useremail@mail.com"
+              className="border rounded-lg p-1 text-black"
+              type="email"
+              id="email"
+              name="email"
+              defaultValue={popUpFormData.email}
+              onChange={handleChange}
+            />{" "}
+            <span className="text-red-500">{errors.email}</span>
+          </div>
+
+          <div className="justify-center items-center flex flex-col m-3">
+            <label className="my-1" htmlFor="phoneNo">
+              Phone Number:{" "}
+            </label>
+            <input
+              placeholder="Phone Number"
+              className="border rounded-lg p-1 text-black"
+              type="tel"
+              id="phoneNo"
+              name="phoneNo"
+              defaultValue={popUpFormData.phoneNo}
+              onChange={handleChange}
+            />{" "}
+            <span className="text-red-500">{errors.phoneNo}</span>
+          </div>
+
+          <button
+            type="submit"
+            className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+          >
+            <div className="text-white text-base font-medium font-['Anek Latin']">
+              Submit
+            </div>
+          </button>
+        </form>
+        <button
+          className="text-red-500 bg-white font-bold text-lg mt-[-500px] ml-[-20px] rounded-full border border-red-400 px-2 "
+          onClick={() => setPopUpFormFlag(false)}
+        >
+          X
+        </button>
+      </div>
+    );
+  };
   const handleProceed = () => {
-    setStep(step + 1);
+    setPopUpFormFlag(true);
   };
 
   const handleOptions = (items: GroupedItemType) => {
     let temp = [...groupedItems];
-
     temp.map((d) => {
       if (d.itemName === items.itemName) {
+        if(d.Selected === true){
+          d.Selected = false;
+          setGroupedItems(temp);
+          return ;
+        }
         d.Selected = true;
       } else {
         d.Selected = false;
@@ -115,19 +246,20 @@ const Step3: React.FC<step3Type> = ({
 
   return (
     <div
-      className={` flex-col justify-start items-start gap-[23px] flex w-[89=9px] max-xl:w-[90vw] h-auto p-5 pt-3 pb-6 bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg border border-orange-400  ${
+      className={` flex-col justify-start items-start gap-[23px] flex w-[899px] max-xl:w-[90vw] h-auto p-5 pt-3 pb-6 bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg border border-orange-400  ${
         step !== 3 ? "hidden" : ""
       }`}
     >
+      {popUpFormFlag && popUpForm()}
       {/* <input type="file" accept=".xls,.xlsx" onChange={readUploadFile} /> */}
       <span className="text-center text-black text-sm font-normal font-['Anek Latin']">
         Step 3/5
       </span>
-      <div className="flex flex-wrap justify-between self-start items-start ">
+      <div className="grid grid-cols-3 gap-4 max-lg:flex max-lg:flex-wrap justify-between self-start items-start ">
         {groupedItems?.map((d, i) => {
           return (
             <>
-              <div className="w-[300px]  max-sm:mx-0 mx-10 my-5 flex-col justify-start items-start gap-5 inline-flex ">
+              <div className="  max-sm:mx-0 max-lg:w-[300px]  my-5 flex-col justify-start items-start gap-5 inline-flex relative">
                 <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start">
                   <div className="flex-col justify-start items-start inline-flex text-left">
                     <div className="text-black text-2xl font-normal font-['Anek Latin'] max-sm:w-[80vw]">
@@ -153,7 +285,7 @@ const Step3: React.FC<step3Type> = ({
                     {info.name === d.itemName && (
                       <div
                         className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
-                          (i + 1) % 2 === 0
+                          (i + 1) % 3 === 0
                             ? "ml-[-350px] max-xl:ml-[-25vw]"
                             : ""
                         }`}
@@ -161,11 +293,57 @@ const Step3: React.FC<step3Type> = ({
                         {info.desc}
                       </div>
                     )}
+
+                    <div
+                      className={`${
+                        d.Selected === true
+                          ? `absolute z-50 font-normal bg-gray-50 mt-28 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
+                              (i + 1) % 3 === 0
+                                ? "ml-[-350px] max-xl:ml-[-25vw]"
+                                : ""
+                            }`
+                          : "hidden"
+                      }`}
+                    >
+                      {" "}
+                      <span className="font-bold text-orange-500 text-2xl">
+                        Choose product
+                      </span>
+                      {d.items.map((item, i) => {
+                        return (
+                          <div
+                            className="my-5  flex flex-col m-auto justify-center"
+                            key={i}
+                          >
+                            <label
+                              className="bg-gradient-to-r bg-white
+        hover:from-amber-50 hover:via-amber-100 
+        hover:to-amber-50 text-[1rem] font-normal 
+        justify-center m-auto p-1 w-[300px]  max-sm:m-2 max-sm:w-[80vw]
+        hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)]
+        shadow-[0_10px_20px_rgba(231,229,228,0.9)]
+        rounded-xl text-wrap"
+                              htmlFor={i.toString()}
+                            >
+                              {item.Description}
+                            </label>
+                            <input
+                              type="radio"
+                              name={item.Item}
+                              value={item.Rate}
+                              id={i.toString()}
+                              onClick={() => onChangeHandle(item)}
+                              className="hidden"
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
                 <button
                   onClick={() => handleOptions(d)}
-                  className="w-[300px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
+                  className="w-[240px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
                 >
                   <div className="grow shrink basis-0 ">
                     {d.items.map((i) => {
@@ -186,52 +364,10 @@ const Step3: React.FC<step3Type> = ({
                     })}
                   </div>
                 </button>
-              </div>
 
-              {(i + 1) % 2 !== 0 && i !== groupedItems.length - 1 && (
-                <div className=" max-lg:hidden w-[0px] h-[100px] relative top-8 origin-top-left border border-stone-300"></div>
-              )}
-              <div
-                className={`${
-                  d.Selected === true
-                    ? "fixed w-[600px] max-lg:left-[5vw] max-sm:left-[1vw] max-sm:w-[95vw] left-[30vw] top-[10vh]  bg-purple-100 border rounded-lg z-20 text-center pt-2"
-                    : "hidden"
-                }`}
-              >
-                {" "}
-                <span className="font-bold text-orange-500 text-2xl">
-                  Choose product
-                </span>
-                {d.items.map((item, i) => {
-                  return (
-                    <div
-                      className="my-5  flex flex-col m-auto justify-center"
-                      key={i}
-                    >
-                      <label
-                        className="bg-gradient-to-r 
-        from-stone-50 via-stone-100 to-stone-50
-        hover:from-amber-50 hover:via-amber-100 
-        hover:to-amber-50 text-[1rem] font-normal 
-        justify-center m-auto p-1 w-[400px]  max-sm:m-2 max-sm:w-[90vw]
-        hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)]
-        shadow-[0_10px_20px_rgba(231,229,228,0.9)]
-        rounded-xl text-wrap"
-                        htmlFor={i.toString()}
-                      >
-                        {item.Description}
-                      </label>
-                      <input
-                        type="radio"
-                        name={item.Item}
-                        value={item.Rate}
-                        id={i.toString()}
-                        onClick={() => onChangeHandle(item)}
-                        className="hidden"
-                      />
-                    </div>
-                  );
-                })}
+                {(i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
+                  <div className=" max-lg:hidden w-[0px] h-[120px] absolute right-0 top-0 origin-top-left border border-stone-300"></div>
+                )}
               </div>
             </>
           );
@@ -250,7 +386,7 @@ const Step3: React.FC<step3Type> = ({
       <div className="flex-col justify-start items-start gap-2.5 flex">
         <div>
           <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-            INR {rateSum}{" "}
+            INR {totalRate}{" "}
           </span>
           <span className="text-black text-2xl font-normal font-['Anek Latin']">
             per sqft

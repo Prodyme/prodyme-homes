@@ -11,11 +11,11 @@ import { Step4 } from "./Step4";
 
 const Estimator = () => {
   const [groupedItems, setGroupedItems] = useState<GroupedItemType[]>([]);
-  const [step, setStep] = useState(1);
-  const [bua, setBua] = useState(0);
-  const [ua, setUa] = useState(0);
+  const [step, setStep] = useState(3);
+  const [basementArea, setBasementArea] = useState(0);
+  const [buildUpArea, setBuildUpArea] = useState(0);
   const [quality, setQuality] = useState(0);
-  const [rateSum, setRateSum] = useState(0);
+  const [totalRate, setRateSum] = useState(0);
   const [estimateValue, setEstimateValue] = useState(0);
   const [flag, setFlag] = useState(false);
   const [resetFlag, setResetFlag] = useState(true);
@@ -81,31 +81,31 @@ const Estimator = () => {
   }, [quality]);
 
   const generateEstimate = () => {
-    let es: number;
-    let rateSum: number = 0;
-    if (Number.isNaN(bua)) {
-      es = ua;
+    let totalArea: number;
+    let totalRate: number = 0;
+    if (Number.isNaN(basementArea)) {
+      totalArea = buildUpArea;
     } else {
-      es = (bua*1.5) + ua;
+      totalArea = (basementArea*1.5) + buildUpArea;
     }
     groupedItems.map((items) => {
       items.items.map((item) => {
         if(items.Category === item.Category){
           if(typeof item.Rate === 'number' && item.Rate !== 0){
-            rateSum += item.Rate;
+            totalRate += item.Rate;
           } 
         }
       })
     })
-    setRateSum(rateSum);
-    setEstimateValue(es*rateSum);
+    setRateSum(totalRate);
+    setEstimateValue(totalArea*totalRate);
     setFlag(true);
   };
 
   const reset = () => {
     setStep(1);
-    setBua(0);
-    setUa(0);
+    setBasementArea(0);
+    setBuildUpArea(0);
     setQuality(0);
     setRateSum(0);
     setEstimateValue(0);
@@ -144,7 +144,7 @@ const Estimator = () => {
                     : step === 2
                     ? "w-[30vw]"
                     : step === 3
-                    ? "w-[60vw]"
+                    ? "w-[40vw]"
                     : step === 4
                     ? "max-xl:w-[90vw] w-[899px]"
                     : "w-[0px]"
@@ -153,8 +153,8 @@ const Estimator = () => {
               <Step1
                 step={step}
                 setStep={setStep}
-                setUa={setUa}
-                setBua={setBua}
+                setBuildUpArea={setBuildUpArea}
+                setBasementArea={setBasementArea}
               />
 
               <Step2
@@ -164,7 +164,7 @@ const Estimator = () => {
                 setQuality={setQuality}
                 estimateValue={estimateValue}
                 generateEstimate={generateEstimate}
-                rateSum={rateSum}
+                totalRate={totalRate}
               />
               <Step3
                 step={step}
@@ -173,7 +173,7 @@ const Estimator = () => {
                 groupedItems={groupedItems}
                 setGroupedItems={setGroupedItems}
                 quality={quality}
-                rateSum={rateSum}
+                totalRate={totalRate}
               />
               <Step4
                 step={step}
@@ -182,7 +182,7 @@ const Estimator = () => {
                 groupedItems={groupedItems}
                 setGroupedItems={setGroupedItems}
                 quality={quality}
-                rateSum={rateSum}
+                totalRate={totalRate}
                 reset={reset}
               />
             </div>

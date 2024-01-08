@@ -6,7 +6,7 @@ import { step3Type } from '../_myTypes';
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
-    backgroundColor: "#E4E4E4",
+    backgroundColor: "white",
     padding: 10,
   },
   section: {
@@ -15,6 +15,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   section2: {
+    margin: 10,
+    padding: 10,
     flexGrow: 1,
     fontSize: "40px",
     color: "#f97316",
@@ -31,6 +33,14 @@ const styles = StyleSheet.create({
   rate: {
     fontSize: 14,
     fontWeight: "bold",
+    color: "#f97316",
+  },
+  rate2: {
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "#f97316",
+    marginLeft: 10,
+    paddingLeft: 10,
   },
 });
 
@@ -41,38 +51,59 @@ export const PDFFile: React.FC<step3Type> = ({
   groupedItems,
   setGroupedItems,
   quality,
-  rateSum,
+  totalRate,
 }) => {
     
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {groupedItems.map((item, index) => (
-          <View key={index} style={styles.section}>
-            <Text style={styles.itemName}>{item.itemName}</Text>
-            {item.items.map((i, subIndex) => {
-                if(item.Category === i.Category){
-                    return (
+        <div className="flex flex-col">
+          {" "}
+          {groupedItems.map((item, index) => (
+            <View key={index} style={styles.section}>
+              <div>
+                <Text style={styles.itemName}>{item.itemName}</Text>
+              </div>
+              {item.items.map((i, subIndex) => {
+                if (item.Category === i.Category) {
+                  return (
+                    <div>
                       <View key={subIndex}>
-                        <Text style={styles.description}>{i.Description}</Text>
-                        <Text style={styles.rate}>
-                          INR {i.Rate} {i.Unit}
-                        </Text>
+                        <div>
+                          <Text style={styles.description}>
+                            {i.Description}
+                          </Text>
+                        </div>
+                        <div className=''>
+                          <Text style={styles.rate}>
+                            INR {i.Rate} {i.Unit}
+                          </Text>
+                        </div>
                       </View>
-                    );
+                    </div>
+                  );
                 }
-            })}
+              })}
+            </View>
+          ))}
+        </div>
+        <div>
+          <View>
+            <div>
+              <Text style={styles.section2}>INR {totalRate} per sqft</Text>
+            </div>
+            <div className=''>
+              <Text style={styles.rate2}>
+                Approximately {estimateValue} for your BUA (Built-Up-Area)
+              </Text>
+            </div>
           </View>
-        ))}
-        <View style={styles.section}>
-          <Text style={styles.section2}>INR {rateSum} per sqft</Text>
-          <Text style={styles.rate}>
-            Approximately {estimateValue} for your BUA (Built-Up-Area)
-          </Text>
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.section2}>Thank You</Text>
-        </View>
+          <div>
+            <View style={styles.section2}>
+              <Text >Thank You</Text>
+            </View>
+          </div>
+        </div>
       </Page>
     </Document>
   );

@@ -3,8 +3,8 @@ import React, { Dispatch, SetStateAction } from "react";
 interface step1Type {
   step: number;
   setStep: Dispatch<SetStateAction<number>>;
-  setUa: Dispatch<SetStateAction<number>>;
-  setBua: Dispatch<SetStateAction<number>>;
+  setBuildUpArea: Dispatch<SetStateAction<number>>;
+  setBasementArea: Dispatch<SetStateAction<number>>;
 }
 interface step2Type {
   step: number;
@@ -13,7 +13,7 @@ interface step2Type {
   setQuality: Dispatch<SetStateAction<number>>;
   estimateValue: number;
   generateEstimate: () => void;
-  rateSum: number;
+  totalRate: number;
 }
 
 interface step3Type {
@@ -23,7 +23,7 @@ interface step3Type {
   groupedItems: GroupedItemType[];
   setGroupedItems: Dispatch<SetStateAction<GroupedItemType[]>>;
   quality: number;
-  rateSum: number;
+  totalRate: number;
 }
 interface step4Type {
   step: number;
@@ -32,7 +32,7 @@ interface step4Type {
   groupedItems: GroupedItemType[];
   setGroupedItems: Dispatch<SetStateAction<GroupedItemType[]>>;
   quality: number;
-  rateSum: number;
+  totalRate: number;
   reset: () => void;
 }
 

@@ -10,8 +10,8 @@ export const Step4: React.FC<step4Type> = ({
   groupedItems,
   setGroupedItems,
   quality,
-  rateSum,
-  reset
+  totalRate,
+  reset,
 }) => {
   const handleProceed = () => {
     reset();
@@ -24,9 +24,17 @@ export const Step4: React.FC<step4Type> = ({
           step !== 4 ? "hidden" : ""
         }`}
       >
-        <span className="text-orange-400 m-8 text-6xl font-bold font-['Anek Latin'] text-center">
-          Thank You
-        </span>
+        <div className="w-[899px] h-auto" >
+          <PDFFile
+            step={step}
+            setStep={setStep}
+            estimateValue={estimateValue}
+            groupedItems={groupedItems}
+            setGroupedItems={setGroupedItems}
+            quality={quality}
+            totalRate={totalRate}
+          />
+        </div>
         <div className="justify-center items-center gap-5 inline-flex w-[80vw] flex-wrap">
           <PDFDownloadLink
             document={
@@ -37,14 +45,14 @@ export const Step4: React.FC<step4Type> = ({
                 groupedItems={groupedItems}
                 setGroupedItems={setGroupedItems}
                 quality={quality}
-                rateSum={rateSum}
+                totalRate={totalRate}
               />
             }
             fileName="Generated Estimate"
             className="w-[200px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
           >
             <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-              Download
+              Download PDF
             </div>
           </PDFDownloadLink>
           <button

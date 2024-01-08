@@ -9,7 +9,7 @@ export const Step2: React.FC<step2Type> = ({
   estimateValue,
   generateEstimate,
   quality,
-  rateSum,
+  totalRate,
 }) => {
   interface Star {
     Base: boolean;
@@ -52,18 +52,12 @@ export const Step2: React.FC<step2Type> = ({
     }
   };
 
-  const handleProceed = () => {
-    if(validate()){
-      setStep(step + 1);
-    }
-  };
-
   const validateEstimate = () => {
     if (validate()) {
       generateEstimate();
+      setStep(step + 1);
     }
   };
-  
 
   return (
     <>
@@ -133,18 +127,11 @@ export const Step2: React.FC<step2Type> = ({
             </div>
           </div>
           <div className="w-[800px] h-[0px] border max-xl:w-[60vw] border-stone-300"></div>
-          <button
-            onClick={validateEstimate}
-            className="h-10 px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
-          >
-            <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-              Geenrate Estimate
-            </div>
-          </button>
+
           <div className="flex-col justify-start items-start gap-2.5 flex w-[80vw]">
             <div>
               <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-                INR {rateSum}{" "}
+                INR {totalRate}{" "}
               </span>
               <span className="text-black text-2xl font-normal font-['Anek Latin']">
                 per sqft
@@ -165,11 +152,11 @@ export const Step2: React.FC<step2Type> = ({
               </div>
             </button>
             <button
-              onClick={handleProceed}
-              className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+              onClick={validateEstimate}
+              className="h-10 px-10 py-2.5 bg-orange-400 rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
             >
               <div className="text-white text-base font-normal font-['Anek Latin']">
-                Proceed
+                Geenrate Estimate
               </div>
             </button>
           </div>
