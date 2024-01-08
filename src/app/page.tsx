@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import HomePage from './pages/HomePage'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-        <header className="pb-24">
+    <main className="">
+        {/* <header className="pb-24">
             <h4>Prodyme</h4>
         </header>
         <figure>
@@ -14,7 +15,9 @@ export default function Home() {
                 height={37}
                 priority
             />
-        </figure>
+
+        </figure> */}
+      <HomePage/>
     </main>
   )
 }
