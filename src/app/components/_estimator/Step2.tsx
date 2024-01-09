@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { step2Type } from "./_myTypes";
 
 export const Step2: React.FC<step2Type> = ({
@@ -9,7 +9,8 @@ export const Step2: React.FC<step2Type> = ({
   estimateValue,
   generateEstimate,
   quality,
-  rateSum,
+  totalRate,
+  costPerSqft,
 }) => {
   interface Star {
     Base: boolean;
@@ -19,13 +20,23 @@ export const Step2: React.FC<step2Type> = ({
     "Ultra-luxury": boolean;
   }
   const [star, setStar] = useState({
-    Base: false,
+    Base: true,
     Classic: false,
     Premium: false,
     Luxury: false,
     "Ultra-luxury": false,
   });
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    setQuality(1)
+  },[]);
+
+  useEffect(() => {
+    if(step === 2){
+      generateEstimate();
+    }
+  },[step])
 
   const handleSelect = (e: ChangeEvent<HTMLInputElement>) => {
     const star: Star = {
@@ -52,18 +63,12 @@ export const Step2: React.FC<step2Type> = ({
     }
   };
 
-  const handleProceed = () => {
-    if(validate()){
-      setStep(step + 1);
-    }
-  };
-
   const validateEstimate = () => {
     if (validate()) {
       generateEstimate();
+      setStep(step + 1);
     }
   };
-  
 
   return (
     <>
@@ -133,18 +138,11 @@ export const Step2: React.FC<step2Type> = ({
             </div>
           </div>
           <div className="w-[800px] h-[0px] border max-xl:w-[60vw] border-stone-300"></div>
-          <button
-            onClick={validateEstimate}
-            className="h-10 px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
-          >
-            <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-              Geenrate Estimate
-            </div>
-          </button>
+
           <div className="flex-col justify-start items-start gap-2.5 flex w-[80vw]">
             <div>
               <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-                INR {rateSum}{" "}
+                INR {costPerSqft}{" "}
               </span>
               <span className="text-black text-2xl font-normal font-['Anek Latin']">
                 per sqft
@@ -165,11 +163,11 @@ export const Step2: React.FC<step2Type> = ({
               </div>
             </button>
             <button
-              onClick={handleProceed}
-              className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+              onClick={validateEstimate}
+              className="h-10 px-10 py-2.5 bg-orange-400 rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
             >
               <div className="text-white text-base font-normal font-['Anek Latin']">
-                Proceed
+                Geenrate Estimate
               </div>
             </button>
           </div>

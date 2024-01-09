@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { step1Type } from "./_myTypes";
 
-const Step1: React.FC<step1Type> = ({ step, setStep, setBua, setUa }) => {
-  const [bUnit, setBUnit] = useState(0);
-  const [aUnit, setAUnit] = useState(0);
+const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUpArea }) => {
+  const [bUnit, setBUnit] = useState(1);
+  const [aUnit, setAUnit] = useState(1);
   const [bValue, setBValue] = useState<number>(NaN);
   const [aValue, setAValue] = useState<number>(NaN);
   const [basement, setBasement] = useState(true);
@@ -17,12 +17,17 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBua, setUa }) => {
   }>({ aUnit: "", bUnit: "", aValue: "", bValue: "" });
 
   useEffect(() => {
-    setBua(Math.round(bUnit * bValue));
+    if(basement){
+      setBasementArea(Math.round(bUnit * bValue));
+    }
+    else{
+      setBasementArea(0);
+    }
     //   console.log();
-  }, [bUnit, bValue]);
+  }, [bUnit, bValue, basement]);
 
   useEffect(() => {
-    setUa(Math.round(aUnit * aValue));
+    setBuildUpArea(Math.round(aUnit * aValue));
     //   console.log();
   }, [aUnit, aValue]);
 
@@ -109,7 +114,7 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBua, setUa }) => {
                     aUnit === 0 ? "opacity-50" : ""
                   }`}
                   onChange={(e) => setAUnit(parseInt(e.target.value))}
-                  defaultValue={0}
+                  defaultValue={1}
                 >
                   <option value={0} disabled className="hidden">
                     Unit of measurment
@@ -164,7 +169,7 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBua, setUa }) => {
                         bUnit === 0 ? "opacity-50" : ""
                       }`}
                       onChange={(e) => setBUnit(parseInt(e.target.value))}
-                      defaultValue={0}
+                      defaultValue={1}
                     >
                       <option value={0} disabled className="hidden">
                         Unit of measurment
