@@ -12,6 +12,7 @@ export const Step4: React.FC<step4Type> = ({
   quality,
   totalRate,
   reset,
+  costPerSqft,
 }) => {
   const handleProceed = () => {
     reset();
@@ -33,6 +34,7 @@ export const Step4: React.FC<step4Type> = ({
             setGroupedItems={setGroupedItems}
             quality={quality}
             totalRate={totalRate}
+            costPerSqft={costPerSqft}
           />
         </div>
         <div className="justify-center items-center gap-5 inline-flex w-[80vw] flex-wrap">
@@ -46,6 +48,7 @@ export const Step4: React.FC<step4Type> = ({
                 setGroupedItems={setGroupedItems}
                 quality={quality}
                 totalRate={totalRate}
+                costPerSqft={costPerSqft}
               />
             }
             fileName="Generated Estimate"

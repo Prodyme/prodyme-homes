@@ -52,6 +52,7 @@ export const PDFFile: React.FC<step3Type> = ({
   setGroupedItems,
   quality,
   totalRate,
+  costPerSqft
 }) => {
     
   return (
@@ -90,7 +91,7 @@ export const PDFFile: React.FC<step3Type> = ({
         <div>
           <View>
             <div>
-              <Text style={styles.section2}>INR {totalRate} per sqft</Text>
+              <Text style={styles.section2}>INR {costPerSqft} per sqft</Text>
             </div>
             <div className=''>
               <Text style={styles.rate2}>

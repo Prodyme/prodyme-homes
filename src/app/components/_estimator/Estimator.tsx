@@ -11,9 +11,10 @@ import { Step4 } from "./Step4";
 
 const Estimator = () => {
   const [groupedItems, setGroupedItems] = useState<GroupedItemType[]>([]);
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
   const [basementArea, setBasementArea] = useState(0);
   const [buildUpArea, setBuildUpArea] = useState(0);
+  const [costPerSqft, setCostPerSqft] = useState(0);
   const [quality, setQuality] = useState(0);
   const [totalRate, setRateSum] = useState(0);
   const [estimateValue, setEstimateValue] = useState(0);
@@ -97,6 +98,7 @@ const Estimator = () => {
         }
       })
     })
+    setCostPerSqft((totalArea*totalRate)/buildUpArea)
     setRateSum(totalRate);
     setEstimateValue(totalArea*totalRate);
     setFlag(true);
@@ -165,6 +167,7 @@ const Estimator = () => {
                 estimateValue={estimateValue}
                 generateEstimate={generateEstimate}
                 totalRate={totalRate}
+                costPerSqft={costPerSqft}
               />
               <Step3
                 step={step}
@@ -174,6 +177,7 @@ const Estimator = () => {
                 setGroupedItems={setGroupedItems}
                 quality={quality}
                 totalRate={totalRate}
+                costPerSqft={costPerSqft}
               />
               <Step4
                 step={step}
@@ -184,6 +188,7 @@ const Estimator = () => {
                 quality={quality}
                 totalRate={totalRate}
                 reset={reset}
+                costPerSqft={costPerSqft}
               />
             </div>
           </div>

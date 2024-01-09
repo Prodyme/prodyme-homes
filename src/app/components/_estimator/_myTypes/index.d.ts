@@ -14,6 +14,7 @@ interface step2Type {
   estimateValue: number;
   generateEstimate: () => void;
   totalRate: number;
+  costPerSqft: number;
 }
 
 interface step3Type {
@@ -24,6 +25,7 @@ interface step3Type {
   setGroupedItems: Dispatch<SetStateAction<GroupedItemType[]>>;
   quality: number;
   totalRate: number;
+  costPerSqft: number;
 }
 interface step4Type {
   step: number;
@@ -34,6 +36,7 @@ interface step4Type {
   quality: number;
   totalRate: number;
   reset: () => void;
+  costPerSqft: number;
 }
 
 interface stepType {

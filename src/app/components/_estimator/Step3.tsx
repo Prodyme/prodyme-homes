@@ -11,6 +11,7 @@ const Step3: React.FC<step3Type> = ({
   setGroupedItems,
   quality,
   totalRate,
+  costPerSqft
 }) => {
   const [popUpFormFlag, setPopUpFormFlag] = useState(false);
   const [popUpFormData, setPopUpFormData] = useState({
@@ -386,7 +387,7 @@ const Step3: React.FC<step3Type> = ({
       <div className="flex-col justify-start items-start gap-2.5 flex">
         <div>
           <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-            INR {totalRate}{" "}
+            INR {costPerSqft}{" "}
           </span>
           <span className="text-black text-2xl font-normal font-['Anek Latin']">
             per sqft

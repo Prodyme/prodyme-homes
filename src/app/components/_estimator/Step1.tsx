@@ -17,9 +17,14 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
   }>({ aUnit: "", bUnit: "", aValue: "", bValue: "" });
 
   useEffect(() => {
-    setBasementArea(Math.round(bUnit * bValue));
+    if(basement){
+      setBasementArea(Math.round(bUnit * bValue));
+    }
+    else{
+      setBasementArea(0);
+    }
     //   console.log();
-  }, [bUnit, bValue]);
+  }, [bUnit, bValue, basement]);
 
   useEffect(() => {
     setBuildUpArea(Math.round(aUnit * aValue));

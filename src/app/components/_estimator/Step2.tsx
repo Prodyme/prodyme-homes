@@ -10,6 +10,7 @@ export const Step2: React.FC<step2Type> = ({
   generateEstimate,
   quality,
   totalRate,
+  costPerSqft,
 }) => {
   interface Star {
     Base: boolean;
@@ -131,7 +132,7 @@ export const Step2: React.FC<step2Type> = ({
           <div className="flex-col justify-start items-start gap-2.5 flex w-[80vw]">
             <div>
               <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-                INR {totalRate}{" "}
+                INR {costPerSqft}{" "}
               </span>
               <span className="text-black text-2xl font-normal font-['Anek Latin']">
                 per sqft
