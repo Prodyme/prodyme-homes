@@ -52,44 +52,49 @@ const Services = () => {
 
     ]
     return (
-        <div className="px-4 sm:px-6 lg:px-8">
-        <section>
-            <h1 className="text-center font-bold text-blue-900 text-3xl my-5">Our Services</h1>
-            <p className="text-center sm:text-left font-thin">
-                Let us help you make your dreams a reality.
-            </p>
-        </section>
-
-        <section className="py-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                {cards.map((value, key) => (
-                    <div
-                        key={key}
-                        className="relative"
-                        onMouseOver={() => setHoveredService(key)}
-                        onMouseOut={() => setHoveredService(null)}
-                    >
-                        <div className="relative">
-                            <img src={value.img} alt={value.title} className="mx-auto w-full" />
-                            {hoveredService === key && (
-                                <div className="absolute inset-0 bg-black opacity-50" />
-                            )}
-                        </div>
-                        <h1 className="text-center font-bold text-2xl my-5 text-blue-900">
-                            {value.title}
-                        </h1>
-                        <p className="text-center font-thin">{value.paraOne}</p>
-                        <p className="text-center font-thin">{value.paraTwo}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
         <div>
-        <Element name="estimatorSection" >
+
+
+            <div className="px-4 sm:px-6 lg:px-8">
+                <section>
+                    <h1 className="text-center font-bold text-blue-900 text-3xl my-5">Our Services</h1>
+                    <p className="text-center sm:text-left font-thin">
+                        Let us help you make your dreams a reality.
+                    </p>
+                </section>
+
+                <section className="py-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                        {cards.map((value, key) => (
+                            <div
+                                key={key}
+                                className="relative"
+                                onMouseOver={() => setHoveredService(key)}
+                                onMouseOut={() => setHoveredService(null)}
+                            >
+                                <div className="relative">
+                                    <img src={value.img} alt={value.title} className="mx-auto w-full" />
+                                    {hoveredService === key && (
+                                        <div className="absolute inset-0 bg-black opacity-50" />
+                                    )}
+                                </div>
+                                <h1 className="text-center font-bold text-2xl my-5 text-blue-900">
+                                    {value.title}
+                                </h1>
+                                <p className="text-center font-thin">{value.paraOne}</p>
+                                <p className="text-center font-thin">{value.paraTwo}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+            </div>
+            <div>
+                <Element name="estimatorSection" >
                     <Estimator />
                 </Element>
+            </div>
         </div>
-    </div>
     )
 }
 

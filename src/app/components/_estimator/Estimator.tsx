@@ -122,7 +122,7 @@ const Estimator = () => {
   return (
     <>
       {resetFlag && (
-        <div className="w-[100vw] overflow-x-hidden h-auto p-[5vw] bg-zinc-100 flex-col justify-center items-center inline-flex  ">
+        <div className="w-[100%] overflow-x-hidden h-auto p-5 bg-zinc-100 flex-col  justify-center items-center inline-flex  ">
           <div className="my-4">
             <span className="text-black text-[32px] font-normal font-['Anek Latin']">
               Use the{" "}
