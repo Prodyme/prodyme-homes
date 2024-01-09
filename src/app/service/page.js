@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { Element } from 'react-scroll'
 import Estimator from '../components/_estimator/Estimator'
 // import { Link } from 'react-router-dom'
 
@@ -83,7 +84,11 @@ const Services = () => {
                 ))}
             </div>
         </section>
-        <Estimator />
+        <div>
+        <Element name="estimatorSection" >
+                    <Estimator />
+                </Element>
+        </div>
     </div>
     )
 }

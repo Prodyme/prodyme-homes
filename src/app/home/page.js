@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import '../globals.css'
 import Estimator from '../components/_estimator/Estimator';
+import { Element } from 'react-scroll';
 
 const HomePage = () => {
 
@@ -189,7 +190,9 @@ const HomePage = () => {
             </section>
 
             <section>
+            <Element name="estimatorSection" className="estimator-section">
                 <Estimator/>
+                </Element>
             </section>
 
             <section className='section-6 mx-5 md:mx-[71px] my-20 '>

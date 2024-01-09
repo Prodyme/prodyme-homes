@@ -4,6 +4,8 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+
 
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -22,6 +24,13 @@ const Navbar = () => {
         };
     }, []);
 
+    const scrollToEstimator = () => {
+        scroll.scrollTo('estimatorSection', {
+            smooth: true,
+            offset: -50,
+        });
+    }
+
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
@@ -33,11 +42,14 @@ const Navbar = () => {
                         <div>
                             <nav className='p-5 navbar relative' style={{ background: 'linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0))' }}>
                                 <ul className='flex justify-between md:text-[30px]'>
-                                    <li className=''>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2448 2.72563C14.1096 2.58751 13.8904 2.58751 13.7552 2.72563L13.0209 1.97539L13.7552 2.72563L5.34625 11.317V25.0243C5.34625 25.2196 5.50123 25.3779 5.69241 25.3779H10.1925V19.3658C10.1925 17.9986 11.2773 16.8902 12.6156 16.8902H15.3848C16.723 16.8902 17.8079 17.9986 17.8079 19.3658V25.3779H22.3078C22.499 25.3779 22.6539 25.2196 22.6539 25.0243V11.3172L14.2448 2.72563L14.97 1.98466L14.2448 2.72563ZM15.7309 25.3779V19.3658C15.7309 19.1705 15.576 19.0122 15.3848 19.0122H12.6156C12.4244 19.0122 12.2694 19.1705 12.2694 19.3658V25.3779H15.7309ZM2.27276 14.4572L3.26933 13.439V25.0243C3.26933 26.3915 4.35418 27.4999 5.69241 27.4999H22.3078C23.646 27.4999 24.7309 26.3915 24.7309 25.0243V13.4392L25.7272 14.4572C26.1328 14.8715 26.7903 14.8715 27.1958 14.4572C27.6014 14.0429 27.6014 13.3711 27.1958 12.9567L15.7134 1.22516C14.7671 0.258361 13.2329 0.258361 12.2866 1.22516L0.804158 12.9567C0.398614 13.3711 0.398614 14.0429 0.804158 14.4572C1.2097 14.8715 1.86722 14.8715 2.27276 14.4572Z" fill="white" />
-                                        </svg>
-                                    </li>
+                                    <Link href="/">
+
+                                        <li className=''>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2448 2.72563C14.1096 2.58751 13.8904 2.58751 13.7552 2.72563L13.0209 1.97539L13.7552 2.72563L5.34625 11.317V25.0243C5.34625 25.2196 5.50123 25.3779 5.69241 25.3779H10.1925V19.3658C10.1925 17.9986 11.2773 16.8902 12.6156 16.8902H15.3848C16.723 16.8902 17.8079 17.9986 17.8079 19.3658V25.3779H22.3078C22.499 25.3779 22.6539 25.2196 22.6539 25.0243V11.3172L14.2448 2.72563L14.97 1.98466L14.2448 2.72563ZM15.7309 25.3779V19.3658C15.7309 19.1705 15.576 19.0122 15.3848 19.0122H12.6156C12.4244 19.0122 12.2694 19.1705 12.2694 19.3658V25.3779H15.7309ZM2.27276 14.4572L3.26933 13.439V25.0243C3.26933 26.3915 4.35418 27.4999 5.69241 27.4999H22.3078C23.646 27.4999 24.7309 26.3915 24.7309 25.0243V13.4392L25.7272 14.4572C26.1328 14.8715 26.7903 14.8715 27.1958 14.4572C27.6014 14.0429 27.6014 13.3711 27.1958 12.9567L15.7134 1.22516C14.7671 0.258361 13.2329 0.258361 12.2866 1.22516L0.804158 12.9567C0.398614 13.3711 0.398614 14.0429 0.804158 14.4572C1.2097 14.8715 1.86722 14.8715 2.27276 14.4572Z" fill="white" />
+                                            </svg>
+                                        </li>
+                                    </Link>
                                     <li>
                                         <Image src='/images/logo.png' alt='prodyme homes' width={37} height={37} priority />
                                     </li>
@@ -57,11 +69,21 @@ const Navbar = () => {
                                 <div className='absolute top-0 left-0 w-full bg-[#000000cb] py-5 px-5'>
                                     <div className='flex  justify-between items-center text-[16px] md:text-[30px] font-bold'>
                                         <ul>
-                                            <li className='text-white'>Home</li>
-                                            <li className='text-white'>About</li>
-                                            <li className='text-white'>Services</li>
-                                            <li className='text-white'>Work</li>
-                                            <li className='text-white'>Contact</li>
+                                            <Link href="/about">
+                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>About</li>
+                                            </Link>
+
+                                            <Link href="/service">
+                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>Services</li>
+                                            </Link>
+
+                                            <Link href="/work">
+                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>Work</li>
+                                            </Link>
+
+                                            <Link href="/contact">
+                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>Contact</li>
+                                            </Link>
                                         </ul>
                                         <ul className='flex justify-around md:text-[30px]'>
                                             <li className='mx-3'>
@@ -124,7 +146,11 @@ const Navbar = () => {
                                 <div className='home_bg pl-[22px] pr-[80px] py-5'>
                                     <h1 className='font-semibold text-white text-[30px] md:text-[60px] '>The most<br /> <span className='text-[orange]'>professional</span> <br /> way to build <br />your home</h1>
                                     <hr className='border-2 my-5 bg-white' />
-                                    <button className='bg-[orange] text-white rounded-[30px] px-5 py-[8px] text-[16px] md:text-[30px] lg:text-md'>Try Smart Estimator</button>
+
+                                    <ScrollLink to="estimatorSection" smooth={true} onClick={scrollToEstimator}>
+                                        <button className='bg-[orange] text-white rounded-[30px] px-5 py-[8px] text-[16px] md:text-[30px] lg:text-md'>Try Smart Estimator</button>
+                                    </ScrollLink>
+
                                 </div>
                             </div>
                         </div>
@@ -223,7 +249,10 @@ const Navbar = () => {
                                 <div className='home_bg pl-10 pr-[300px] py-10'>
                                     <h1 className=' font-semibold text-white text-[50px]'>The most<br /> <span className='text-[orange]'>professional</span> <br /> way to build <br />your home</h1>
                                     <hr className='border-2 my-10 bg-white' />
-                                    <button className='bg-[orange] text-white rounded-[40px] px-10 py-[10px]'>Try Smart Estimator</button>
+
+                                    <ScrollLink to="estimatorSection" smooth={true} onClick={scrollToEstimator}>
+                                        <button className='bg-[orange] text-white rounded-[40px] px-10 py-[10px]'>Try Smart Estimator</button>
+                                    </ScrollLink>
                                 </div>
 
                             </div>
