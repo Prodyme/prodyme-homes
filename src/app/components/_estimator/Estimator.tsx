@@ -63,6 +63,7 @@ const Estimator = () => {
     });
     // console.log(sourceData)
     setGroupedItems(sourceData);
+    
     // console.log(groupedItems);
   }
 

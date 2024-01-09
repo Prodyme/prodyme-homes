@@ -260,7 +260,7 @@ const Step3: React.FC<step3Type> = ({
         {groupedItems?.map((d, i) => {
           return (
             <>
-              <div className="  max-sm:mx-0 max-lg:w-[300px]  my-5 flex-col justify-start items-start gap-5 inline-flex relative">
+              <div className="  max-sm:mx-0 max-lg:w-[300px] min-h-[160px]  my-5 flex-col justify-between items-start gap-5 inline-flex relative">
                 <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start">
                   <div className="flex-col justify-start items-start inline-flex text-left">
                     <div className="text-black text-2xl font-normal font-['Anek Latin'] max-sm:w-[80vw]">
@@ -367,7 +367,7 @@ const Step3: React.FC<step3Type> = ({
                 </button>
 
                 {(i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
-                  <div className=" max-lg:hidden w-[0px] h-[120px] absolute right-0 top-0 origin-top-left border border-stone-300"></div>
+                  <div className=" max-lg:hidden w-[0px] h-[160px] absolute right-0 top-0 origin-top-left border border-stone-300"></div>
                 )}
               </div>
             </>

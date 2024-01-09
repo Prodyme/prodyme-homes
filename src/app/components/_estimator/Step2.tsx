@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { step2Type } from "./_myTypes";
 
 export const Step2: React.FC<step2Type> = ({
@@ -20,13 +20,23 @@ export const Step2: React.FC<step2Type> = ({
     "Ultra-luxury": boolean;
   }
   const [star, setStar] = useState({
-    Base: false,
+    Base: true,
     Classic: false,
     Premium: false,
     Luxury: false,
     "Ultra-luxury": false,
   });
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    setQuality(1)
+  },[]);
+
+  useEffect(() => {
+    if(step === 2){
+      generateEstimate();
+    }
+  },[step])
 
   const handleSelect = (e: ChangeEvent<HTMLInputElement>) => {
     const star: Star = {
