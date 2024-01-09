@@ -294,52 +294,6 @@ const Step3: React.FC<step3Type> = ({
                         {info.desc}
                       </div>
                     )}
-
-                    <div
-                      className={`${
-                        d.Selected === true
-                          ? `absolute z-50 font-normal bg-gray-50 mt-28 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
-                              (i + 1) % 3 === 0
-                                ? "ml-[-350px] max-xl:ml-[-25vw]"
-                                : ""
-                            }`
-                          : "hidden"
-                      }`}
-                    >
-                      {" "}
-                      <span className="font-bold text-orange-500 text-2xl">
-                        Choose product
-                      </span>
-                      {d.items.map((item, i) => {
-                        return (
-                          <div
-                            className="my-5  flex flex-col m-auto justify-center"
-                            key={i}
-                          >
-                            <label
-                              className="bg-gradient-to-r bg-white
-        hover:from-amber-50 hover:via-amber-100 
-        hover:to-amber-50 text-[1rem] font-normal 
-        justify-center m-auto p-1 w-[300px]  max-sm:m-2 max-sm:w-[80vw]
-        hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)]
-        shadow-[0_10px_20px_rgba(231,229,228,0.9)]
-        rounded-xl text-wrap"
-                              htmlFor={i.toString()}
-                            >
-                              {item.Description}
-                            </label>
-                            <input
-                              type="radio"
-                              name={item.Item}
-                              value={item.Rate}
-                              id={i.toString()}
-                              onClick={() => onChangeHandle(item)}
-                              className="hidden"
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
                   </div>
                 </div>
                 <button
@@ -365,6 +319,52 @@ const Step3: React.FC<step3Type> = ({
                     })}
                   </div>
                 </button>
+
+                <div
+                  className={`${
+                    d.Selected === true
+                      ? `absolute z-50 font-normal bg-gray-50 mt-40 justify-center m-auto p-1 w-[400px] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
+                          (i + 1) % 3 === 0
+                            ? ""
+                            : ""
+                        }`
+                      : "hidden"
+                  }`}
+                >
+                  {" "}
+                  <span className="font-bold text-orange-500 text-2xl">
+                    Choose product
+                  </span>
+                  {d.items.map((item, i) => {
+                    return (
+                      <div
+                        className="my-5  flex flex-col m-auto justify-center"
+                        key={i}
+                      >
+                        <label
+                          className="bg-gradient-to-r bg-white
+        hover:from-amber-50 hover:via-amber-100 
+        hover:to-amber-50 text-[1rem] font-normal 
+        justify-center m-auto p-1 w-[300px]  max-sm:m-2 max-sm:w-[80vw]
+        hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)]
+        shadow-[0_10px_20px_rgba(231,229,228,0.9)]
+        rounded-xl text-wrap"
+                          htmlFor={i.toString()}
+                        >
+                          {item.Description}
+                        </label>
+                        <input
+                          type="radio"
+                          name={item.Item}
+                          value={item.Rate}
+                          id={i.toString()}
+                          onClick={() => onChangeHandle(item)}
+                          className="hidden"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
 
                 {(i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
                   <div className=" max-lg:hidden w-[0px] h-[160px] absolute right-0 top-0 origin-top-left border border-stone-300"></div>
