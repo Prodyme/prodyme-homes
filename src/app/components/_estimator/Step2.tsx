@@ -142,14 +142,15 @@ export const Step2: React.FC<step2Type> = ({
           <div className="flex-col justify-start items-start gap-2.5 flex w-[80vw]">
             <div>
               <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-                INR {costPerSqft}{" "}
+                INR {costPerSqft.toLocaleString()}{" "}
               </span>
               <span className="text-black text-2xl font-normal font-['Anek Latin']">
                 per sqft
               </span>
             </div>
             <div className="text-black text-2xl font-normal font-['Anek Latin']">
-              Approximately {estimateValue} for your BUA (Built-Up-Area)
+              Approximately {estimateValue.toLocaleString()} for your BUA
+              (Built-Up-Area)
             </div>
           </div>
           <div className="w-[800px] h-[0px] border max-xl:w-[60vw] border-stone-300"></div>
@@ -167,7 +168,7 @@ export const Step2: React.FC<step2Type> = ({
               className="h-10 px-10 py-2.5 bg-orange-400 rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
             >
               <div className="text-white text-base font-normal font-['Anek Latin']">
-                Geenrate Estimate
+                Customize Estimate
               </div>
             </button>
           </div>

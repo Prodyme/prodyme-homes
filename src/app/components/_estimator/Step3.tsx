@@ -1,6 +1,8 @@
 "use client";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { GroupedItemType, ItemDetails, step3Type } from "./_myTypes";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
 // import * as xlsx from "xlsx";
 
 const Step3: React.FC<step3Type> = ({
@@ -11,22 +13,21 @@ const Step3: React.FC<step3Type> = ({
   setGroupedItems,
   quality,
   totalRate,
-  costPerSqft
+  costPerSqft,
 }) => {
   const [popUpFormFlag, setPopUpFormFlag] = useState(false);
   const [popUpFormData, setPopUpFormData] = useState({
-    username: "",
     email: "",
     phoneNo: "",
   });
   const [errors, setErrors] = useState({
-    username: "",
     email: "",
     phoneNo: "",
   });
   const [info, setInfo] = useState({ desc: "", name: "" });
   const [showOptions, setShowOptions] =
     useState<{ sectionId: number; showOptions: boolean }[]>();
+
 
   useEffect(() => {
     // try {
@@ -59,12 +60,7 @@ const Step3: React.FC<step3Type> = ({
 
   const validateForm = () => {
     let valid = true;
-    const newErrors = { username: "", email: "", phoneNo: "" };
-
-    if (!popUpFormData.username.trim()) {
-      newErrors.username = "Username is required";
-      valid = false;
-    }
+    const newErrors = { email: "", phoneNo: "" };
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popUpFormData.email)) {
       newErrors.email = "Invalid email format";
@@ -84,7 +80,7 @@ const Step3: React.FC<step3Type> = ({
     if (validateForm()) {
       // Perform actions with the form data here
       console.log("Form Data:", popUpFormData);
-      setStep(step + 1)
+      setStep(step + 1);
     } else {
       console.log("Form validation failed");
     }
@@ -93,25 +89,9 @@ const Step3: React.FC<step3Type> = ({
     return (
       <div className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
         <form
-          className="flex flex-col justify-center items-center w-[300px] h-[500px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
+          className="flex flex-col justify-around items-center w-[300px] h-[500px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
           onSubmit={handleSubmit}
         >
-          <div className="justify-center items-center flex flex-col m-3 ">
-            <label className="my-1" htmlFor="username">
-              Username:
-            </label>
-            <input
-              placeholder="Username"
-              className="border rounded-lg p-1 text-black"
-              type="text"
-              id="username"
-              name="username"
-              defaultValue={popUpFormData.username}
-              onChange={handleChange}
-            />
-            <span className="text-red-500">{errors.username}</span>
-          </div>
-
           <div className="justify-center items-center flex flex-col m-3 ">
             <label className="my-1" htmlFor="email">
               Email:{" "}
@@ -170,10 +150,10 @@ const Step3: React.FC<step3Type> = ({
     let temp = [...groupedItems];
     temp.map((d) => {
       if (d.itemName === items.itemName) {
-        if(d.Selected === true){
+        if (d.Selected === true) {
           d.Selected = false;
           setGroupedItems(temp);
-          return ;
+          return;
         }
         d.Selected = true;
       } else {
@@ -324,9 +304,7 @@ const Step3: React.FC<step3Type> = ({
                   className={`${
                     d.Selected === true
                       ? `absolute z-50 font-normal bg-gray-50 mt-40 justify-center m-auto p-1 w-[400px] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
-                          (i + 1) % 3 === 0
-                            ? ""
-                            : ""
+                          (i + 1) % 3 === 0 ? "" : ""
                         }`
                       : "hidden"
                   }`}
@@ -351,7 +329,11 @@ const Step3: React.FC<step3Type> = ({
         rounded-xl text-wrap"
                           htmlFor={i.toString()}
                         >
-                          {item.Description}
+                          <span className="font-bold">Description: </span>
+                          <span>{item.Description}</span>
+                          <br />
+                          <span className="font-bold">Rate: </span>
+                          <span>INR {item.Rate}</span>
                         </label>
                         <input
                           type="radio"
@@ -387,34 +369,46 @@ const Step3: React.FC<step3Type> = ({
       <div className="flex-col justify-start items-start gap-2.5 flex">
         <div>
           <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
-            INR {costPerSqft}{" "}
+            INR {costPerSqft.toLocaleString()}{" "}
           </span>
           <span className="text-black text-2xl font-normal font-['Anek Latin']">
             per sqft
           </span>
         </div>
         <div className="text-black text-2xl font-normal font-['Anek Latin']">
-          Approximately {estimateValue} for your BUA (Built-Up-Area)
+          Approximately {estimateValue.toLocaleString()} for your BUA
+          (Built-Up-Area)
         </div>
       </div>
       <div className="w-[800px] h-[0px] max-xl:w-[60vw] border border-stone-300"></div>
       <div className="justify-start items-start gap-5 inline-flex flex-wrap">
-        <button
-          onClick={() => setStep(step - 1)}
-          className="w-[113px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+        <ScrollLink
+          to="estimatorSection"
+          smooth={false}
         >
-          <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-            Back
-          </div>
-        </button>
-        <button
-          onClick={handleProceed}
-          className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+          <button
+            onClick={() => setStep(step - 1)}
+            className="w-[113px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+          >
+            <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
+              Back
+            </div>
+          </button>
+        </ScrollLink>
+        <ScrollLink
+          to="estimatorSection"
+          smooth={false}
+
         >
-          <div className="text-white text-base font-normal font-['Anek Latin']">
-            Proceed
-          </div>
-        </button>
+          <button
+            onClick={handleProceed}
+            className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+          >
+            <div className="text-white text-base font-normal font-['Anek Latin']">
+              Proceed
+            </div>
+          </button>
+        </ScrollLink>
       </div>
     </div>
   );

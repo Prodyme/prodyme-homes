@@ -75,7 +75,7 @@ export const PDFFile: React.FC<step3Type> = ({
                             {i.Description}
                           </Text>
                         </div>
-                        <div className=''>
+                        <div className="">
                           <Text style={styles.rate}>
                             INR {i.Rate} {i.Unit}
                           </Text>
@@ -91,17 +91,20 @@ export const PDFFile: React.FC<step3Type> = ({
         <div>
           <View>
             <div>
-              <Text style={styles.section2}>INR {costPerSqft} per sqft</Text>
+              <Text style={styles.section2}>
+                INR {costPerSqft.toLocaleString()} per sqft
+              </Text>
             </div>
-            <div className=''>
+            <div className="">
               <Text style={styles.rate2}>
-                Approximately {estimateValue} for your BUA (Built-Up-Area)
+                Approximately {estimateValue.toLocaleString()} for your BUA
+                (Built-Up-Area)
               </Text>
             </div>
           </View>
           <div>
             <View style={styles.section2}>
-              <Text >Thank You</Text>
+              <Text>Thank You</Text>
             </View>
           </div>
         </div>

@@ -42,6 +42,8 @@ interface step4Type {
 interface stepType {
   step: number;
   setStep: Dispatch<SetStateAction<number>>;
+  buildUpArea: number;
+  quality: number;
 }
 
 interface eventType {

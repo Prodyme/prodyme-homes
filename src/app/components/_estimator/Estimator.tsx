@@ -122,7 +122,7 @@ const Estimator = () => {
   return (
     <>
       {resetFlag && (
-        <div className="w-[100%] overflow-x-hidden h-auto p-5 bg-zinc-100 flex-col  justify-center items-center inline-flex  ">
+        <div className="w-[100%] h-auto p-5 bg-zinc-100 flex-col  justify-center items-center inline-flex  ">
           <div className="my-4">
             <span className="text-black text-[32px] font-normal font-['Anek Latin']">
               Use the{" "}
@@ -136,12 +136,12 @@ const Estimator = () => {
             </span>
           </div>
 
-          <div className="flex max-xl:flex-col ">
+          <div className="flex max-xl:flex-col h-auto ">
             {" "}
-            <SideBar step={step} setStep={setStep} />
+            <SideBar step={step} setStep={setStep} buildUpArea={buildUpArea} quality={quality}/>
             <div className="flex flex-col">
               <div
-                className={`border-4 h-0 border-orange-400 transition-all ease-out duration-1000 m-0  ${
+                className={`border-4 h-0 border-orange-400 transition-all ease-out duration-1000 m-0 sticky top-0 ${
                   step === 1
                     ? "w-[5vw]"
                     : step === 2
