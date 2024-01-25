@@ -88,7 +88,7 @@ export const PDFFile: React.FC<step3Type> = ({
             </View>
           ))}
         </div>
-        <div>
+        <div className='flex flex-col max-sm:text-center'>
           <View>
             <div>
               <Text style={styles.section2}>
