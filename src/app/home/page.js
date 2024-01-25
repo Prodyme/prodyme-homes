@@ -3,10 +3,44 @@ import React, { useState, useEffect } from 'react'
 import '../globals.css'
 import Estimator from '../components/_estimator/Estimator';
 import { Element } from 'react-scroll';
+import { Dialog, DialogTitle, DialogContent, Button } from '@mui/material';
+
 
 const HomePage = () => {
-
     const [isMobile, setIsMobile] = useState(false);
+
+    // const theme = useTheme();
+    // const isMobiles = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const [isModalOpen1, setIsModalOpen1] = useState(false);
+    const [isModalOpen2, setIsModalOpen2] = useState(false);
+    const [isModalOpen3, setIsModalOpen3] = useState(false);
+    const [isModalOpen4, setIsModalOpen4] = useState(false);
+
+    const openModal1 = () => {
+        setIsModalOpen1(true);
+    };
+
+    const closeModal1 = () => {
+        setIsModalOpen1(false);
+    };
+
+    const openModal2 = () => {
+        setIsModalOpen2(true);
+    };
+
+    const closeModal2 = () => {
+        setIsModalOpen2(false);
+    };
+    const openModal3 = () => {
+        setIsModalOpen3(true);
+    };
+
+    const closeModal3 = () => {
+        setIsModalOpen3(false);
+    };
+
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -58,9 +92,9 @@ const HomePage = () => {
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                            <button className='bg-white text-[orange] text-[16px] px-[30px] py-[8px] rounded-2xl'>
-                                Why our Quality is the best?
-                            </button>
+                                <button onClick={openModal1} className='bg-white text-[orange] text-[16px] px-[30px] py-[8px] rounded-2xl'>
+                                    Why our Quality is the best?
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -74,18 +108,59 @@ const HomePage = () => {
                             <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Why our Quality is the best?</button>
+                            <button onClick={openModal1} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Why our Quality is the best?</button>
                         </div>
                     </div>
                 )}
+
+                <div>
+                    <Dialog open={isModalOpen1} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal1} className="fixed inset-0 overflow-y-auto">
+                        <DialogTitle>
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-xl font-bold">Invest in Proficiency</h2>
+                                <Button onClick={closeModal1} color="secondary">
+                                    X
+                                </Button>
+                            </div>
+                        </DialogTitle>
+                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                            <img
+                                src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                            <img
+                                src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                        </DialogContent>
+                    </Dialog>
+                </div>
+
             </section>
+
 
             <section className='section-3 mx-5 md:mx-[71px] my-10'>
 
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 7.png" alt='' className='h-full w-full' />
+                            <img src="/images/mob-image 7.png" alt='' className='h-[100%] w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Unmatched <span className='text-[orange]'>Quality</span></h1>
@@ -93,9 +168,9 @@ const HomePage = () => {
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                            <button className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
-                                Take a Glimpse!
-                            </button>
+                                <button onClick={isModalOpen2} className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                    Take a Glimpse!
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -106,7 +181,7 @@ const HomePage = () => {
                             <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
+                            <button onClick={openModal2} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
                             </button>
                         </div>
                         <div className='w-[70%] h-auto sm:w-full'>
@@ -114,7 +189,44 @@ const HomePage = () => {
                         </div>
                     </div>
                 )}
-
+                <div>
+                    <Dialog open={isModalOpen2} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                        <DialogTitle>
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-xl font-bold">Unmatched Quality</h2>
+                                <Button onClick={closeModal2} color="secondary">
+                                    X
+                                </Button>
+                            </div>
+                        </DialogTitle>
+                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                            <img
+                                src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                            <img
+                                src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                        </DialogContent>
+                    </Dialog>
+                </div>
             </section>
 
             <section className='section-4 mx-5 md:mx-[71px] my-10'>
@@ -129,9 +241,9 @@ const HomePage = () => {
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                            <button className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
-                                Customise your Steel Estimate
-                            </button>
+                                <button onClick={openModal3} className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                    Customise your Steel Estimate
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -145,12 +257,49 @@ const HomePage = () => {
                             <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Customise your Steel Estimate
+                            <button onClick={openModal3} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Customise your Steel Estimate
                             </button>
                         </div>
                     </div>
                 )}
-
+                <div>
+                    <Dialog open={isModalOpen3} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                        <DialogTitle>
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-xl font-bold">Earthquake safe in Prodyme homes</h2>
+                                <Button onClick={closeModal3} color="secondary">
+                                    X
+                                </Button>
+                            </div>
+                        </DialogTitle>
+                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                            <img
+                                src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                            <img
+                                src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                        </DialogContent>
+                    </Dialog>
+                </div>
             </section>
 
             <section className='section-5 mx-5 md:mx-[71px] my-10'>
@@ -165,33 +314,70 @@ const HomePage = () => {
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                            <button className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
-                                Take a Glimpse!
-                            </button>
-                            </div> 
+                                <button onClick={openModal2} className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                    Take a Glimpse!
+                                </button>
+                            </div>
                         </div>
                     </div>
-                ): (
+                ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
-                    <div className='px-10 py-5 '>
-                        <h1 className='text-[22px] xl:text-[32px] font-bold'>Worry-Free <span className='text-[orange]'>Warranty</span>of 2 Year</h1>
-                        <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
-                            Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
-                        </p>
-                        <button className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
-                        </button>
+                        <div className='px-10 py-5 '>
+                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Worry-Free <span className='text-[orange]'>Warranty</span>of 2 Year</h1>
+                            <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
+                                Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
+                            </p>
+                            <button onClick={openModal2} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
+                            </button>
+                        </div>
+                        <div className='w-[70%] h-auto sm:w-full'>
+                            <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-full w-full object-fill' />
+                        </div>
                     </div>
-                    <div className='w-[70%] h-auto sm:w-full'>
-                        <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-full w-full object-fill' />
-                    </div>
-                </div>
                 )}
-                
+                <div>
+                    <Dialog open={isModalOpen2} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                        <DialogTitle>
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-xl font-bold">Worry-Free Warrantyof 2 Year</h2>
+                                <Button onClick={closeModal2} color="secondary">
+                                    X
+                                </Button>
+                            </div>
+                        </DialogTitle>
+                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                            <img
+                                src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                            <img
+                                src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
+                                alt=""
+                                className="w-full h-full object-fill"
+                            />
+                            <p className="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque harum, optio, ea magnam quod dolorem
+                                inventore maiores hic officiis modi nulla dicta laudantium eos earum voluptates id dolores blanditiis! Quasi
+                                dolorem maxime earum officia quos cupiditate magni provident minus officiis dolore, eveniet similique aliquam
+                                temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
+                                voluptates deleniti. Eum.
+                            </p>
+                        </DialogContent>
+                    </Dialog>
+                </div>
             </section>
 
             <section>
-            <Element name="estimatorSection" className="estimator-section">
-                <Estimator/>
+                <Element name="estimatorSection" className="estimator-section">
+                    <Estimator />
                 </Element>
             </section>
 
