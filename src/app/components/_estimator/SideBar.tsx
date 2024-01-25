@@ -43,7 +43,7 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
             : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300  justify-end items-start gap-2.5 inline-flex text-black text-xl max-sm:text-base font-normal font-['Anek Latin']"
         }
       >
-        <div className="">Select Premium </div>
+        <div className="">{qValue}</div>
         <div className={step <= 2 ? " hidden" : "w-[26px] h-[26px] relative max-sm:hidden"}>
           <img
             className="w-[26px] h-[26px] left-0 top-0 object-cover absolute rounded-full border-2 border-black"
