@@ -25,7 +25,7 @@ export const Step4: React.FC<step4Type> = ({
           step !== 4 ? "hidden" : ""
         }`}
       >
-        <div className="w-[899px] h-auto" >
+        <div className="w-[899px] max-lg:w-[90vw] h-auto" >
           <PDFFile
             step={step}
             setStep={setStep}

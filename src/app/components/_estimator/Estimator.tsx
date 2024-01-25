@@ -51,7 +51,7 @@ const Estimator = () => {
 
   useEffect(() => {
     console.log(groupedItems, "hello");
-    if(flag === true){
+    if (flag === true) {
       generateEstimate();
     }
   }, [groupedItems]);
@@ -63,7 +63,7 @@ const Estimator = () => {
     });
     // console.log(sourceData)
     setGroupedItems(sourceData);
-    
+
     // console.log(groupedItems);
   }
 
@@ -88,20 +88,20 @@ const Estimator = () => {
     if (Number.isNaN(basementArea)) {
       totalArea = buildUpArea;
     } else {
-      totalArea = (basementArea*1.5) + buildUpArea;
+      totalArea = basementArea * 1.5 + buildUpArea;
     }
     groupedItems.map((items) => {
       items.items.map((item) => {
-        if(items.Category === item.Category){
-          if(typeof item.Rate === 'number' && item.Rate !== 0){
+        if (items.Category === item.Category) {
+          if (typeof item.Rate === "number" && item.Rate !== 0) {
             totalRate += item.Rate;
-          } 
+          }
         }
-      })
-    })
-    setCostPerSqft((totalArea*totalRate)/buildUpArea)
+      });
+    });
+    setCostPerSqft((totalArea * totalRate) / buildUpArea);
     setRateSum(totalRate);
-    setEstimateValue(totalArea*totalRate);
+    setEstimateValue(totalArea * totalRate);
     setFlag(true);
   };
 
@@ -113,11 +113,11 @@ const Estimator = () => {
     setRateSum(0);
     setEstimateValue(0);
     setResetFlag(false);
-  }
+  };
 
   useEffect(() => {
     setResetFlag(true);
-  },[resetFlag])
+  }, [resetFlag]);
 
   return (
     <>
@@ -138,19 +138,8 @@ const Estimator = () => {
 
           <div className="flex max-xl:flex-col h-auto ">
             {" "}
-            <div
-              className={` ${
-                step === 1
-                  ? "h-[]"
-                  : step === 2
-                  ? "w-[30vw]"
-                  : step === 3
-                  ? "w-[40vw]"
-                  : step === 4
-                  ? "max-xl:w-[90vw] w-[899px]"
-                  : "w-[0px]"
-              }`}
-            >
+            <div className="flex-grow">
+              {" "}
               <SideBar
                 step={step}
                 setStep={setStep}
@@ -160,7 +149,7 @@ const Estimator = () => {
             </div>
             <div className="flex flex-col">
               <div
-                className={`border-4 h-0 border-orange-400 transition-all ease-out duration-1000 m-0 sticky top-0 ${
+                className={`border-4 h-0 border-orange-400 transition-all ease-out duration-1000 m-0 ${
                   step === 1
                     ? "w-[5vw]"
                     : step === 2
