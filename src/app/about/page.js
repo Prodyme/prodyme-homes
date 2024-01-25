@@ -8,7 +8,7 @@ const About = () => {
     return (
         <div>
             <section className='section-1 py-5'>
-                <div className='text-center px-4 sm:px-[410px]'>
+                <div className='text-center px-4 sm:px-[410px] '>
                     <h1 className='font-bold text-3xl my-5'>About M&D Remodeling</h1>
                     <p className='font-thin'>
                         I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
@@ -16,7 +16,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section className='section-2 relative overflow-hidden'>
+            <section className='section-2 relative '>
                 <div className='bg-image'
                     style={{
                         backgroundImage: `url('https://static.wixstatic.com/media/74f558_ee8a9ea2d0db4a52b264bf379cd6a276~mv2_d_4000_2447_s_4_2.jpeg/v1/fill/w_1085,h_844,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/74f558_ee8a9ea2d0db4a52b264bf379cd6a276~mv2_d_4000_2447_s_4_2.jpeg')`,
@@ -40,7 +40,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section className='section-4 py-5 overflow-x-hidden'>
+            <section className='section-4 py-5 '>
                 <div className='bg-[#dbdbdb]'>
                     <div className='flex flex-wrap justify-center items-center'>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>

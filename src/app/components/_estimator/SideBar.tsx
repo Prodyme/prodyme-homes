@@ -17,7 +17,7 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
     }
   }, [quality]);
   return (
-    <div className="mt-2 flex min-[1280px]:flex-col text-center ">
+    <div className="mt-2 flex min-[1280px]:flex-col text-center sticky top-0 ">
       <div
         className={`${
           step === 1

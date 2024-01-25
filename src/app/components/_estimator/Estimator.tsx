@@ -138,7 +138,26 @@ const Estimator = () => {
 
           <div className="flex max-xl:flex-col h-auto ">
             {" "}
-            <SideBar step={step} setStep={setStep} buildUpArea={buildUpArea} quality={quality}/>
+            <div
+              className={` ${
+                step === 1
+                  ? "h-[]"
+                  : step === 2
+                  ? "w-[30vw]"
+                  : step === 3
+                  ? "w-[40vw]"
+                  : step === 4
+                  ? "max-xl:w-[90vw] w-[899px]"
+                  : "w-[0px]"
+              }`}
+            >
+              <SideBar
+                step={step}
+                setStep={setStep}
+                buildUpArea={buildUpArea}
+                quality={quality}
+              />
+            </div>
             <div className="flex flex-col">
               <div
                 className={`border-4 h-0 border-orange-400 transition-all ease-out duration-1000 m-0 sticky top-0 ${
