@@ -40,6 +40,11 @@ const HomePage = () => {
         setIsModalOpen3(false);
     };
 
+    const styles = {
+        rounded: {
+          borderRadius: '20px', 
+        },
+      };
 
 
     useEffect(() => {
@@ -108,14 +113,20 @@ const HomePage = () => {
                             <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button onClick={openModal1} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Why our Quality is the best?</button>
+                            <button onClick={openModal1} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl '>Why our Quality is the best?</button>
                         </div>
                     </div>
                 )}
 
                 <div>
-                    <Dialog open={isModalOpen1} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal1} className="fixed inset-0 overflow-y-auto">
-                        <DialogTitle>
+                    <Dialog
+                        open={isModalOpen1}
+                        style={{ width: '100%', maxWidth: 'none' }}
+                        onClose={closeModal1}
+                        className="fixed inset-0 overflow-y-auto "
+                        classes={{ paper: styles.rounded }}
+                    >
+                        <DialogTitle className="">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-xl font-bold">Invest in Proficiency</h2>
                                 <Button onClick={closeModal1} color="secondary">
@@ -123,7 +134,32 @@ const HomePage = () => {
                                 </Button>
                             </div>
                         </DialogTitle>
-                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                        <DialogContent
+                            className="p-20"
+                            fullWidth
+                            maxWidth="false"
+                            style={{
+                                scrollbarWidth: 'thin',
+                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            }}
+                        >
+                            <style>
+                                {`
+          ::-webkit-scrollbar {
+            width: 12px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: #A5A5A5;
+            border-radius: 6px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background-color: #EFEFEF;
+            border-radius: 6px;
+          }
+        `}
+                            </style>
                             <img
                                 src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
                                 alt=""
@@ -150,7 +186,7 @@ const HomePage = () => {
                             </p>
                         </DialogContent>
                     </Dialog>
-                </div>
+                </div>;
 
             </section>
 
@@ -199,7 +235,32 @@ const HomePage = () => {
                                 </Button>
                             </div>
                         </DialogTitle>
-                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                        <DialogContent
+                            className="p-20"
+                            fullWidth
+                            maxWidth="false"
+                            style={{
+                                scrollbarWidth: 'thin',
+                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            }}
+                        >
+                            <style>
+                                {`
+          ::-webkit-scrollbar {
+            width: 12px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: #A5A5A5;
+            border-radius: 6px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background-color: #EFEFEF;
+            border-radius: 6px;
+          }
+        `}
+                            </style>
                             <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
@@ -272,7 +333,32 @@ const HomePage = () => {
                                 </Button>
                             </div>
                         </DialogTitle>
-                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                        <DialogContent
+                            className="p-20"
+                            fullWidth
+                            maxWidth="false"
+                            style={{
+                                scrollbarWidth: 'thin',
+                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            }}
+                        >
+                            <style>
+                                {`
+          ::-webkit-scrollbar {
+            width: 12px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: #A5A5A5;
+            border-radius: 6px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background-color: #EFEFEF;
+            border-radius: 6px;
+          }
+        `}
+                            </style>
                             <img
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
@@ -345,7 +431,32 @@ const HomePage = () => {
                                 </Button>
                             </div>
                         </DialogTitle>
-                        <DialogContent className="p-20" fullWidth maxWidth="false">
+                        <DialogContent
+                            className="p-20"
+                            fullWidth
+                            maxWidth="false"
+                            style={{
+                                scrollbarWidth: 'thin',
+                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            }}
+                        >
+                            <style>
+                                {`
+          ::-webkit-scrollbar {
+            width: 12px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: #A5A5A5;
+            border-radius: 6px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background-color: #EFEFEF;
+            border-radius: 6px;
+          }
+        `}
+                            </style>
                             <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
