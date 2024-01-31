@@ -20,12 +20,12 @@ const Footer = () => {
 
     return (
         <div>
-            <section className='px-10 py-[30px] bg-black'>
+            <section className='px-10 py-[30px] bg-black font-sans'>
                 {isMobile ? (
                     <div>
                         <div className='flex flex-col justify-center'>
                             <div>
-                                <h1 className='text-white border-2 px-[30px] text-center py-5 border-[orange]'>Prodyme Logo and name</h1>
+                                <h1 className='text-white border-2 px-[30px] text-center py-5 border-orange-400'>Prodyme Logo and name</h1>
                             </div>
                             <div className='my-2'>
                                 <p className='text-white'>
@@ -113,7 +113,7 @@ const Footer = () => {
 
                             <div className='flex flex-col justify-between'>
                                 <div>
-                                    <h1 className='text-white border-2 px-[30px] text-center py-5 border-[orange]'>Prodyme Logo and name</h1>
+                                    <h1 className='text-white border-2 px-[30px] text-center py-5 border-orange-400'>Prodyme Logo and name</h1>
                                 </div>
                                 <div className='my-2'>
                                     <p className='text-white'>
