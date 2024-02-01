@@ -4,6 +4,7 @@ import '../globals.css'
 import Estimator from '../components/_estimator/Estimator';
 import { Element } from 'react-scroll';
 import { Dialog, DialogTitle, DialogContent, Button } from '@mui/material';
+import Image from 'next/image';
 
 
 const HomePage = () => {
@@ -89,7 +90,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 5.png" alt='' className='h-full w-full' />
+                            <Image src="/images/mob-image 5.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Invest in <span className='text-[orange]'>Proficiency</span></h1>
@@ -106,7 +107,7 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[70%] max-w-[700px] h-auto mx-auto sm:w-full'>
-                            <img src="/images/image 5.png" alt='Person standing on a concrete slab' className='h-auto w-full object-fill' />
+                            <Image src="/images/image 5.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                         <div className='px-10 py-5 '>
                             <h1 className='text-[22px] xl:text-[32px] font-bold'>Invest in <span className='text-[orange]'>Proficiency</span></h1>
@@ -146,7 +147,7 @@ const HomePage = () => {
                             <style>
                                 {`
           ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
           }
 
           ::-webkit-scrollbar-thumb {
@@ -160,9 +161,11 @@ const HomePage = () => {
           }
         `}
                             </style>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -172,9 +175,11 @@ const HomePage = () => {
                                 temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
                                 voluptates deleniti. Eum.
                             </p>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -186,7 +191,7 @@ const HomePage = () => {
                             </p>
                         </DialogContent>
                     </Dialog>
-                </div>;
+                </div>
 
             </section>
 
@@ -196,7 +201,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 7.png" alt='' className='h-[100%] w-full' />
+                        <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Unmatched <span className='text-[orange]'>Quality</span></h1>
@@ -221,7 +226,7 @@ const HomePage = () => {
                             </button>
                         </div>
                         <div className='w-[70%] h-auto sm:w-full'>
-                            <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-full w-full object-fill' />
+                        <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                     </div>
                 )}
@@ -247,7 +252,7 @@ const HomePage = () => {
                             <style>
                                 {`
           ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
           }
 
           ::-webkit-scrollbar-thumb {
@@ -261,9 +266,11 @@ const HomePage = () => {
           }
         `}
                             </style>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -273,9 +280,11 @@ const HomePage = () => {
                                 temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
                                 voluptates deleniti. Eum.
                             </p>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -294,7 +303,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 6.png" alt='' className='h-full w-full' />
+                            <Image src="/images/mob-image 6.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'><span className='text-[orange]'>Earthquake safe</span> in Prodyme homes</h1>
@@ -311,7 +320,7 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[70%] h-auto sm:w-full'>
-                            <img src="/images/image 6.png" alt='Person standing on a concrete slab' className='h-full w-full object-fill' />
+                        <Image src="/images/image 6.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                         <div className='px-10 py-5 '>
                             <h1 className='text-[22px] xl:text-[32px] font-bold'><span className='text-[orange]'>Earthquake safe</span> in Prodyme homes</h1>
@@ -345,7 +354,7 @@ const HomePage = () => {
                             <style>
                                 {`
           ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
           }
 
           ::-webkit-scrollbar-thumb {
@@ -359,9 +368,11 @@ const HomePage = () => {
           }
         `}
                             </style>
-                            <img
+                            <Image
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -371,9 +382,11 @@ const HomePage = () => {
                                 temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
                                 voluptates deleniti. Eum.
                             </p>
-                            <img
+                            <Image
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -392,7 +405,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 7.png" alt='' className='h-full w-full' />
+                        <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Worry-Free <span className='text-[orange]'>Warranty</span>of 2 Year</h1>
@@ -417,7 +430,7 @@ const HomePage = () => {
                             </button>
                         </div>
                         <div className='w-[70%] h-auto sm:w-full'>
-                            <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-full w-full object-fill' />
+                        <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                     </div>
                 )}
@@ -443,7 +456,7 @@ const HomePage = () => {
                             <style>
                                 {`
           ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
           }
 
           ::-webkit-scrollbar-thumb {
@@ -457,9 +470,11 @@ const HomePage = () => {
           }
         `}
                             </style>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -469,9 +484,11 @@ const HomePage = () => {
                                 temporibus hic asperiores iusto distinctio perferendis voluptas nobis alias iste consectetur, expedita
                                 voluptates deleniti. Eum.
                             </p>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                                width={1000}
+                                height={1000}
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4">
@@ -498,7 +515,7 @@ const HomePage = () => {
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center'>
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
-                            <img src={v.image} alt={v.title} className='mx-auto' />
+                            <Image src={v.image} alt={v.title} width={100} height={100} className='mx-auto' />
                             <h1 className='my-3 text-[orange] font-bold text-[16px] md:text-xl'>{v.title}</h1>
                             <p className='text-[14px] md:text-xl font-semibold'>{v.description}</p>
                         </div>
@@ -512,7 +529,7 @@ const HomePage = () => {
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center'>
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
-                            <img src={v.image} alt={v.title} className='mx-auto' />
+                            <Image src={v.image} alt={v.title} width={100} height={100} className='mx-auto' />
                             <p className='text-[14px] md:text-xl font-semibold'>{v.description}</p>
                             <h1 className=' my-3 text-[orange] font-bold text-[16px] md:text-xl'>{v.title}</h1>
                         </div>

@@ -7,7 +7,7 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="px-4 md:px-0">
                     <h1 className="font-semibold text-3xl md:text-5xl mb-4">
-                        Let's Discuss <br />
+                        Lets Discuss <br />
                         Your Next Project
                     </h1>
                     <p className="mb-4">

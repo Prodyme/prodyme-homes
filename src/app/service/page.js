@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Element } from 'react-scroll'
 import Estimator from '../components/_estimator/Estimator'
+import Image from 'next/image'
 // import { Link } from 'react-router-dom'
 
 const Services = () => {
@@ -73,7 +74,7 @@ const Services = () => {
                                 onMouseOut={() => setHoveredService(null)}
                             >
                                 <div className="relative">
-                                    <img src={value.img} alt={value.title} className="mx-auto w-full" />
+                                    <Image src={value.img} alt={value.title} width={1000} height={1000} className="mx-auto w-full" />
                                     {hoveredService === key && (
                                         <div className="absolute inset-0 bg-black opacity-50" />
                                     )}

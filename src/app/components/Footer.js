@@ -25,7 +25,14 @@ const Footer = () => {
                     <div>
                         <div className='flex flex-col justify-center'>
                             <div>
-                                <h1 className='text-white border-2 px-[30px] text-center py-5 border-[orange]'>Prodyme Logo and name</h1>
+                            <div className='flex justify-start items-center'>
+                                    <div>
+                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px]'/>
+                                    </div>
+                                    <div>
+                                        <h1 className='text-white px-[30px] text-center py-5 text-xl font-bold'>Prodyme</h1>
+                                    </div>
+                                </div>
                             </div>
                             <div className='my-2'>
                                 <p className='text-white'>
@@ -112,8 +119,13 @@ const Footer = () => {
                             </div>
 
                             <div className='flex flex-col justify-between'>
-                                <div>
-                                    <h1 className='text-white border-2 px-[30px] text-center py-5 border-[orange]'>Prodyme Logo and name</h1>
+                                <div className='flex justify-start items-center'>
+                                    <div>
+                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px]'/>
+                                    </div>
+                                    <div>
+                                        <h1 className='text-white px-[30px] text-center py-5 text-xl font-bold'>Prodyme</h1>
+                                    </div>
                                 </div>
                                 <div className='my-2'>
                                     <p className='text-white'>

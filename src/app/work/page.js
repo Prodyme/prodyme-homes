@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Element } from 'react-scroll'
 import Estimator from '../components/_estimator/Estimator'
+import Image from 'next/image'
 // import { Link } from 'react-router-dom';
 
 const Work = () => {
@@ -47,7 +48,7 @@ const Work = () => {
                 <section>
                     <h1 className="text-center font-bold text-blue-900 text-3xl my-5">Our Work</h1>
                     <p className="text-center sm:text-left font-thin">
-                        You’re invited to browse a selection of recently completed projects below.
+                        You are invited to browse a selection of recently completed projects below.
                     </p>
                 </section>
 
@@ -60,7 +61,7 @@ const Work = () => {
                                 onMouseOver={() => setHoveredService(index)}
                                 onMouseOut={() => setHoveredService(null)}
                             >
-                                <img src={service.img} alt={service.name} className="w-full h-auto" />
+                                <Image src={service.img} alt={service.name} width={1000} height={1000} className="w-full h-auto" />
                                 {hoveredService === index && (
                                     <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 text-white">
                                         <span className="text-center font-bold text-xl">
