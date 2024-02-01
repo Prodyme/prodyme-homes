@@ -20,214 +20,222 @@ const Footer = () => {
 
     return (
         <div>
-            <section className='px-10 py-[30px] bg-black'>
+            <section className="px-10 py-[30px] bg-black font-sans">
                 {isMobile ? (
                     <div>
-                        <div className='flex flex-col justify-center'>
+                        <div className="flex flex-col justify-center text-[12px] font-normal">
                             <div>
-                            <div className='flex justify-start items-center'>
+                                <div className='flex justify-start items-center'>
                                     <div>
-                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px]'/>
+                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px]' />
                                     </div>
                                     <div>
                                         <h1 className='text-white px-[30px] text-center py-5 text-xl font-bold'>Prodyme</h1>
                                     </div>
                                 </div>
                             </div>
-                            <div className='my-2'>
-                                <p className='text-white'>
-                                    501, Colony name,<br />
-                                    Lane name road,<br />
-                                    City of office<br />
-                                    Pin code</p>
+                            <div className="my-2">
+                                <p className="text-white">
+                                    501, Colony name,
+                                    <br />
+                                    Lane name road,
+                                    <br />
+                                    City of office
+                                    <br />
+                                    Pin code
+                                </p>
                             </div>
-                            <div className='my-2'>
-                                <p className='text-white'>
-                                    care@prodyme.in<br />
+                            <div className="my-2">
+                                <p className="text-white">
+                                    care@prodyme.in
+                                    <br />
                                     +91 8920804195
                                 </p>
                             </div>
-                            <div className='my-2'>
-                                <p className='text-white'>
-                                    Prodym footer text like all rights reserved etc.</p>
+                            <div className="my-2">
+                                <p className="text-white">
+                                    Prodym footer text like all rights reserved etc.
+                                </p>
                             </div>
                         </div>
 
-              <div>
-                <hr className="border-2 bg-white my-10" />
-              </div>
+                        <div>
+                            <hr className="border-2 bg-white my-10" />
+                        </div>
 
-              <div>
-                <div>
-                  <div className="text-white text-[16px] font-normal text-center">
-                    Contact Us
-                  </div>
-                </div>
-                <div className="grid ">
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="Site Address"
-                    className="p-3 rounded-xl my-5"
-                  />
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="Subject"
-                    className="p-3 rounded-xl my-5"
-                  />
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="Your message"
-                    className="p-3 rounded-xl my-5"
-                  />
-                </div>
-              </div>
+                        <div>
+                            <div>
+                                <div className="text-white text-[16px] font-normal text-center">
+                                    Contact Us
+                                </div>
+                            </div>
+                            <div className="grid ">
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Site Address"
+                                    className="p-3 rounded-xl my-5"
+                                />
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Subject"
+                                    className="p-3 rounded-xl my-5"
+                                />
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Your message"
+                                    className="p-3 rounded-xl my-5"
+                                />
+                            </div>
+                        </div>
 
-              <div>
-                <ul className="flex justify-center items-center my-5">
-                  <li className="mx-5 ">
-                    <Image
-                      src="/images/facebook.png"
-                      alt="prodyme homes"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </li>
-                  <li className="mx-5 ">
-                    <Image
-                      src="/images/instagram.png"
-                      alt="prodyme homes"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </li>
-                  <li className="mx-5 ">
-                    <Image
-                      src="/images/Vector.png"
-                      alt="prodyme homes"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </li>
-                </ul>
-              </div>
-            </div>
-          ) : (
-            <div className="flex justify-between items-center">
-              <div className="grid grid-cols-3">
-                <div className="py-5">
-                  <div>
-                    <div>
-                      <h1 className="text-white font-normal text-[24px]">
-                        Contact Us
-                      </h1>
+                        <div>
+                            <ul className="flex justify-center items-center my-5">
+                                <li className="mx-5 ">
+                                    <Image
+                                        src="/images/facebook.png"
+                                        alt="prodyme homes"
+                                        width={38}
+                                        height={38}
+                                        priority
+                                    />
+                                </li>
+                                <li className="mx-5 ">
+                                    <Image
+                                        src="/images/instagram.png"
+                                        alt="prodyme homes"
+                                        width={38}
+                                        height={38}
+                                        priority
+                                    />
+                                </li>
+                                <li className="mx-5 ">
+                                    <Image
+                                        src="/images/Vector.png"
+                                        alt="prodyme homes"
+                                        width={38}
+                                        height={38}
+                                        priority
+                                    />
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="grid ">
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Site Address"
-                        className="p-3 rounded-xl my-5"
-                      />
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Subject"
-                        className="p-3 rounded-xl my-5"
-                      />
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Your message"
-                        className="p-3 rounded-xl my-5"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute top-0 bottom-0 h-full w-0.5 bg-white left-[50%]"></div>
-                </div>
-
-                            <div className='relative'>
-                                <div className='absolute top-0 bottom-0 h-full w-0.5 bg-white left-[50%]'></div>
+                ) : (
+                    <div className="flex justify-between items-center">
+                        <div className="grid grid-cols-3">
+                            <div className="py-5">
+                                <div>
+                                    <div>
+                                        <h1 className="text-white font-normal text-[24px]">
+                                            Contact Us
+                                        </h1>
+                                    </div>
+                                    <div className="grid ">
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Site Address"
+                                            className="p-3 rounded-xl my-5"
+                                        />
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Subject"
+                                            className="p-3 rounded-xl my-5"
+                                        />
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Your message"
+                                            className="p-3 rounded-xl my-5"
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className='flex flex-col justify-between'>
+                            <div className="relative">
+                                <div className="absolute top-0 bottom-0 h-full w-0.5 bg-white left-[50%]"></div>
+                            </div>
+
+                            <div className='flex flex-col justify-between font-normal text-[14px]'>
                                 <div className='flex justify-start items-center'>
                                     <div>
-                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px]'/>
+                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px] object-cover' />
                                     </div>
                                     <div>
-                                        <h1 className='text-white px-[30px] text-center py-5 text-xl font-bold'>Prodyme</h1>
+                                        <h1 className='text-white px-[30px] text-center py-5 font-normal text-xl'>Prodyme</h1>
                                     </div>
                                 </div>
-                                <div className='my-2'>
-                                    <p className='text-white'>
-                                        501, Colony name,<br />
-                                        Lane name road,<br />
-                                        City of office<br />
-                                        Pin code</p>
+                                <div className="my-2">
+                                <p className="text-white text-lg">
+                                        501, Colony name,
+                                        <br />
+                                        Lane name road,
+                                        <br />
+                                        City of office
+                                        <br />
+                                        Pin code
+                                    </p>
                                 </div>
-                                <div className='my-2'>
-                                    <p className='text-white'>
-                                        care@prodyme.in<br />
+                                <div className="my-2">
+                                    <p className="text-white text-lg">
+                                        care@prodyme.in
+                                        <br />
                                         +91 8920804195
                                     </p>
                                 </div>
-                                <div className='my-2'>
-                                    <p className='text-white'>
-                                        Prodym footer text like all rights reserved etc.</p>
+                                <div className="my-2">
+                                    <p className="text-white ">
+                                        Prodym footer text like all rights reserved etc.
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-              <div>
-                <ul className="flex my-5">
-                  <li className="mx-5 ">
-                    <Image
-                      src="/images/facebook.png"
-                      alt="prodyme homes"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </li>
-                  <li className="mx-5 ">
-                    <Image
-                      src="/images/instagram.png"
-                      alt="prodyme homes"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </li>
-                  <li className="mx-5 ">
-                    <Image
-                      src="/images/Vector.png"
-                      alt="prodyme homes"
-                      width={38}
-                      height={38}
-                      priority
-                    />
-                  </li>
-                </ul>
-              </div>
-            </div>
-          )}
-        </section>
-      </div>
+                        <div>
+                            <ul className="flex my-5">
+                                <li className="mx-5 ">
+                                    <Image
+                                        src="/images/facebook.png"
+                                        alt="prodyme homes"
+                                        width={38}
+                                        height={38}
+                                        priority
+                                    />
+                                </li>
+                                <li className="mx-5 ">
+                                    <Image
+                                        src="/images/instagram.png"
+                                        alt="prodyme homes"
+                                        width={38}
+                                        height={38}
+                                        priority
+                                    />
+                                </li>
+                                <li className="mx-5 ">
+                                    <Image
+                                        src="/images/Vector.png"
+                                        alt="prodyme homes"
+                                        width={38}
+                                        height={38}
+                                        priority
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                )}
+            </section>
+        </div>
     );
 }
 

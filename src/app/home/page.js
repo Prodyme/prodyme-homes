@@ -43,9 +43,9 @@ const HomePage = () => {
 
     const styles = {
         rounded: {
-          borderRadius: '20px', 
+            borderRadius: '20px',
         },
-      };
+    };
 
 
     useEffect(() => {
@@ -90,15 +90,15 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <Image src="/images/mob-image 5.png" alt='' width={1000} height={1000} className='h-full w-full' />
+                            <Image src="/images/mob-image 5.png" alt='' width={1000} height={1000} className='h-full w-full' priority/>
                         </div>
                         <div className='px-5 py-3 '>
-                            <h1 className='text-[20px] font-bold'>Invest in <span className='text-[orange]'>Proficiency</span></h1>
-                            <p className='text-[16px] font-medium my-3'>
+                            <h1 className='text-[20px] font-bold'>Invest in <span className='text-orange-400'>Proficiency</span></h1>
+                            <p className='text-[16px] font-normal my-3'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                                <button onClick={openModal1} className='bg-white text-[orange] text-[16px] px-[30px] py-[8px] rounded-2xl'>
+                                <button onClick={openModal1} className='bg-white text-orange-400 text-[16px] px-[30px] py-[8px] rounded-2xl'>
                                     Why our Quality is the best?
                                 </button>
                             </div>
@@ -107,14 +107,14 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[70%] max-w-[700px] h-auto mx-auto sm:w-full'>
-                            <Image src="/images/image 5.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
+                            <Image src="/images/image 5.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' priority/>
                         </div>
                         <div className='px-10 py-5 '>
-                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Invest in <span className='text-[orange]'>Proficiency</span></h1>
-                            <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
+                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Invest in <span className='text-orange-400'>Proficiency</span></h1>
+                            <p className='text-[14px] xl:text-[24px] font-normal my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button onClick={openModal1} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl '>Why our Quality is the best?</button>
+                            <button onClick={openModal1} className='bg-white text-orange-400 text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl '>Why our Quality is the best?</button>
                         </div>
                     </div>
                 )}
@@ -201,15 +201,15 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                        <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full' />
+                            <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
-                            <h1 className='text-[20px] font-bold'>Unmatched <span className='text-[orange]'>Quality</span></h1>
-                            <p className='text-[16px] font-medium my-3'>
+                            <h1 className='text-[20px] font-bold'>Unmatched <span className='text-orange-400'>Quality</span></h1>
+                            <p className='text-[16px] font-normal my-3'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                                <button onClick={isModalOpen2} className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                <button onClick={isModalOpen2} className='bg-white text-orange-400 font-[16px] px-[30px] py-[8px] rounded-2xl '>
                                     Take a Glimpse!
                                 </button>
                             </div>
@@ -218,15 +218,15 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='px-10 py-5 '>
-                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Unmatched <span className='text-[orange]'>Quality</span></h1>
-                            <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
+                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Unmatched <span className='text-orange-400'>Quality</span></h1>
+                            <p className='text-[14px] xl:text-[24px] font-normal my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button onClick={openModal2} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
+                            <button onClick={openModal2} className='bg-white text-orange-400 text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
                             </button>
                         </div>
                         <div className='w-[70%] h-auto sm:w-full'>
-                        <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
+                            <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                     </div>
                 )}
@@ -306,12 +306,12 @@ const HomePage = () => {
                             <Image src="/images/mob-image 6.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
-                            <h1 className='text-[20px] font-bold'><span className='text-[orange]'>Earthquake safe</span> in Prodyme homes</h1>
-                            <p className='text-[16px] font-medium my-3'>
+                            <h1 className='text-[20px] font-bold'><span className='text-orange-400'>Earthquake safe</span> in Prodyme homes</h1>
+                            <p className='text-[16px] font-normal my-3'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                                <button onClick={openModal3} className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                <button onClick={openModal3} className='bg-white text-orange-400 font-[16px] px-[30px] py-[8px] rounded-2xl '>
                                     Customise your Steel Estimate
                                 </button>
                             </div>
@@ -320,14 +320,14 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[70%] h-auto sm:w-full'>
-                        <Image src="/images/image 6.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
+                            <Image src="/images/image 6.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                         <div className='px-10 py-5 '>
-                            <h1 className='text-[22px] xl:text-[32px] font-bold'><span className='text-[orange]'>Earthquake safe</span> in Prodyme homes</h1>
-                            <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
+                            <h1 className='text-[22px] xl:text-[32px] font-bold'><span className='text-orange-400'>Earthquake safe</span> in Prodyme homes</h1>
+                            <p className='text-[14px] xl:text-[24px] font-normal my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button onClick={openModal3} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Customise your Steel Estimate
+                            <button onClick={openModal3} className='bg-white text-orange-400 text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Customise your Steel Estimate
                             </button>
                         </div>
                     </div>
@@ -405,15 +405,15 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                        <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full' />
+                            <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
-                            <h1 className='text-[20px] font-bold'>Worry-Free <span className='text-[orange]'>Warranty</span>of 2 Year</h1>
-                            <p className='text-[16px] font-medium my-3'>
+                            <h1 className='text-[20px] font-bold'>Worry-Free <span className='text-orange-400'>Warranty</span>of 2 Year</h1>
+                            <p className='text-[16px] font-normal my-3'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                                <button onClick={openModal2} className='bg-white text-[orange] font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                <button onClick={openModal2} className='bg-white text-orange-400 font-[16px] px-[30px] py-[8px] rounded-2xl '>
                                     Take a Glimpse!
                                 </button>
                             </div>
@@ -422,15 +422,15 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='px-10 py-5 '>
-                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Worry-Free <span className='text-[orange]'>Warranty</span>of 2 Year</h1>
-                            <p className='text-[14px] xl:text-[24px] font-medium my-4 xl:my-5'>
+                            <h1 className='text-[22px] xl:text-[32px] font-bold'>Worry-Free <span className='text-orange-400'>Warranty</span>of 2 Year</h1>
+                            <p className='text-[14px] xl:text-[24px] font-normal my-4 xl:my-5'>
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
-                            <button onClick={openModal2} className='bg-white text-[orange] text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
+                            <button onClick={openModal2} className='bg-white text-orange-400 text-[12px] xl:text-[16px] px-[40px] py-[10px] rounded-2xl'>Take a Glimpse!
                             </button>
                         </div>
                         <div className='w-[70%] h-auto sm:w-full'>
-                        <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
+                            <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                     </div>
                 )}
@@ -503,35 +503,48 @@ const HomePage = () => {
                 </div>
             </section>
 
-        <section>
-          <Element name="estimatorSection" className="estimator-section">
-            <Estimator />
-          </Element>
-        </section>
+            <section>
+                <Element name="estimatorSection" className="estimator-section">
+                    <Estimator />
+                </Element>
+            </section>
 
-            <section className='section-6 mx-5 md:mx-[71px] my-20 '>
-                <h1 className='md:text-[32px] text-[16px] font-semibold text-center'>Other practical reasons to choose Prodyme</h1>
-                <hr className='my-10 bg-[#C6C6C6] border-2' />
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center'>
+            <section className="section-6 mx-5 md:mx-[71px] my-20 ">
+                <h1 className="md:text-[32px] text-[16px] font-normal text-center">
+                    Other practical reasons to choose Prodyme
+                </h1>
+                <hr className="my-10 bg-[#C6C6C6] border-2" />
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center">
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
                             <Image src={v.image} alt={v.title} width={100} height={100} className='mx-auto' />
-                            <h1 className='my-3 text-[orange] font-bold text-[16px] md:text-xl'>{v.title}</h1>
-                            <p className='text-[14px] md:text-xl font-semibold'>{v.description}</p>
+                            <h1 className="my-3 text-orange-400 font-bold text-[16px] md:text-xl">
+                                {v.title}
+                            </h1>
+                            <p className="text-[14px] md:text-xl font-normal">
+                                {v.description}
+                            </p>
                         </div>
                     ))}
                 </div>
             </section>
 
-            <section className='section-6 px-5 md:px-[71px] py-20 bg-[#EFEFEF]'>
-                <h1 className='md:text-[32px] text-[16px] font-semibold text-center'>Words of our Customers</h1>
-                <hr className='my-10 bg-[#C6C6C6] border-2' />
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center'>
+            <section className="section-6 px-5 md:px-[71px] py-20 bg-[#EFEFEF]">
+                <h1 className="md:text-[32px] text-[16px] font-normal text-center">
+                    Words of our Customers
+                </h1>
+                <hr className="my-10 bg-[#C6C6C6] border-2" />
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center">
+
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
                             <Image src={v.image} alt={v.title} width={100} height={100} className='mx-auto' />
-                            <p className='text-[14px] md:text-xl font-semibold'>{v.description}</p>
-                            <h1 className=' my-3 text-[orange] font-bold text-[16px] md:text-xl'>{v.title}</h1>
+                            <p className="text-[14px] md:text-xl font-normal">
+                                {v.description}
+                            </p>
+                            <h1 className="my-3 text-orange-400 font-bold text-[16px] md:text-xl">
+                                {v.title}
+                            </h1>
                         </div>
                     ))}
                 </div>
