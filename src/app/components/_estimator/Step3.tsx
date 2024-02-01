@@ -54,9 +54,9 @@ const Step3: React.FC<step3Type> = ({
     }));
   };
 
-  useEffect(() => {
-    console.log(popUpFormData);
-  }, [popUpFormData]);
+  // useEffect(() => {
+  //   console.log(popUpFormData);
+  // }, [popUpFormData]);
 
   const validateForm = () => {
     let valid = true;
@@ -233,20 +233,19 @@ const Step3: React.FC<step3Type> = ({
     >
       {popUpFormFlag && popUpForm()}
       {/* <input type="file" accept=".xls,.xlsx" onChange={readUploadFile} /> */}
-      <span className="text-center text-black text-sm font-normal font-['Anek Latin']">
+      <span className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">
         Step 3/5
       </span>
       <div className="grid grid-cols-3 gap-4 max-lg:flex max-lg:flex-wrap justify-between self-start items-start ">
         {groupedItems?.map((d, i) => {
           return (
-            <>
-              <div className="  max-sm:mx-0 max-lg:w-[300px] min-h-[160px]  my-5 flex-col justify-between items-start gap-5 inline-flex relative">
+              <div key={i} className="  max-sm:mx-0 max-lg:w-[300px] md:min-h-[160px]  my-5 flex-col justify-between items-start gap-5 inline-flex relative">
                 <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start">
                   <div className="flex-col justify-start items-start inline-flex text-left">
-                    <div className="text-black text-2xl font-normal font-['Anek Latin'] max-sm:w-[80vw]">
+                    <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
                       {d.itemName}
                     </div>
-                    {/* <div className="text-black text-sm font-normal font-['Anek Latin']">
+                    {/* <div className="text-black md:text-sm text-xs font-normal font-['Anek Latin']">
                       Rathi, Kamdhenu or equivalent
                     </div> */}
                   </div>
@@ -281,15 +280,15 @@ const Step3: React.FC<step3Type> = ({
                   className="w-[240px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
                 >
                   <div className="grow shrink basis-0 ">
-                    {d.items.map((i) => {
+                    {d.items.map((i,index) => {
                       if (d.Category === i.Category) {
                         return (
-                          <span>
-                            <span className="text-black text-sm font-bold font-['Anek Latin']">
+                          <span key={index}>
+                            <span className="text-black md:text-sm text-xs font-bold font-['Anek Latin']">
                               INR
                             </span>{" "}
                             {i.Rate}
-                            <span className="text-black text-sm font-light font-['Anek Latin']">
+                            <span className="text-black md:text-sm text-xs font-light font-['Anek Latin']">
                               {" "}
                               {i.Unit}
                             </span>
@@ -310,7 +309,7 @@ const Step3: React.FC<step3Type> = ({
                   }`}
                 >
                   {" "}
-                  <span className="font-bold text-orange-500 text-2xl">
+                  <span className="font-bold text-orange-500 md:text-2xl text-base">
                     Choose product
                   </span>
                   {d.items.map((item, i) => {
@@ -352,7 +351,7 @@ const Step3: React.FC<step3Type> = ({
                   <div className=" max-lg:hidden w-[0px] h-[160px] absolute right-0 top-0 origin-top-left border border-stone-300"></div>
                 )}
               </div>
-            </>
+            
           );
         })}
       </div>
@@ -368,14 +367,14 @@ const Step3: React.FC<step3Type> = ({
       </button>
       <div className="flex-col justify-start items-start gap-2.5 flex">
         <div>
-          <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
+          <span className="text-orange-400 md:text-6xl text-3xl font-bold font-['Anek Latin']">
             INR {costPerSqft.toLocaleString()}{" "}
           </span>
-          <span className="text-black text-2xl font-normal font-['Anek Latin']">
+          <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
             per sqft
           </span>
         </div>
-        <div className="text-black text-2xl font-normal font-['Anek Latin']">
+        <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
           Approximately {estimateValue.toLocaleString()} for your BUA
           (Built-Up-Area)
         </div>

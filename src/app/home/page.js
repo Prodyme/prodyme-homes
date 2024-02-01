@@ -503,11 +503,11 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section>
-                <Element name="estimatorSection" className="estimator-section">
-                    <Estimator />
-                </Element>
-            </section>
+        <section>
+          <Element name="estimatorSection" className="estimator-section">
+            <Estimator />
+          </Element>
+        </section>
 
             <section className='section-6 mx-5 md:mx-[71px] my-20 '>
                 <h1 className='md:text-[32px] text-[16px] font-semibold text-center'>Other practical reasons to choose Prodyme</h1>

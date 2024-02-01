@@ -3,7 +3,7 @@ import HomePage from './home/page'
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
+    <main className="font-sans">
         {/* <header className="pb-24">
             <h4>Prodyme</h4>
         </header>

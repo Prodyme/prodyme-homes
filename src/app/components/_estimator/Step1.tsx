@@ -87,14 +87,14 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
       >
         <div className="flex-col justify-start items-start gap-[23px] flex">
           <div className="pl-5 justify-start items-start gap-2.5 inline-flex">
-            <div className="text-center text-black text-sm font-normal font-['Anek Latin']">
+            <div className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">
               Step 1/5
             </div>
           </div>
         </div>
         <div className="pl-5 flex-col justify-start items-start gap-5 flex">
           <div className="flex-col justify-start items-start gap-5 flex">
-            <span className="text-black text-2xl font-normal font-['Anek Latin'] w-[80vw]">
+            <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] ">
               Provide us your expected built up area:
             </span>
             <div className="justify-start items-start gap-5 inline-flex max-md:flex-col">
@@ -104,13 +104,13 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
                   min="1"
                   placeholder="like 1800..."
                   onChange={(e) => setAValue(parseFloat(e.target.value))}
-                  className="flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 text-black text-sm font-normal font-['Anek Latin']"
+                  className="flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 text-black md:text-sm text-xs font-normal font-['Anek Latin']"
                 />
                 <span className="text-red-500 pt-2">{errors.aValue}</span>
               </div>
               <div className="flex flex-col">
                 <select
-                  className={`flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg justify-start items-center gap-2.5 grow shrink basis-0 text-black text-sm font-normal font-['Anek Latin'] ${
+                  className={`flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg justify-start items-center gap-2.5 grow shrink basis-0 text-black md:text-sm text-xs font-normal font-['Anek Latin'] ${
                     aUnit === 0 ? "opacity-50" : ""
                   }`}
                   onChange={(e) => setAUnit(parseInt(e.target.value))}
@@ -128,9 +128,9 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
             </div>
           </div>
           <div className="w-[800px] max-xl:w-[60vw] h-[0px] border border-stone-300"></div>
-          <div className="flex-col justify-start items-start gap-5 flex w-[70vw]">
-            <div className="justify-start items-center gap-5 inline-flex ">
-              <div className="text-black text-2xl font-normal font-['Anek Latin'] ">
+          <div className="flex-col justify-start items-start gap-5 flex">
+            <div className="justify-start items-center gap-1 flex ">
+              <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] ">
                 Planning to build a basement?
               </div>
               <div className="w-[31px] h-[17px]">
@@ -149,7 +149,7 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
             <div className={basement ? "" : "hidden"}>
               <div className="w-[420px] max-xl:w-[30vw] h-[0px] border border-stone-300 mb-5"></div>
               <div className="flex-col justify-start items-start gap-5 flex">
-                <div className="text-black text-2xl font-normal font-['Anek Latin'] w-[80vw]">
+                <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] ">
                   Provide us your expected basement area:
                 </div>
                 <div className="justify-start items-start gap-5 inline-flex max-md:flex-col">
@@ -159,13 +159,13 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
                       min="0"
                       placeholder="like 1800..."
                       onChange={(e) => setBValue(parseFloat(e.target.value))}
-                      className="flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 text-black text-sm font-normal font-['Anek Latin']"
+                      className="flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 text-black md:text-sm text-xs font-normal font-['Anek Latin']"
                     />
                     <span className="text-red-500 pt-2">{errors.bValue}</span>
                   </div>
                   <div className="flex flex-col">
                     <select
-                      className={`flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg justify-start items-center gap-2.5 grow shrink basis-0 text-black text-sm font-normal font-['Anek Latin'] ${
+                      className={`flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg justify-start items-center gap-2.5 grow shrink basis-0 text-black md:text-sm text-xs font-normal font-['Anek Latin'] ${
                         bUnit === 0 ? "opacity-50" : ""
                       }`}
                       onChange={(e) => setBUnit(parseInt(e.target.value))}

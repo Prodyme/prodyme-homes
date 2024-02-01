@@ -57,7 +57,7 @@ const Work = () => {
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className="relative overflow-hidden rounded-lg"
+                                className="relative rounded-lg"
                                 onMouseOver={() => setHoveredService(index)}
                                 onMouseOut={() => setHoveredService(null)}
                             >

@@ -86,7 +86,7 @@ export const Step2: React.FC<step2Type> = ({
         </div>
         <div className="pl-5 flex-col justify-start items-start gap-5 flex">
           <div className="flex-col justify-start items-start gap-5 flex">
-            <span className="text-black text-2xl font-normal font-['Anek Latin'] w-[80vw]">
+            <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] ">
               Select the degree of premium quality:
             </span>
             <div className="flex flex-col">
@@ -139,22 +139,22 @@ export const Step2: React.FC<step2Type> = ({
           </div>
           <div className="w-[800px] h-[0px] border max-xl:w-[60vw] border-stone-300"></div>
 
-          <div className="flex-col justify-start items-start gap-2.5 flex w-[80vw]">
+          <div className="flex-col justify-start items-start gap-2.5 flex">
             <div>
-              <span className="text-orange-400 text-6xl font-bold font-['Anek Latin']">
+              <span className="text-orange-400 md:text-6xl text-2xl font-bold font-['Anek Latin']">
                 INR {costPerSqft.toLocaleString()}{" "}
               </span>
-              <span className="text-black text-2xl font-normal font-['Anek Latin']">
+              <span className="text-black md:text-3xl text-base font-normal font-['Anek Latin']">
                 per sqft
               </span>
             </div>
-            <div className="text-black text-2xl font-normal font-['Anek Latin']">
+            <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
               Approximately {estimateValue.toLocaleString()} for your BUA
               (Built-Up-Area)
             </div>
           </div>
           <div className="w-[800px] h-[0px] border max-xl:w-[60vw] border-stone-300"></div>
-          <div className="justify-start items-start gap-5 inline-flex w-[80vw] flex-wrap">
+          <div className="justify-start items-start gap-5 inline-flex flex-wrap">
             <button
               onClick={() => setStep(step - 1)}
               className="w-[113px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
