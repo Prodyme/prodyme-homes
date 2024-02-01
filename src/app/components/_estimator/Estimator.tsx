@@ -50,7 +50,7 @@ const Estimator = () => {
   }, []);
 
   useEffect(() => {
-    console.log(groupedItems, "hello");
+    // console.log(groupedItems, "hello");
     if (flag === true) {
       generateEstimate();
     }
@@ -124,13 +124,13 @@ const Estimator = () => {
       {resetFlag && (
         <div className="w-[100%] h-auto p-5 bg-zinc-100 flex-col  justify-center items-center inline-flex  ">
           <div className="my-4">
-            <span className="text-black text-[32px] font-normal font-['Anek Latin']">
+            <span className="text-black md:text-[32px] text-[20px] font-normal font-['Anek Latin']">
               Use the{" "}
             </span>
-            <span className="text-black text-[32px] font-bold font-['Anek Latin']">
+            <span className="text-black md:text-[32px] text-[20px] font-bold font-['Anek Latin']">
               Smart Estimator
             </span>
-            <span className="text-black text-[32px] font-normal font-['Anek Latin']">
+            <span className="text-black md:text-[32px] text-[20px] font-normal font-['Anek Latin']">
               {" "}
               to get the most detailed preliminary budget:
             </span>

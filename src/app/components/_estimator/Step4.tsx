@@ -2,6 +2,8 @@ import React from "react";
 import { step4Type, stepType } from "./_myTypes";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { PDFFile } from "./_components/PDFFile";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
 
 export const Step4: React.FC<step4Type> = ({
   step,
@@ -21,23 +23,55 @@ export const Step4: React.FC<step4Type> = ({
   return (
     <>
       <div
-        className={`w-[899px] max-xl:w-[90vw] h-auto gap-[30px] pt-3  pb-6 bg-white rounded-bl-lg rounded-br-lg border border-orange-400 flex-col justify-center items-center inline-flex  ${
+        className={`w-[899px] max-xl:w-[90vw] h-auto gap-[30px] pt-3  pb-6 bg-white rounded-bl-lg rounded-br-lg border border-orange-400 flex-col justify-start items-start inline-flex pl-5 ${
           step !== 4 ? "hidden" : ""
         }`}
       >
-        <div className="w-[899px] max-lg:w-[90vw] h-auto" >
-          <PDFFile
-            step={step}
-            setStep={setStep}
-            estimateValue={estimateValue}
-            groupedItems={groupedItems}
-            setGroupedItems={setGroupedItems}
-            quality={quality}
-            totalRate={totalRate}
-            costPerSqft={costPerSqft}
-          />
+        <div className="w-[899px] max-lg:w-[90vw] h-auto">
+          <div className="flex flex-col mx-2 my-5 justify-between items-start gap-5 relative">
+            {" "}
+            {groupedItems.map((item, index) => {
+              return (
+                <div key={index}>
+                  <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
+                    {item.itemName}
+                  </div>
+                  {item.items.map((i, subIndex) => {
+                    if (item.Category === i.Category) {
+                      return (
+                        <span key={subIndex} className="text-orange-400">
+                          <span className="text-black md:text-base text-sm font-bold font-['Anek Latin']">
+                            INR
+                          </span>{" "}
+                          {i.Rate}
+                          <span className="text-black md:text-base text-sm font-light font-['Anek Latin']">
+                            {" "}
+                            {i.Unit}
+                          </span>
+                        </span>
+                      );
+                    }
+                  })}
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex flex-col mx-2 my-5 justify-between items-start gap-5 relative">
+            <div>
+              <span className="text-orange-400 md:text-6xl text-3xl font-bold font-['Anek Latin']">
+                INR {costPerSqft.toLocaleString()}{" "}
+              </span>
+              <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
+                per sqft
+              </span>
+            </div>
+            <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
+              Approximately {estimateValue.toLocaleString()} for your BUA
+              (Built-Up-Area)
+            </div>
+          </div>
         </div>
-        <div className="justify-center items-center gap-5 inline-flex w-[80vw] flex-wrap">
+        <div className="justify-start items-start gap-5 inline-flex w-[80vw] flex-wrap my-5 ">
           <PDFDownloadLink
             document={
               <PDFFile
@@ -52,20 +86,22 @@ export const Step4: React.FC<step4Type> = ({
               />
             }
             fileName="Generated Estimate"
-            className="w-[200px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+            className="w-[200px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-start items-start gap-2.5 flex transition-transform transform hover:scale-110"
           >
             <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
               Download PDF
             </div>
           </PDFDownloadLink>
-          <button
-            onClick={handleProceed}
-            className="w-[300px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
-          >
-            <div className="text-white text-base font-normal font-['Anek Latin']">
-              Generate New Budget
-            </div>
-          </button>
+          <ScrollLink to="estimatorSection" smooth={false}>
+            <button
+              onClick={handleProceed}
+              className="w-[250px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-start items-start gap-2.5 flex transition-transform transform hover:scale-110"
+            >
+              <div className="text-white text-base font-normal font-['Anek Latin']">
+                Generate New Budget
+              </div>
+            </button>
+          </ScrollLink>
         </div>
       </div>
     </>

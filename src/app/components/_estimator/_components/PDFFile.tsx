@@ -59,7 +59,6 @@ export const PDFFile: React.FC<step3Type> = ({
     <Document>
       <Page size="A4" style={styles.page}>
         <div className="flex flex-col">
-          {" "}
           {groupedItems.map((item, index) => (
             <View key={index} style={styles.section}>
               <div>
@@ -68,7 +67,7 @@ export const PDFFile: React.FC<step3Type> = ({
               {item.items.map((i, subIndex) => {
                 if (item.Category === i.Category) {
                   return (
-                    <div>
+                    <div key={subIndex}>
                       <View key={subIndex}>
                         <div>
                           <Text style={styles.description}>
@@ -102,11 +101,6 @@ export const PDFFile: React.FC<step3Type> = ({
               </Text>
             </div>
           </View>
-          <div>
-            <View style={styles.section2}>
-              <Text>Thank You</Text>
-            </View>
-          </div>
         </div>
       </Page>
     </Document>
