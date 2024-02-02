@@ -27,7 +27,7 @@ const Footer = () => {
                             <div>
                                 <div className='flex justify-start items-center'>
                                     <div>
-                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px]' />
+                                        <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[100px] h-auto' />
                                     </div>
                                     <div>
                                         <h1 className='text-white px-[30px] text-center py-5 text-xl font-bold'>Prodyme</h1>
@@ -100,8 +100,10 @@ const Footer = () => {
                                     <Image
                                         src="/images/facebook.png"
                                         alt="prodyme homes"
-                                        width={38}
-                                        height={38}
+                                        width='0'
+                                        height='0'
+                                        sizes='100vw'
+                                        className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
@@ -109,8 +111,10 @@ const Footer = () => {
                                     <Image
                                         src="/images/instagram.png"
                                         alt="prodyme homes"
-                                        width={38}
-                                        height={38}
+                                        width='0'
+                                        height='0'
+                                        sizes='100vw'
+                                        className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
@@ -118,8 +122,10 @@ const Footer = () => {
                                     <Image
                                         src="/images/Vector.png"
                                         alt="prodyme homes"
-                                        width={38}
-                                        height={38}
+                                        width='0'
+                                        height='0'
+                                        sizes='100vw'
+                                        className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
@@ -169,7 +175,7 @@ const Footer = () => {
                             <div className='flex flex-col justify-between font-normal text-[14px]'>
                                 <div className='flex justify-start items-center'>
                                     <div>
-                                        <Image src="/images/logo.png" alt="" width={100} height={100} className='w-[100px] h-[100px] object-cover' />
+                                        <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[100px] h-auto object-cover' />
                                     </div>
                                     <div>
                                         <h1 className='text-white px-[30px] text-center py-5 font-normal text-xl'>Prodyme</h1>
@@ -207,8 +213,10 @@ const Footer = () => {
                                     <Image
                                         src="/images/facebook.png"
                                         alt="prodyme homes"
-                                        width={38}
-                                        height={38}
+                                        width='0'
+                                        height='0'
+                                        sizes='100vw'
+                                        className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
@@ -216,8 +224,10 @@ const Footer = () => {
                                     <Image
                                         src="/images/instagram.png"
                                         alt="prodyme homes"
-                                        width={38}
-                                        height={38}
+                                        width='0'
+                                        height='0'
+                                        sizes='100vw'
+                                        className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
@@ -225,8 +235,10 @@ const Footer = () => {
                                     <Image
                                         src="/images/Vector.png"
                                         alt="prodyme homes"
-                                        width={38}
-                                        height={38}
+                                        width='0'
+                                        height='0'
+                                        sizes='100vw'
+                                        className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>

@@ -107,7 +107,7 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[70%] max-w-[700px] h-auto mx-auto sm:w-full'>
-                            <Image src="/images/image 5.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' priority/>
+                            <Image src="/images/image 5.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-fill' />
                         </div>
                         <div className='px-10 py-5 '>
                             <h1 className='text-[22px] xl:text-[32px] font-bold'>Invest in <span className='text-orange-400'>Proficiency</span></h1>
@@ -122,7 +122,7 @@ const HomePage = () => {
                 <div>
                     <Dialog
                         open={isModalOpen1}
-                        style={{ width: '100%', maxWidth: 'none' }}
+                        style={{ width: '100%' }}
                         onClose={closeModal1}
                         className="fixed inset-0 overflow-y-auto "
                         classes={{ paper: styles.rounded }}
@@ -137,8 +137,7 @@ const HomePage = () => {
                         </DialogTitle>
                         <DialogContent
                             className="p-20"
-                            fullWidth
-                            maxWidth="false"
+                            
                             style={{
                                 scrollbarWidth: 'thin',
                                 scrollbarColor: '#A5A5A5 #EFEFEF',
@@ -209,7 +208,7 @@ const HomePage = () => {
                                 Lorem ipsum dolor sit amet consectetur. Diam egestas volutpat vulputate urna nisl at. Dignissim condimentum eget dignissim vestibulum volutpat. Risus odio enim nam fermentum donec nisi etiam amet at. Sed donec volutpat sagittis ultrices amet quam feugiat malesuada pulvinar.
                             </p>
                             <div className='flex justify-center items-center'>
-                                <button onClick={isModalOpen2} className='bg-white text-orange-400 font-[16px] px-[30px] py-[8px] rounded-2xl '>
+                                <button onClick={openModal2} className='bg-white text-orange-400 font-[16px] px-[30px] py-[8px] rounded-2xl '>
                                     Take a Glimpse!
                                 </button>
                             </div>
@@ -231,7 +230,7 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen2} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen2} style={{ width: '100%'}} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h2 className="text-xl font-bold">Unmatched Quality</h2>
@@ -242,8 +241,7 @@ const HomePage = () => {
                         </DialogTitle>
                         <DialogContent
                             className="p-20"
-                            fullWidth
-                            maxWidth="false"
+                            
                             style={{
                                 scrollbarWidth: 'thin',
                                 scrollbarColor: '#A5A5A5 #EFEFEF',
@@ -333,7 +331,7 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen3} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen3} style={{ width: '100%' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h2 className="text-xl font-bold">Earthquake safe in Prodyme homes</h2>
@@ -344,8 +342,7 @@ const HomePage = () => {
                         </DialogTitle>
                         <DialogContent
                             className="p-20"
-                            fullWidth
-                            maxWidth="false"
+                            
                             style={{
                                 scrollbarWidth: 'thin',
                                 scrollbarColor: '#A5A5A5 #EFEFEF',
@@ -435,7 +432,7 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen2} style={{ width: '100%', maxWidth: 'none' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen2} style={{ width: '100%' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h2 className="text-xl font-bold">Worry-Free Warrantyof 2 Year</h2>
@@ -446,8 +443,7 @@ const HomePage = () => {
                         </DialogTitle>
                         <DialogContent
                             className="p-20"
-                            fullWidth
-                            maxWidth="false"
+                            
                             style={{
                                 scrollbarWidth: 'thin',
                                 scrollbarColor: '#A5A5A5 #EFEFEF',
@@ -517,7 +513,7 @@ const HomePage = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center">
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
-                            <Image src={v.image} alt={v.title} width={100} height={100} className='mx-auto' />
+                            <Image src={v.image} alt={v.title} width='0' height='0' sizes='100vw' className='mx-auto h-auto w-[100px]' />
                             <h1 className="my-3 text-orange-400 font-bold text-[16px] md:text-xl">
                                 {v.title}
                             </h1>
@@ -538,7 +534,7 @@ const HomePage = () => {
 
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
-                            <Image src={v.image} alt={v.title} width={100} height={100} className='mx-auto' />
+                            <Image src={v.image} alt={v.title} width='0' height='0' sizes='100vw' className='mx-auto h-auto w-[100px]' />
                             <p className="text-[14px] md:text-xl font-normal">
                                 {v.description}
                             </p>
