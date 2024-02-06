@@ -22,8 +22,8 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
       <div
         className={`${
           step === 1
-            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-orange-400 min-[1280px]:rounded-tl-lg min-[1280px]:rounded-bl-lg justify-end items-start gap-2.5 inline-flex text-white md:text-xl text-base max-sm:text-base font-bold font-['Anek Latin'] max-xl:rounded-t-lg max-xl:rounded-r-lg "
-            : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300 min-[1280px]:rounded-tl-lg justify-end items-start gap-2.5 inline-flex text-black md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-xl:rounded-tl-lg"
+            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-orange-400 min-[1280px]:rounded-tl-lg min-[1280px]:rounded-bl-lg justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-white md:text-xl text-base max-sm:text-base font-bold font-['Anek Latin'] max-xl:rounded-t-lg max-xl:rounded-r-lg "
+            : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300 min-[1280px]:rounded-tl-lg justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-black md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-xl:rounded-tl-lg"
         }`}
       >
         <div className="">{isNaN(buildUpArea) ? 0 : buildUpArea} Sq ft.</div>
@@ -38,10 +38,10 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
       <div
         className={
           step === 1
-            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6  min-[1280px]:rounded-bl-lg justify-end items-start gap-2.5 inline-flex text-orange-400 md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-xl:rounded-lg"
+            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6  min-[1280px]:rounded-bl-lg justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-orange-400 md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-xl:rounded-lg"
             : step === 2
-            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-orange-400  min-[1280px]:rounded-bl-lg justify-end items-start gap-2.5 inline-flex text-white md:text-xl text-base max-sm:text-base font-bold font-['Anek Latin']"
-            : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300  justify-end items-start gap-2.5 inline-flex text-black md:text-xl text-base  max-sm:text-base font-normal font-['Anek Latin']"
+            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-orange-400  min-[1280px]:rounded-bl-lg justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-white md:text-xl text-base max-sm:text-base font-bold font-['Anek Latin']"
+            : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300  justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-black md:text-xl text-base  max-sm:text-base font-normal font-['Anek Latin']"
         }
       >
 
@@ -57,10 +57,10 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
       <div
         className={
           step <= 2
-            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6  min-[1280px]:rounded-bl-lg max-xl:rounded-r-lg justify-end items-start gap-2.5 inline-flex text-orange-400 md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-sm:pl-24"
+            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6  min-[1280px]:rounded-bl-lg max-xl:rounded-r-lg justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-orange-400 md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-sm:pl-24"
             : step === 3
-            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-orange-400  min-[1280px]:rounded-bl-lg max-xl:rounded-r-lg justify-end items-start gap-2.5 inline-flex text-white md:text-xl text-base max-sm:text-base font-bold font-['Anek Latin'] max-sm:pl-24 max-sm:mx-0 "
-            : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300  justify-end items-start gap-2.5 inline-flex text-black md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-sm:pl-24 max-sm:mx-0"
+            ? "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-orange-400  min-[1280px]:rounded-bl-lg max-xl:rounded-r-lg justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-white md:text-xl text-base max-sm:text-base font-bold font-['Anek Latin'] max-sm:pl-24 max-sm:mx-0 "
+            : "w-[300px] max-xl:w-[30vw] h-[80px] px-5 py-6 bg-zinc-300  justify-end max-sm:justify-end max-xl:justify-center items-start gap-2.5 inline-flex text-black md:text-xl text-base max-sm:text-base font-normal font-['Anek Latin'] max-sm:pl-24 max-sm:mx-0"
         }
       >
         <div className="">Customize Estimator</div>
