@@ -122,7 +122,7 @@ const HomePage = () => {
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Total <span className='text-orange-400'>Transparency</span></h1>
                             <p className='text-[16px] font-normal my-3'>
-                                At Prodyme Homes, transparency isn't just a principle; it's a practice ingrained in every facet of our operations to establish trust and conﬁdence with our clients.
+                                At Prodyme Homes, transparency isn&apos;t just a principle; it&apos;s a practice ingrained in every facet of our operations to establish trust and confidence with our clients.
                             </p>
                             <div className='flex justify-center items-center'>
                                 <button onClick={openModal1} className='bg-white text-orange-400 text-[16px] px-[30px] py-[8px] rounded-2xl'>
@@ -139,8 +139,9 @@ const HomePage = () => {
                         <div className='px-10 py-5 '>
                             <h1 className='text-[22px] xl:text-[40px] font-bold'>Total <span className='text-orange-400'>Transparency</span></h1>
                             <p className='text-[18px] xl:text-[30px] font-normal my-4 xl:my-5'>
-                                At Prodyme Homes, transparency isn't just a principle it's a practice ingrained in every facet of our operations to establish trust and conﬁdence with our clients.
+                                At Prodyme Homes, transparency isn&apos;t just a principle; it&apos;s a practice ingrained in every facet of our operations to establish trust and confidence with our clients.
                             </p>
+
                             <button onClick={openModal1} className='bg-white text-orange-400 text-[12px] xl:text-[20px] px-[40px] py-[10px] rounded-2xl '>See More</button>
                         </div>
                     </div>
@@ -213,10 +214,10 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-                                <span className='font-bold'>●	24X7 On-site Cameras Access: </span>
-                                To enhance transparency, Prodyme Homes provides clients with 24/7 on-site camera access. This tangible feature allows clients to virtually visit their construction site at any time. It's not just a promise of transparency; it's an actual tool that enables clients to witness the progress, fostering trust in the construction process.
-
+                                <span className='font-bold'>● 24X7 On-site Cameras Access: </span>
+                                To enhance transparency, Prodyme Homes provides clients with 24/7 on-site camera access. This tangible feature allows clients to virtually visit their construction site at any time. It&apos;s not just a promise of transparency; it&apos;s an actual tool that enables clients to witness the progress, fostering trust in the construction process.
                             </p>
+
                         </DialogContent>
                     </Dialog>
                 </div>
@@ -314,9 +315,10 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-                                <span className='font-bold'>●	Financial Commitment: </span>
-                                The "zero delays or we pay twice the rent" policy is more than a guarantee – it's a tangible commitment to our clients. In the rare event of a delay, Prodyme Homes compensates clients ﬁnancially. This policy isn't just a safety net; it's a demonstration of our commitment to mitigating inconveniences and ensuring our clients' peace of mind.
+                                <span className='font-bold'>● Financial Commitment: </span>
+                                The &quot;zero delays or we pay twice the rent&quot; policy is more than a guarantee – it&apos;s a tangible commitment to our clients. In the rare event of a delay, Prodyme Homes compensates clients financially. This policy isn&apos;t just a safety net; it&apos;s a demonstration of our commitment to mitigating inconveniences and ensuring our clients&apos; peace of mind.
                             </p>
+
                         </DialogContent>
                     </Dialog>
                 </div>
@@ -510,9 +512,10 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-                                <span className='font-bold'>●	Guided Decision Process: </span>
-                                Our experienced team acts as a guiding force throughout the decision-making process. By offering personalized guidance and valuable insights, we help clients make informed choices based on their lifestyle, preferences, and budget. This personalized approach ensures that decision-making is not only straightforward but tailored to each client's unique vision.
-                            </p>
+    <span className='font-bold'>● Guided Decision Process: </span>
+    Our experienced team acts as a guiding force throughout the decision-making process. By offering personalized guidance and valuable insights, we help clients make informed choices based on their lifestyle, preferences, and budget. This personalized approach ensures that decision-making is not only straightforward but tailored to each client&apos;s unique vision.
+</p>
+
                         </DialogContent>
                     </Dialog>
                 </div>
@@ -608,9 +611,10 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-                                <span className='font-bold'>●	10-Year Structural Warranty: </span>
-                                To underscore our conﬁdence in the durability of our constructions, Prodyme Homes offers a 10-year structural warranty with no ﬁne print or hidden clauses. This warranty is a tangible expression of our commitment to the long-term well-being of our clients' homes, offering an additional layer of assurance that goes beyond industry standards.
-                            </p>
+    <span className='font-bold'>● 10-Year Structural Warranty: </span>
+    To underscore our confidence in the durability of our constructions, Prodyme Homes offers a 10-year structural warranty with no fine print or hidden clauses. This warranty is a tangible expression of our commitment to the long-term well-being of our clients&apos; homes, offering an additional layer of assurance that goes beyond industry standards.
+</p>
+
                         </DialogContent>
                     </Dialog>
                 </div>
@@ -703,11 +707,11 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-                                <span className='font-bold'>●	Guaranteed Protection: </span>
-                                Prodyme Homes provides a solid guarantee of structural
-                                integrity even in the face of earthquakes. Our designs undergo rigorous testing, and we utilize advanced engineering principles to ensure the safety and well-being of our clients' families. This uncompromising commitment to safety extends beyond industry standards, with tangible measures in place to guarantee the protection of our clients and their homes.
+    <span className='font-bold'>● Guaranteed Protection: </span>
+    Prodyme Homes provides a solid guarantee of structural
+    integrity even in the face of earthquakes. Our designs undergo rigorous testing, and we utilize advanced engineering principles to ensure the safety and well-being of our clients&apos; families. This uncompromising commitment to safety extends beyond industry standards, with tangible measures in place to guarantee the protection of our clients and their homes.
+</p>
 
-                            </p>
                         </DialogContent>
                     </Dialog>
                 </div>
