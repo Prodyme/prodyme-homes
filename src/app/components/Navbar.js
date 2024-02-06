@@ -30,6 +30,12 @@ const Navbar = () => {
             offset: -50,
         });
     }
+    const scrollToContact=()=>{
+        scroll.scrollTo("contactSection",{
+            smooth :true,
+            offset:-50
+        })
+    }
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -38,7 +44,7 @@ const Navbar = () => {
         <main>
             <section>
                 {isMobile ? (
-                    <div>
+                    <div className='font-roboto'>
                         <div>
                             <nav className='p-5 navbar relative' style={{ background: 'linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0))' }}>
                                 <ul className='flex justify-between md:text-[30px]'>
@@ -70,20 +76,20 @@ const Navbar = () => {
                                     <div className='flex  justify-between items-center text-[16px] md:text-[30px] font-bold'>
                                         <ul>
                                             <Link href="/about">
-                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>About</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>About</li>
                                             </Link>
 
                                             <Link href="/service">
-                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>Services</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>Services</li>
                                             </Link>
 
                                             <Link href="/work">
-                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>Work</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>Work</li>
                                             </Link>
 
-                                            <Link href="/contact">
-                                                <li className='mx-4 text-white hover:text-[orange] font-bold'>Contact</li>
-                                            </Link>
+                                            <ScrollLink to="contactSection" smooth={true} onClick={scrollToContact}>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>Contact</li>
+                                            </ScrollLink>
                                         </ul>
                                         
                                     </div>
@@ -106,7 +112,7 @@ const Navbar = () => {
                             </video>
                             <div className='flex justify-start items-center h-screen'>
                                 <div className='home_bg pl-[22px] pr-[80px] py-5'>
-                                    <h1 className='font-semibold text-white text-[30px] md:text-[60px] '>The most<br /> <span className='text-[orange]'>professional</span> <br /> way to build <br />your home</h1>
+                                    <h1 className='font-semibold text-white text-[30px] md:text-[60px] '>The most<br /> <span className='text-orange-400'>professional</span> <br /> way to build <br />your home</h1>
                                     <hr className='border-2 my-5 bg-white' />
 
                                     <ScrollLink to="estimatorSection" smooth={true} onClick={scrollToEstimator}>
@@ -118,7 +124,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 ) : (
-                    <div>
+                    <div className='font-roboto'>
                         <nav className='p-5 navbar relative' style={{ background: 'linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0))' }}>
 
                             <div className='flex justify-between items-center '>
@@ -133,23 +139,23 @@ const Navbar = () => {
                                 <div>
                                     <ul className='flex cursor-pointer'>
                                         <Link href="/">
-                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Home</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Home</li>
                                         </Link>
                                         <Link href="/about">
-                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>About</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>About</li>
                                         </Link>
 
                                         <Link href="/service">
-                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Services</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Services</li>
                                         </Link>
 
                                         <Link href="/work">
-                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Work</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Work</li>
                                         </Link>
 
-                                        <Link href="/contact">
-                                            <li className='mx-4 text-white hover:text-[orange] font-bold'>Contact</li>
-                                        </Link>
+                                        <ScrollLink to="contactSection" smooth={true} onClick={scrollToContact}>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Contact</li>
+                                        </ScrollLink>
                                         
                                     </ul>
                                 </div>
@@ -172,7 +178,7 @@ const Navbar = () => {
                             </video>
                             <div className='flex  justify-start items-center h-screen'>
                                 <div className='home_bg pl-10 pr-[300px] py-10'>
-                                    <h1 className=' font-semibold text-white text-[50px]'>The most<br /> <span className='text-[orange]'>professional</span> <br /> way to build <br />your home</h1>
+                                    <h1 className=' font-semibold text-white text-[50px]'>The most<br /> <span className='text-orange-400'>professional</span> <br /> way to build <br />your home</h1>
                                     <hr className='border-2 my-10 bg-white' />
 
                                     <ScrollLink to="estimatorSection" smooth={true} onClick={scrollToEstimator}>

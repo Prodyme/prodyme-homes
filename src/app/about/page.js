@@ -3,11 +3,12 @@ import React from 'react';
 import './About.css';
 import { Element } from 'react-scroll'
 import Estimator from '../components/_estimator/Estimator';
+import Contact from '../components/contact/page';
 import Image from 'next/image';
 
 const About = () => {
     return (
-        <div>
+        <div className='font-roboto'>
             <section className='section-1 py-5'>
                 <div className='text-center px-4 sm:px-[410px] '>
                     <h1 className='font-bold text-3xl my-5'>About M&D Remodeling</h1>
@@ -93,7 +94,11 @@ const About = () => {
                 <Element name="estimatorSection" >
                     <Estimator />
                 </Element>
-
+            </div>
+            <div>
+                <Element name="contactSection" >
+                    <Contact />
+                </Element>
             </div>
 
         </div>

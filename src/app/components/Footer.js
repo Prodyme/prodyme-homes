@@ -20,7 +20,7 @@ const Footer = () => {
 
     return (
         <div>
-            <section className="px-10 py-[30px] bg-black font-sans">
+            <section className="px-10 py-[30px] bg-black font-roboto">
                 {isMobile ? (
                     <div>
                         <div className="flex flex-col justify-center text-[12px] font-normal">
@@ -30,12 +30,12 @@ const Footer = () => {
                                         <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[100px] h-auto' />
                                     </div>
                                     <div>
-                                        <h1 className='text-white px-[30px] text-center py-5 text-xl font-bold'>Prodyme</h1>
+                                        <h1 className='text-white  text-center py-5 text-xl font-roboto'>Prodyme homes</h1>
                                     </div>
                                 </div>
                             </div>
-                            <div className="my-2">
-                                <p className="text-white">
+                            <div className="mt-4 mx-2">
+                                <p className="text-white text-sm">
                                     501, Colony name,
                                     <br />
                                     Lane name road,
@@ -46,14 +46,14 @@ const Footer = () => {
                                 </p>
                             </div>
                             <div className="my-2">
-                                <p className="text-white">
+                                <p className="text-white text-sm">
                                     care@prodyme.in
                                     <br />
                                     +91 8920804195
                                 </p>
                             </div>
                             <div className="my-2">
-                                <p className="text-white">
+                                <p className="text-white text-sm">
                                     Prodym footer text like all rights reserved etc.
                                 </p>
                             </div>
@@ -63,7 +63,7 @@ const Footer = () => {
                             <hr className="border-2 bg-white my-10" />
                         </div>
 
-                        <div>
+                        {/* <div>
                             <div>
                                 <div className="text-white text-[16px] font-normal text-center">
                                     Contact Us
@@ -92,7 +92,7 @@ const Footer = () => {
                                     className="p-3 rounded-xl my-5"
                                 />
                             </div>
-                        </div>
+                        </div> */}
 
                         <div>
                             <ul className="flex justify-center items-center my-5">
@@ -135,7 +135,7 @@ const Footer = () => {
                 ) : (
                     <div className="flex justify-between items-center">
                         <div className="grid grid-cols-3">
-                            <div className="py-5">
+                            {/* <div className="py-5">
                                 <div>
                                     <div>
                                         <h1 className="text-white font-normal text-[24px]">
@@ -166,23 +166,26 @@ const Footer = () => {
                                         />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="relative">
+                            {/* <div className="relative">
                                 <div className="absolute top-0 bottom-0 h-full w-0.5 bg-white left-[50%]"></div>
+                            </div> */}
+
+                            <div className=''>
+                                <div>
+                                    <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[200px] h-auto object-cover' />
+                                    <h1 className='text-white mx-5 py-5 font-roboto text-xl font-bold'>Prodyme Homes</h1>
+                                </div>
+
+                                <div>
+                                    
+                                </div>
                             </div>
 
                             <div className='flex flex-col justify-between font-normal text-[14px]'>
-                                <div className='flex justify-start items-center'>
-                                    <div>
-                                        <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[100px] h-auto object-cover' />
-                                    </div>
-                                    <div>
-                                        <h1 className='text-white px-[30px] text-center py-5 font-normal text-xl'>Prodyme</h1>
-                                    </div>
-                                </div>
                                 <div className="my-2">
-                                <p className="text-white text-lg">
+                                    <p className="text-white text-lg">
                                         501, Colony name,
                                         <br />
                                         Lane name road,
@@ -200,7 +203,7 @@ const Footer = () => {
                                     </p>
                                 </div>
                                 <div className="my-2">
-                                    <p className="text-white ">
+                                    <p className="text-white text-lg">
                                         Prodym footer text like all rights reserved etc.
                                     </p>
                                 </div>

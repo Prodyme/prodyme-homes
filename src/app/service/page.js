@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Element } from 'react-scroll'
 import Estimator from '../components/_estimator/Estimator'
+import Contact from '../components/contact/page'
 import Image from 'next/image'
 // import { Link } from 'react-router-dom'
 
@@ -53,7 +54,7 @@ const Services = () => {
 
     ]
     return (
-        <div>
+        <div className='font-roboto'>
 
 
             <div className="px-4 sm:px-6 lg:px-8">
@@ -93,6 +94,11 @@ const Services = () => {
             <div>
                 <Element name="estimatorSection" >
                     <Estimator />
+                </Element>
+            </div>
+            <div>
+                <Element name="contactSection" >
+                    <Contact />
                 </Element>
             </div>
         </div>
