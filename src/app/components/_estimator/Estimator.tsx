@@ -22,31 +22,75 @@ const Estimator = () => {
   const [resetFlag, setResetFlag] = useState(true);
 
   useEffect(() => {
-    const groupedItems: GroupedItemType[] = [];
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/estimator/getItems"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const APIdata = await response.json();
+        console.log(APIdata);
 
-    test2.forEach((item) => {
-      const itemName = item.Item;
-      const category = "Base"; // Set your desired category here
+        const groupedItems: GroupedItemType[] = [];
 
-      // Check if there's an existing group for this itemName
-      const existingGroup = groupedItems.find(
-        (group) => group.itemName === itemName
-      );
 
-      if (existingGroup) {
-        existingGroup.items.push(item);
-      } else {
-        // If not, create a new group
-        groupedItems.push({
-          itemName,
-          Category: category,
-          items: [item],
-          Selected: false,
+
+        APIdata.forEach((item: ItemDetails) => {
+          const itemName = item.Item;
+          const category = "Base"; // Set your desired category here
+
+          // Check if there's an existing group for this itemName
+          const existingGroup = groupedItems.find(
+            (group) => group.itemName === itemName
+          );
+
+          if (existingGroup) {
+            existingGroup.items.push(item);
+          } else {
+            // If not, create a new group
+            groupedItems.push({
+              itemName,
+              Category: category,
+              items: [item],
+              Selected: false,
+            });
+          }
         });
+        setGroupedItems(groupedItems);
+        console.log(groupedItems, "hello");
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
-    });
-    setGroupedItems(groupedItems);
-    // console.log(groupedItems);
+    };
+
+    fetchData();
+    // const groupedItems: GroupedItemType[] = [];
+
+    // test2.forEach((item) => {
+    //   const itemName = item.Item;
+    //   const category = "Base"; // Set your desired category here
+
+    //   // Check if there's an existing group for this itemName
+    //   const existingGroup = groupedItems.find(
+    //     (group) => group.itemName === itemName
+    //   );
+
+    //   if (existingGroup) {
+    //     existingGroup.items.push(item);
+    //   } else {
+    //     // If not, create a new group
+    //     groupedItems.push({
+    //       itemName,
+    //       Category: category,
+    //       items: [item],
+    //       Selected: false,
+    //     });
+    //   }
+    // });
+    // setGroupedItems(groupedItems);
+    // console.log(groupedItems, "hello");
   }, []);
 
   useEffect(() => {
@@ -54,6 +98,7 @@ const Estimator = () => {
     if (flag === true) {
       generateEstimate();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [groupedItems]);
 
   function groupItemsWithCategory(newCategory: string): void {
@@ -80,6 +125,7 @@ const Estimator = () => {
     } else if (quality === 5) {
       groupItemsWithCategory("Ultra-luxury");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quality]);
 
   const generateEstimate = () => {
@@ -93,8 +139,10 @@ const Estimator = () => {
     groupedItems.map((items) => {
       items.items.map((item) => {
         if (items.Category === item.Category) {
-          if (typeof item.Rate === "number" && item.Rate !== 0) {
-            totalRate += item.Rate;
+          const rate = parseFloat(item.Rate);
+
+          if (!isNaN(rate)) {
+            totalRate += rate;
           }
         }
       });

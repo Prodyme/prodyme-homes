@@ -53,9 +53,9 @@ interface eventType {
 interface ItemDetails {
   Item: string;
   Category: string;
-  Description: string | number; // Allow both string and number for Description
+  Description: string; // Allow both string and number for Description
   "Long Description": string;
-  Rate: string | number;
+  Rate: string;
   Unit?: string;
 }
 interface GroupedItemType {

@@ -17,18 +17,19 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
   }>({ aUnit: "", bUnit: "", aValue: "", bValue: "" });
 
   useEffect(() => {
-    if(basement){
+    if (basement) {
       setBasementArea(Math.round(bUnit * bValue));
-    }
-    else{
+    } else {
       setBasementArea(0);
     }
     //   console.log();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bUnit, bValue, basement]);
 
   useEffect(() => {
     setBuildUpArea(Math.round(aUnit * aValue));
     //   console.log();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aUnit, aValue]);
 
   const validate = (): boolean => {

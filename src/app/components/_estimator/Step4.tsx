@@ -1,9 +1,10 @@
+"use client";
+
 import React from "react";
 import { step4Type, stepType } from "./_myTypes";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { PDFFile } from "./_components/PDFFile";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-
 
 export const Step4: React.FC<step4Type> = ({
   step,

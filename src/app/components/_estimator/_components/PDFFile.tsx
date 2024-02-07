@@ -1,6 +1,8 @@
-import React from 'react'
+"use client";
+
+import React from "react";
 import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
-import { step3Type } from '../_myTypes';
+import { step3Type } from "../_myTypes";
 
 // Create styles
 const styles = StyleSheet.create({
@@ -52,9 +54,8 @@ export const PDFFile: React.FC<step3Type> = ({
   setGroupedItems,
   quality,
   totalRate,
-  costPerSqft
+  costPerSqft,
 }) => {
-    
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -87,7 +88,7 @@ export const PDFFile: React.FC<step3Type> = ({
             </View>
           ))}
         </div>
-        <div className='flex flex-col max-sm:text-center'>
+        <div className="flex flex-col max-sm:text-center">
           <View>
             <div>
               <Text style={styles.section2}>
@@ -105,4 +106,4 @@ export const PDFFile: React.FC<step3Type> = ({
       </Page>
     </Document>
   );
-}
+};
