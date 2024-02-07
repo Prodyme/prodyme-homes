@@ -56,7 +56,7 @@ const Services = () => {
 
             <div className="px-4 sm:px-6 lg:px-8">
                 <section>
-                    <h1 className="text-center font-bold text-4xl my-5 text-[#62a7f0]">Our Services</h1>
+                    <h1 className="md:text-[40px] text-[16px] font-normal text-center my-5">Our Services</h1>
                     <p className="text-center sm:text-left font-thin">
                         Let us help you make your dreams a reality.
                     </p>
