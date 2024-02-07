@@ -30,7 +30,7 @@ const Navbar = () => {
             offset: -50,
         });
     }
-    const scrollToContact=()=>{
+    const scrollToSection=()=>{
         scroll.scrollTo("contactSection",{
             smooth :true,
             offset:-50
@@ -75,19 +75,19 @@ const Navbar = () => {
                                 <div className='absolute top-0 left-0 w-full bg-[#000000cb] py-5 px-5'>
                                     <div className='flex  justify-between items-center text-[16px] md:text-[30px] font-bold'>
                                         <ul>
-                                            <Link href="/about">
+                                            <ScrollLink to="aboutSection" smooth={true} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>About</li>
-                                            </Link>
+                                            </ScrollLink>
 
-                                            <Link href="/service">
+                                            <ScrollLink to="serviceSection" smooth={true} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>Services</li>
-                                            </Link>
+                                            </ScrollLink>
 
-                                            <Link href="/work">
+                                            <ScrollLink to="workSection" smooth={true} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>Work</li>
-                                            </Link>
+                                            </ScrollLink>
 
-                                            <ScrollLink to="contactSection" smooth={true} onClick={scrollToContact}>
+                                            <ScrollLink to="contactSection" smooth={true} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>Contact</li>
                                             </ScrollLink>
                                         </ul>
@@ -139,22 +139,22 @@ const Navbar = () => {
                                 <div>
                                     <ul className='flex cursor-pointer'>
                                         <Link href="/">
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Home</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Home</li>
                                         </Link>
-                                        <Link href="/about">
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>About</li>
-                                        </Link>
+                                        <ScrollLink to="aboutSection" smooth={true} onClick={scrollToSection}>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>About</li>
+                                        </ScrollLink>
 
-                                        <Link href="/service">
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Services</li>
-                                        </Link>
+                                        <ScrollLink to="serviceSection" smooth={true} onClick={scrollToSection}>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Services</li>
+                                        </ScrollLink>
 
-                                        <Link href="/work">
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Work</li>
-                                        </Link>
+                                        <ScrollLink to="workSection" smooth={true} onClick={scrollToSection}>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Work</li>
+                                        </ScrollLink>
 
-                                        <ScrollLink to="contactSection" smooth={true} onClick={scrollToContact}>
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold'>Contact</li>
+                                        <ScrollLink to="contactSection" smooth={true} onClick={scrollToSection}>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Contact</li>
                                         </ScrollLink>
                                         
                                     </ul>

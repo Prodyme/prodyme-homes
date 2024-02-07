@@ -1,8 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { Element } from 'react-scroll'
-import Estimator from '../components/_estimator/Estimator'
-import Contact from '../components/contact/page'
 import Image from 'next/image'
 // import { Link } from 'react-router-dom'
 
@@ -59,7 +56,7 @@ const Services = () => {
 
             <div className="px-4 sm:px-6 lg:px-8">
                 <section>
-                    <h1 className="text-center font-bold text-blue-900 text-3xl my-5">Our Services</h1>
+                    <h1 className="text-center font-bold text-4xl my-5 text-[#62a7f0]">Our Services</h1>
                     <p className="text-center sm:text-left font-thin">
                         Let us help you make your dreams a reality.
                     </p>
@@ -91,16 +88,7 @@ const Services = () => {
                 </section>
 
             </div>
-            <div>
-                <Element name="estimatorSection" >
-                    <Estimator />
-                </Element>
-            </div>
-            <div>
-                <Element name="contactSection" >
-                    <Contact />
-                </Element>
-            </div>
+            
         </div>
     )
 }

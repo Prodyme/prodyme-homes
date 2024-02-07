@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react'
 import '../globals.css'
 import Estimator from '../components/_estimator/Estimator';
 import Contact from '../components/contact/page';
+import About from '../components/about/page';
+import Work from '../components/work/page';
+import Services from '../components/service/page';
 import { Element } from 'react-scroll';
 import { Dialog, DialogTitle, DialogContent, Button } from '@mui/material';
 import Image from 'next/image';
@@ -512,9 +515,9 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-    <span className='font-bold'>● Guided Decision Process: </span>
-    Our experienced team acts as a guiding force throughout the decision-making process. By offering personalized guidance and valuable insights, we help clients make informed choices based on their lifestyle, preferences, and budget. This personalized approach ensures that decision-making is not only straightforward but tailored to each client&apos;s unique vision.
-</p>
+                                <span className='font-bold'>● Guided Decision Process: </span>
+                                Our experienced team acts as a guiding force throughout the decision-making process. By offering personalized guidance and valuable insights, we help clients make informed choices based on their lifestyle, preferences, and budget. This personalized approach ensures that decision-making is not only straightforward but tailored to each client&apos;s unique vision.
+                            </p>
 
                         </DialogContent>
                     </Dialog>
@@ -611,9 +614,9 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-    <span className='font-bold'>● 10-Year Structural Warranty: </span>
-    To underscore our confidence in the durability of our constructions, Prodyme Homes offers a 10-year structural warranty with no fine print or hidden clauses. This warranty is a tangible expression of our commitment to the long-term well-being of our clients&apos; homes, offering an additional layer of assurance that goes beyond industry standards.
-</p>
+                                <span className='font-bold'>● 10-Year Structural Warranty: </span>
+                                To underscore our confidence in the durability of our constructions, Prodyme Homes offers a 10-year structural warranty with no fine print or hidden clauses. This warranty is a tangible expression of our commitment to the long-term well-being of our clients&apos; homes, offering an additional layer of assurance that goes beyond industry standards.
+                            </p>
 
                         </DialogContent>
                     </Dialog>
@@ -707,19 +710,37 @@ const HomePage = () => {
                                 className="w-full h-full object-fill"
                             />
                             <p className="mt-4 text-lg">
-    <span className='font-bold'>● Guaranteed Protection: </span>
-    Prodyme Homes provides a solid guarantee of structural
-    integrity even in the face of earthquakes. Our designs undergo rigorous testing, and we utilize advanced engineering principles to ensure the safety and well-being of our clients&apos; families. This uncompromising commitment to safety extends beyond industry standards, with tangible measures in place to guarantee the protection of our clients and their homes.
-</p>
+                                <span className='font-bold'>● Guaranteed Protection: </span>
+                                Prodyme Homes provides a solid guarantee of structural
+                                integrity even in the face of earthquakes. Our designs undergo rigorous testing, and we utilize advanced engineering principles to ensure the safety and well-being of our clients&apos; families. This uncompromising commitment to safety extends beyond industry standards, with tangible measures in place to guarantee the protection of our clients and their homes.
+                            </p>
 
                         </DialogContent>
                     </Dialog>
                 </div>
             </section>
 
+            <section className='my-5'>
+                <Element name="aboutSection" className='about-section'>
+                    <About/>
+                </Element>
+            </section>
+
             <section>
                 <Element name="estimatorSection" className="estimator-section">
                     <Estimator />
+                </Element>
+            </section>
+
+            <section className='my-5'>
+                <Element name="serviceSection" className="service-section">
+                    <Services/>
+                </Element>
+            </section>
+            
+            <section className='my-5'>
+            <Element name="workSection" className="work-section">
+                    <Work/>
                 </Element>
             </section>
 
