@@ -305,10 +305,10 @@ const Step3: React.FC<step3Type> = ({
                   {d.items.map((i, index) => {
                     if (d.Category === i.Category) {
                       return (
-                        <>
+                        <div key={index}>
                           {i.Description.slice(0, 60)}{" "}
                           {i.Description.length > 60 ? " ..." : ""}
-                        </>
+                        </div>
                       );
                     }
                   })}
