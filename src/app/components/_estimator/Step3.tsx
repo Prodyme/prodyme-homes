@@ -3,7 +3,8 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { GroupedItemType, ItemDetails, step3Type } from "./_myTypes";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Image from "next/image";
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import * as xlsx from "xlsx";
 
@@ -94,7 +95,9 @@ const Step3: React.FC<step3Type> = ({
               // Add any additional headers if needed
             },
             body: JSON.stringify({"email": popUpFormData.email, "phone": popUpFormData.phoneNo}),
+            
           }
+          
         );
 
         if (!response.ok) {
@@ -102,11 +105,13 @@ const Step3: React.FC<step3Type> = ({
         }
 
         const responseData = await response.json();
+        toast.success('Form submitted successfully');
         // console.log("Response Data:", responseData);
 
         setStep(step + 1); // Move to the next step after successful form submission
       } catch (error) {
         console.error("Error submitting form:", error);
+        toast.error('Form submission failed');
       }
     } else {
       console.log("Form validation failed");
@@ -115,6 +120,7 @@ const Step3: React.FC<step3Type> = ({
   const popUpForm = () => {
     return (
       <div className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
+      
         <form
           className="flex flex-col justify-around items-center w-[300px] h-[500px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
           onSubmit={handleSubmit}
@@ -262,6 +268,7 @@ const Step3: React.FC<step3Type> = ({
         step !== 3 ? "hidden" : ""
       }`}
     >
+      <ToastContainer/>
       {popUpFormFlag && popUpForm()}
       {/* <input type="file" accept=".xls,.xlsx" onChange={readUploadFile} /> */}
       <span className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">

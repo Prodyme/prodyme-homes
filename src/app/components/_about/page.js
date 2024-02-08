@@ -8,7 +8,7 @@ const About = () => {
         <div className='font-roboto '>
             <section className='section-1 py-5'>
                 <div className='text-center px-4 sm:px-[410px] '>
-                    <h1 className='md:text-[40px] text-[30px] font-normal text-center my-5 text-orange-400'>About M&D Remodeling</h1>
+                    <h1 className='md:text-[40px] text-[30px] font-bold text-center my-5 text-orange-400'>About M&D Remodeling</h1>
                     <p className='font-thin'>
                         I am a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
                     </p>
@@ -29,7 +29,7 @@ const About = () => {
             </section>
             <section className='section-3 py-5'>
                 <div className='text-center px-4 sm:px-[410px]'>
-                    <h1 className='md:text-[40px] text-[30px] font-normal text-center my-5 text-orange-400'>Our Process</h1>
+                    <h1 className='md:text-[40px] text-[30px] font-bold text-center my-5 text-orange-400'>Our Process</h1>
                     <p className='font-normal'>
                         I am a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
                     </p>
@@ -79,7 +79,7 @@ const About = () => {
 
             <section className='section-5 py-5'>
                 <div className='text-center px-4 sm:px-[410px]'>
-                    <h1 className='md:text-[40px] text-[30px] font-normal text-center my- text-orange-400'>Our Quality Guarantee</h1>
+                    <h1 className='md:text-[40px] text-[30px] font-bold text-center my- text-orange-400'>Our Quality Guarantee</h1>
                     <p className='font-normal'>I am a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p><br />
 
                     <p className='font-normal'>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p><br />
