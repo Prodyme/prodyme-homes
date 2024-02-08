@@ -27,6 +27,7 @@ const Step3: React.FC<step3Type> = ({
     phoneNo: "",
   });
   const [info, setInfo] = useState({ desc: "", name: "" });
+  const [desc, setDesc] = useState('');
   const [showOptions, setShowOptions] =
     useState<{ sectionId: number; showOptions: boolean }[]>();
 
@@ -227,6 +228,10 @@ const Step3: React.FC<step3Type> = ({
     });
   };
 
+  // useEffect(() => {
+  //   setDesc()
+  // },[])
+
   return (
     <div
       className={` flex-col justify-start items-start gap-[23px] flex w-[899px] max-xl:w-[90vw] h-auto p-5 pt-3 pb-6 bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg border border-orange-400  ${
@@ -238,59 +243,76 @@ const Step3: React.FC<step3Type> = ({
       <span className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">
         Step 3/5
       </span>
-      <div className="grid grid-cols-3 gap-4 max-lg:flex max-lg:flex-wrap justify-between self-start items-start ">
+      <div className="grid grid-cols-3  gap-4 max-lg:flex max-lg:flex-wrap justify-between self-start items-start ">
         {groupedItems?.map((d, i) => {
           return (
             <div
               key={i}
-              className="  max-sm:mx-0 max-lg:w-[300px] md:min-h-[160px]  my-5 flex-col justify-between items-start gap-5 inline-flex relative"
+              className="h-full max-sm:mx-0 max-lg:w-[300px] flex flex-col gap-2 justify-between items-start relative"
             >
-              <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start">
-                <div className="flex-col justify-start items-start inline-flex text-left">
-                  <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
-                    {d.itemName}
-                  </div>
-                  {/* <div className="text-black md:text-sm text-xs font-normal font-['Anek Latin']">
+              <div className="flex flex-col justify-start items-start">
+                <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start ">
+                  <div className="flex-col justify-start items-start inline-flex text-left">
+                    <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
+                      {d.itemName}
+                    </div>
+
+                    {/* <div className="text-black md:text-sm text-xs font-normal font-['Anek Latin']">
                       Rathi, Kamdhenu or equivalent
                     </div> */}
-                </div>
-                <div className="flex">
-                  <button
-                    onClick={() => handleOptions(d)}
-                    className="transition-transform transform hover:scale-110 w-[30px] object-contain"
-                  >
-                    <Image
-                      src="images/pen.svg"
-                      alt="Detailed Description"
-                      width="0"
-                      height="0"
-                      sizes="100vw"
-                      className="w-[20px] h-auto"
-                    />
-                  </button>
-                  <button
-                    onClick={() => showDesc(d)}
-                    className="transition-transform transform hover:scale-110 w-[30px] object-contain"
-                  >
-                    <Image
-                      src="images/info.svg"
-                      alt="Detailed Description"
-                      width="0"
-                      height="0"
-                      sizes="100vw"
-                      className="w-[20px] h-auto"
-                    />
-                  </button>
-                  {info.name === d.itemName && (
-                    <div
-                      className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
-                        (i + 1) % 3 === 0 ? "ml-[-350px] max-xl:ml-[-25vw]" : ""
-                      }`}
+                  </div>
+                  <div className="flex">
+                    <button
+                      onClick={() => handleOptions(d)}
+                      className="transition-transform transform hover:scale-110 w-[30px] object-contain"
                     >
-                      {info.desc}
-                    </div>
-                  )}
+                      <Image
+                        src="images/pen.svg"
+                        alt="Detailed Description"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="w-[20px] h-auto"
+                      />
+                    </button>
+                    <button
+                      onClick={() => showDesc(d)}
+                      className="transition-transform transform hover:scale-110 w-[30px] object-contain"
+                    >
+                      <Image
+                        src="images/info.svg"
+                        alt="Detailed Description"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="w-[20px] h-auto"
+                      />
+                    </button>
+                    {info.name === d.itemName && (
+                      <div
+                        className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
+                          (i + 1) % 3 === 0
+                            ? "ml-[-350px] max-xl:ml-[-25vw]"
+                            : ""
+                        }`}
+                      >
+                        {info.desc}
+                      </div>
+                    )}
+                  </div>
                 </div>
+                <span className="text-black md:text-sm text-xs mr-2 w-[200px] font-font-normal font-['Anek Latin']">
+                  {d.items.map((i, index) => {
+                    if (d.Category === i.Category) {
+                      return (
+                        <>
+                          {i.Description.slice(0, 60)}{" "}
+                          {i.Description.length > 60 ? " ..." : ""}
+                        </>
+                      );
+                    }
+                  })}
+                </span>
               </div>
               <button
                 onClick={() => handleOptions(d)}
@@ -305,7 +327,7 @@ const Step3: React.FC<step3Type> = ({
                             INR
                           </span>{" "}
                           {i.Rate}
-                          <span className="text-black md:text-sm text-xs font-light font-['Anek Latin']">
+                          <span className="text-black md:text-sm text-xs font-font-normal font-['Anek Latin']">
                             {" "}
                             {i.Unit}
                           </span>
@@ -365,13 +387,13 @@ const Step3: React.FC<step3Type> = ({
               </div>
 
               {(i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
-                <div className=" max-lg:hidden w-[0px] h-[160px] absolute right-0 top-0 origin-top-left border border-stone-300"></div>
+                <div className=" max-lg:hidden w-[0px] h-full absolute right-0 top-0 origin-top-left border border-stone-300"></div>
               )}
             </div>
           );
         })}
       </div>
-      <div className="w-[800px] h-[0px] max-xl:w-[80vw] border border-stone-300"></div>
+      <div className="w-[800px] h-[0px] max-xl:w-[80vw] mt-4 border border-stone-300"></div>
 
       <button
         onClick={handleReset}

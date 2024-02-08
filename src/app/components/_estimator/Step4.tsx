@@ -78,7 +78,7 @@ export const Step4: React.FC<step4Type> = ({
               </div>
             </div>
           </div>
-          <div className="justify-start items-start gap-5 inline-flex w-[80vw] flex-wrap my-5 ">
+          <div className="justify-start items-start gap-5 inline-flex flex-wrap my-5 ">
             <PDFDownloadLink
               document={
                 <PDFFile
