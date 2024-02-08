@@ -78,12 +78,36 @@ const Step3: React.FC<step3Type> = ({
     setErrors(newErrors);
     return valid;
   };
-  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
       // Perform actions with the form data here
       console.log("Form Data:", popUpFormData);
-      setStep(step + 1);
+
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/user/estimator",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              // Add any additional headers if needed
+            },
+            body: JSON.stringify({"email": popUpFormData.email, "phone": popUpFormData.phoneNo}),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const responseData = await response.json();
+        // console.log("Response Data:", responseData);
+
+        setStep(step + 1); // Move to the next step after successful form submission
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
     } else {
       console.log("Form validation failed");
     }
