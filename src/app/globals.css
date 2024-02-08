@@ -29,3 +29,17 @@ body {
 .home_bg{
   background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #A5A5A5;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #EFEFEF;
+  border-radius: 6px;
+}

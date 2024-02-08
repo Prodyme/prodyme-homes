@@ -153,10 +153,10 @@ const HomePage = () => {
                 <div>
                     <Dialog
                         open={isModalOpen1}
-                        style={{ width: '100%' }}
                         onClose={closeModal1}
-                        className="fixed inset-0 overflow-y-auto "
-                        classes={{ paper: styles.rounded }}
+                        fullWidth
+                        maxWidth="lg"
+
                     >
                         <DialogTitle className="">
                             <div className="flex justify-between items-center">
@@ -167,30 +167,16 @@ const HomePage = () => {
                             </div>
                         </DialogTitle>
                         <DialogContent
-                            className="p-20"
-
-                            style={{
-                                scrollbarWidth: 'thin',
-                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            sx={{
+                                overflowY: 'auto',
+                                padding: '20px',
+                                '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                                msOverflowStyle: 'none',
+                                scrollbarWidth: 'none',
                             }}
                         >
-                            <style>
-                                {`
-          ::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background-color: #A5A5A5;
-            border-radius: 6px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background-color: #EFEFEF;
-            border-radius: 6px;
-          }
-        `}
-                            </style>
                             <Image
                                 src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
                                 alt=""
@@ -198,13 +184,13 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Quotations: </span>
                                 Our commitment to transparency starts with our detailed quotations. We
                                 go beyond providing an overall project cost; we break down costs item by item, from the foundation to the ﬁnishes. Clients appreciate this level of detail as it empowers them to make informed decisions about their investment.
 
                             </p>
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Payments: </span>
                                 Transparent ﬁnancial dealings are crucial to a positive client experience. Prodyme Homes goes above and beyond by providing a comprehensive payment schedule tied to speciﬁc project milestones. This ensures that each payment corresponds to tangible progress on-site, allowing clients to see their ﬁnancial commitment aligning with the actual construction timeline.
 
@@ -216,7 +202,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>● 24X7 On-site Cameras Access: </span>
                                 To enhance transparency, Prodyme Homes provides clients with 24/7 on-site camera access. This tangible feature allows clients to virtually visit their construction site at any time. It&apos;s not just a promise of transparency; it&apos;s an actual tool that enables clients to witness the progress, fostering trust in the construction process.
                             </p>
@@ -263,7 +249,10 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen2} style={{ width: '100%' }} onClose={closeModal2} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen2}
+                        onClose={closeModal2}
+                        fullWidth
+                        maxWidth="lg">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h1 className='text-[22px] xl:text-[40px] font-bold'>Zero <span className='text-orange-400'>Delays</span></h1>
@@ -273,30 +262,16 @@ const HomePage = () => {
                             </div>
                         </DialogTitle>
                         <DialogContent
-                            className="p-20"
-
-                            style={{
-                                scrollbarWidth: 'thin',
-                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            sx={{
+                                overflowY: 'auto',
+                                padding: '20px',
+                                '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                                msOverflowStyle: 'none',
+                                scrollbarWidth: 'none',
                             }}
                         >
-                            <style>
-                                {`
-          ::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background-color: #A5A5A5;
-            border-radius: 6px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background-color: #EFEFEF;
-            border-radius: 6px;
-          }
-        `}
-                            </style>
                             <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
@@ -304,7 +279,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Strict Timelines: </span>
                                 Our project management approach involves setting realistic timelines
                                 that account for potential challenges and unforeseen circumstances. We conduct a comprehensive assessment of the project scope, factoring in all aspects from permitting to weather conditions. By proactively addressing potential delays, we ensure that the construction process adheres to the established schedule.
@@ -317,7 +292,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>● Financial Commitment: </span>
                                 The &quot;zero delays or we pay twice the rent&quot; policy is more than a guarantee – it&apos;s a tangible commitment to our clients. In the rare event of a delay, Prodyme Homes compensates clients financially. This policy isn&apos;t just a safety net; it&apos;s a demonstration of our commitment to mitigating inconveniences and ensuring our clients&apos; peace of mind.
                             </p>
@@ -361,7 +336,10 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen3} style={{ width: '100%' }} onClose={closeModal3} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen3}
+                        onClose={closeModal3}
+                        fullWidth
+                        maxWidth="lg">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h1 className='text-[22px] xl:text-[40px] font-bold'><span className='text-orange-400'>Unmatched </span>Quality</h1>
@@ -371,30 +349,17 @@ const HomePage = () => {
                             </div>
                         </DialogTitle>
                         <DialogContent
-                            className="p-20"
-
-                            style={{
-                                scrollbarWidth: 'thin',
-                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            sx={{
+                                overflowY: 'auto',
+                                padding: '20px',
+                                '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                                msOverflowStyle: 'none',
+                                scrollbarWidth: 'none',
                             }}
                         >
-                            <style>
-                                {`
-          ::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background-color: #A5A5A5;
-            border-radius: 6px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background-color: #EFEFEF;
-            border-radius: 6px;
-          }
-        `}
-                            </style>
+                            
                             <Image
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
@@ -402,11 +367,11 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Visible Aesthetics: </span>
                                 Prodyme Homes prioritizes visible excellence with an unwavering commitment to luxurious ﬁnishes, premium materials, and meticulous design. Our selection of materials, from ﬂooring to countertops, reﬂects a dedication to craftsmanship and aesthetic appeal.
                             </p>
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Structural Integrity: </span>
                                 Our commitment to quality goes beyond surface-level aesthetics. Prodyme employs cutting-edge construction techniques, using the ﬁnest materials to guarantee the structural integrity of every home. Rigorous quality assurance checks at every stage ensure that our homes not only meet but exceed industry standards.
                             </p>
@@ -417,7 +382,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Quality Assurance: </span>
                                 Prodyme Homes integrates a stringent quality assurance process into every construction project. Our team conducts thorough checks at various stages, involving third-party inspections when necessary, to ensure that industry standards are not just met but surpassed. This commitment to quality assurance is our pledge to deliver homes that meet the highest standards of excellence.
                             </p>
@@ -460,7 +425,10 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen4} style={{ width: '100%' }} onClose={closeModal4} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen4}
+                        onClose={closeModal4}
+                        fullWidth
+                        maxWidth="lg">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h1 className='text-[22px] xl:text-[40px] font-bold'>Decluttering the <span className='text-orange-400'>Clutter</span></h1>
@@ -470,30 +438,17 @@ const HomePage = () => {
                             </div>
                         </DialogTitle>
                         <DialogContent
-                            className="p-20"
-
-                            style={{
-                                scrollbarWidth: 'thin',
-                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            sx={{
+                                overflowY: 'auto',
+                                padding: '20px',
+                                '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                                msOverflowStyle: 'none',
+                                scrollbarWidth: 'none',
                             }}
                         >
-                            <style>
-                                {`
-          ::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background-color: #A5A5A5;
-            border-radius: 6px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background-color: #EFEFEF;
-            border-radius: 6px;
-          }
-        `}
-                            </style>
+                            
                             <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
@@ -501,7 +456,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Curated Options: </span>
                                 Instead of inundating clients with a myriad of choices, Prodyme offers
                                 curated options for materials, ﬁnishes, and design elements. Our approach is to present clients with choices that align with their taste and preferences, minimizing decision fatigue and ensuring that the selections contribute to a cohesive and personalized aesthetic.
@@ -514,7 +469,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>● Guided Decision Process: </span>
                                 Our experienced team acts as a guiding force throughout the decision-making process. By offering personalized guidance and valuable insights, we help clients make informed choices based on their lifestyle, preferences, and budget. This personalized approach ensures that decision-making is not only straightforward but tailored to each client&apos;s unique vision.
                             </p>
@@ -558,7 +513,10 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen5} style={{ width: '100%' }} onClose={closeModal5} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen5}
+                        onClose={closeModal5}
+                        fullWidth
+                        maxWidth="lg">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h1 className='text-[22px] xl:text-[40px] font-bold'>Worry-Free <span className='text-orange-400'>Warranty</span></h1>
@@ -568,30 +526,17 @@ const HomePage = () => {
                             </div>
                         </DialogTitle>
                         <DialogContent
-                            className="p-20"
-
-                            style={{
-                                scrollbarWidth: 'thin',
-                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            sx={{
+                                overflowY: 'auto',
+                                padding: '20px',
+                                '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                                msOverflowStyle: 'none',
+                                scrollbarWidth: 'none',
                             }}
                         >
-                            <style>
-                                {`
-          ::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background-color: #A5A5A5;
-            border-radius: 6px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background-color: #EFEFEF;
-            border-radius: 6px;
-          }
-        `}
-                            </style>
+                            
                             <Image
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
@@ -599,7 +544,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	1-Year Comprehensive Warranty: </span>
                                 Our commitment to client satisfaction extends
                                 beyond the completion of the home. Prodyme Homes stands by its work with a 1-year comprehensive warranty, addressing any concerns or issues that may arise
@@ -613,7 +558,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>● 10-Year Structural Warranty: </span>
                                 To underscore our confidence in the durability of our constructions, Prodyme Homes offers a 10-year structural warranty with no fine print or hidden clauses. This warranty is a tangible expression of our commitment to the long-term well-being of our clients&apos; homes, offering an additional layer of assurance that goes beyond industry standards.
                             </p>
@@ -657,7 +602,10 @@ const HomePage = () => {
                     </div>
                 )}
                 <div>
-                    <Dialog open={isModalOpen6} style={{ width: '100%' }} onClose={closeModal6} className="fixed inset-0 overflow-y-auto">
+                    <Dialog open={isModalOpen6}
+                        onClose={closeModal6}
+                        fullWidth
+                        maxWidth="lg">
                         <DialogTitle>
                             <div className="flex justify-between items-center">
                                 <h1 className='text-[22px] xl:text-[40px] font-bold'><span className='text-orange-400'>Earthquake-Safe </span>Homes</h1>
@@ -667,30 +615,17 @@ const HomePage = () => {
                             </div>
                         </DialogTitle>
                         <DialogContent
-                            className="p-20"
-
-                            style={{
-                                scrollbarWidth: 'thin',
-                                scrollbarColor: '#A5A5A5 #EFEFEF',
+                            sx={{
+                                overflowY: 'auto',
+                                padding: '20px',
+                                '&::-webkit-scrollbar': {
+                                    display: 'none',
+                                },
+                                msOverflowStyle: 'none',
+                                scrollbarWidth: 'none',
                             }}
                         >
-                            <style>
-                                {`
-          ::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background-color: #A5A5A5;
-            border-radius: 6px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background-color: #EFEFEF;
-            border-radius: 6px;
-          }
-        `}
-                            </style>
+                            
                             <Image
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
@@ -698,7 +633,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Seismic Expertise: </span>
                                 Our engineering team comprises specialists in earthquake-resistant design. Leveraging the latest technologies and methodologies, Prodyme Homes ensures that every home can withstand seismic forces. Our commitment to safety is grounded in expertise and ongoing research to stay at the forefront of seismic design advancements.
                             </p>
@@ -709,7 +644,7 @@ const HomePage = () => {
                                 height={1000}
                                 className="w-full h-full object-fill"
                             />
-                            <p className="mt-4 text-lg">
+                            <p className="my-5 text-lg">
                                 <span className='font-bold'>● Guaranteed Protection: </span>
                                 Prodyme Homes provides a solid guarantee of structural
                                 integrity even in the face of earthquakes. Our designs undergo rigorous testing, and we utilize advanced engineering principles to ensure the safety and well-being of our clients&apos; families. This uncompromising commitment to safety extends beyond industry standards, with tangible measures in place to guarantee the protection of our clients and their homes.
@@ -722,7 +657,7 @@ const HomePage = () => {
 
             <section className='my-5'>
                 <Element name="aboutSection" className='about-section'>
-                    <About/>
+                    <About />
                 </Element>
             </section>
 
@@ -734,13 +669,13 @@ const HomePage = () => {
 
             <section className='my-5'>
                 <Element name="serviceSection" className="service-section">
-                    <Services/>
+                    <Services />
                 </Element>
             </section>
-            
+
             <section className='my-5'>
-            <Element name="workSection" className="work-section">
-                    <Work/>
+                <Element name="workSection" className="work-section">
+                    <Work />
                 </Element>
             </section>
 

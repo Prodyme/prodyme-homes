@@ -76,19 +76,19 @@ const Navbar = () => {
                                     <div className='flex  justify-between items-center text-[16px] md:text-[30px] font-bold'>
                                         <ul>
                                             <ScrollLink to="aboutSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>About</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-normal'>About</li>
                                             </ScrollLink>
 
                                             <ScrollLink to="serviceSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>Services</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-normal'>Services</li>
                                             </ScrollLink>
 
                                             <ScrollLink to="workSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>Work</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-normal'>Work</li>
                                             </ScrollLink>
 
                                             <ScrollLink to="contactSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                                <li className='mx-4 text-white hover:text-orange-400 font-bold'>Contact</li>
+                                                <li className='mx-4 text-white hover:text-orange-400 font-normal'>Contact</li>
                                             </ScrollLink>
                                         </ul>
                                         
@@ -139,22 +139,22 @@ const Navbar = () => {
                                 <div>
                                     <ul className='flex cursor-pointer'>
                                         <Link href="/">
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Home</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-normal text-[15px]'>Home</li>
                                         </Link>
                                         <ScrollLink to="aboutSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>About</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-normal text-[15px]'>About</li>
                                         </ScrollLink>
 
                                         <ScrollLink to="serviceSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Services</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-normal text-[15px]'>Services</li>
                                         </ScrollLink>
 
                                         <ScrollLink to="workSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Work</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-normal text-[15px]'>Work</li>
                                         </ScrollLink>
 
                                         <ScrollLink to="contactSection" smooth={true} duration={3000} onClick={scrollToSection}>
-                                            <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Contact</li>
+                                            <li className='mx-4 text-white hover:text-orange-400 font-normal text-[15px]'>Contact</li>
                                         </ScrollLink>
                                         
                                     </ul>

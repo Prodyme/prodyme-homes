@@ -56,8 +56,8 @@ const Services = () => {
 
             <div className="px-4 sm:px-6 lg:px-8">
                 <section>
-                    <h1 className="md:text-[40px] text-[16px] font-normal text-orange-400 text-center my-5">Our Services</h1>
-                    <p className="text-center sm:text-left font-thin">
+                    <h1 className="md:text-[40px] text-[30px] font-normal text-orange-400 text-center my-5">Our Services</h1>
+                    <p className="text-center sm:text-left font-normal">
                         Let us help you make your dreams a reality.
                     </p>
                 </section>
@@ -80,8 +80,8 @@ const Services = () => {
                                 <h1 className="text-center font-bold text-2xl my-5 text-blue-900">
                                     {value.title}
                                 </h1>
-                                <p className="text-center font-thin">{value.paraOne}</p>
-                                <p className="text-center font-thin">{value.paraTwo}</p>
+                                <p className="text-center font-normal">{value.paraOne}</p>
+                                <p className="text-center font-normal">{value.paraTwo}</p>
                             </div>
                         ))}
                     </div>
