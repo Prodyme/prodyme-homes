@@ -75,19 +75,19 @@ const Navbar = () => {
                                 <div className='absolute top-0 left-0 w-full bg-[#000000cb] py-5 px-5'>
                                     <div className='flex  justify-between items-center text-[16px] md:text-[30px] font-bold'>
                                         <ul>
-                                            <ScrollLink to="aboutSection" smooth={true} onClick={scrollToSection}>
+                                            <ScrollLink to="aboutSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>About</li>
                                             </ScrollLink>
 
-                                            <ScrollLink to="serviceSection" smooth={true} onClick={scrollToSection}>
+                                            <ScrollLink to="serviceSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>Services</li>
                                             </ScrollLink>
 
-                                            <ScrollLink to="workSection" smooth={true} onClick={scrollToSection}>
+                                            <ScrollLink to="workSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>Work</li>
                                             </ScrollLink>
 
-                                            <ScrollLink to="contactSection" smooth={true} onClick={scrollToSection}>
+                                            <ScrollLink to="contactSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                                 <li className='mx-4 text-white hover:text-orange-400 font-bold'>Contact</li>
                                             </ScrollLink>
                                         </ul>
@@ -141,19 +141,19 @@ const Navbar = () => {
                                         <Link href="/">
                                             <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Home</li>
                                         </Link>
-                                        <ScrollLink to="aboutSection" smooth={true} onClick={scrollToSection}>
+                                        <ScrollLink to="aboutSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                             <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>About</li>
                                         </ScrollLink>
 
-                                        <ScrollLink to="serviceSection" smooth={true} onClick={scrollToSection}>
+                                        <ScrollLink to="serviceSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                             <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Services</li>
                                         </ScrollLink>
 
-                                        <ScrollLink to="workSection" smooth={true} onClick={scrollToSection}>
+                                        <ScrollLink to="workSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                             <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Work</li>
                                         </ScrollLink>
 
-                                        <ScrollLink to="contactSection" smooth={true} onClick={scrollToSection}>
+                                        <ScrollLink to="contactSection" smooth={true} duration={3000} onClick={scrollToSection}>
                                             <li className='mx-4 text-white hover:text-orange-400 font-bold text-[15px]'>Contact</li>
                                         </ScrollLink>
                                         
