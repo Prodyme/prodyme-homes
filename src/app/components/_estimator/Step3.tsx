@@ -274,6 +274,7 @@ const Step3: React.FC<step3Type> = ({
       >
 
         {popUpFormFlag && popUpForm()}
+        <ToastContainer/>
         {/* <input type="file" accept=".xls,.xlsx" onChange={readUploadFile} /> */}
         <span className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">
           Step 3/5
