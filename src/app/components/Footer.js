@@ -27,7 +27,7 @@ const Footer = () => {
                             <div>
                                 <div className='flex justify-start items-center'>
                                     <div>
-                                        <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[100px] h-auto' />
+                                        <img src="/images/logo.png" alt=""  className='w-[100px] h-auto' />
                                     </div>
                                     <div>
                                         <h1 className='text-white  text-center py-5 text-xl font-roboto'>Prodyme homes</h1>
@@ -97,34 +97,25 @@ const Footer = () => {
                         <div>
                             <ul className="flex justify-center items-center my-5">
                                 <li className="mx-5 ">
-                                    <Image
+                                    <img
                                         src="/images/facebook.png"
                                         alt="prodyme homes"
-                                        width='0'
-                                        height='0'
-                                        sizes='100vw'
                                         className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
                                 <li className="mx-5 ">
-                                    <Image
+                                    <img
                                         src="/images/instagram.png"
                                         alt="prodyme homes"
-                                        width='0'
-                                        height='0'
-                                        sizes='100vw'
                                         className='h-auto w-[38px]'
                                         priority
                                     />
                                 </li>
                                 <li className="mx-5 ">
-                                    <Image
+                                    <img
                                         src="/images/Vector.png"
                                         alt="prodyme homes"
-                                        width='0'
-                                        height='0'
-                                        sizes='100vw'
                                         className='h-auto w-[38px]'
                                         priority
                                     />
@@ -174,7 +165,7 @@ const Footer = () => {
 
                             <div className=''>
                                 <div>
-                                    <Image src="/images/logo.png" alt="" width="0" height="0" sizes='100vw' className='w-[200px] h-auto object-cover' />
+                                    <img src="/images/logo.png" alt=""  className='w-[200px] h-auto object-cover' />
                                     <h1 className='text-white mx-5 py-5 font-roboto text-xl font-bold'>Prodyme Homes</h1>
                                 </div>
 
@@ -213,36 +204,24 @@ const Footer = () => {
                         <div>
                             <ul className="flex my-5">
                                 <li className="mx-5 ">
-                                    <Image
+                                    <img
                                         src="/images/facebook.png"
                                         alt="prodyme homes"
-                                        width='0'
-                                        height='0'
-                                        sizes='100vw'
                                         className='h-auto w-[38px]'
-                                        priority
                                     />
                                 </li>
                                 <li className="mx-5 ">
-                                    <Image
+                                    <img
                                         src="/images/instagram.png"
                                         alt="prodyme homes"
-                                        width='0'
-                                        height='0'
-                                        sizes='100vw'
                                         className='h-auto w-[38px]'
-                                        priority
                                     />
                                 </li>
                                 <li className="mx-5 ">
-                                    <Image
+                                    <img
                                         src="/images/Vector.png"
                                         alt="prodyme homes"
-                                        width='0'
-                                        height='0'
-                                        sizes='100vw'
                                         className='h-auto w-[38px]'
-                                        priority
                                     />
                                 </li>
                             </ul>

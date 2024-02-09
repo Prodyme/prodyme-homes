@@ -43,14 +43,14 @@ const About = () => {
                 <div className='bg-[#dbdbdb]'>
                     <div className='flex flex-wrap justify-center items-center'>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
-                            <Image src="https://static.wixstatic.com/media/74f558_b261ab6879d14b0bbc9800ec41ba91fd~mv2_d_6208_4258_s_4_2.jpeg" alt="" width={1000} height={1000} className='w-full h-80' />
+                            <img src="https://static.wixstatic.com/media/74f558_b261ab6879d14b0bbc9800ec41ba91fd~mv2_d_6208_4258_s_4_2.jpeg" alt=""  className='w-full h-80' />
                         </div>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
                             <h1 className='text-center font-bold text-2xl px-4 sm:px-8 mt-5'>Preconstruction Design</h1>
                             <p className='text-center font-normal px-4 sm:px-8 mt-5'>I am a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
                         </div>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
-                            <Image src="https://static.wixstatic.com/media/74f558_0e46dc42786945daad2d2535524461c3~mv2_d_6048_4032_s_4_2.jpeg" alt="" width={1000} height={1000} className='w-full h-80' />
+                            <img src="https://static.wixstatic.com/media/74f558_0e46dc42786945daad2d2535524461c3~mv2_d_6048_4032_s_4_2.jpeg" alt=""  className='w-full h-80' />
                         </div>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
                             <h1 className='text-center font-bold text-2xl px-4 sm:px-8 mt-5'>Design & Construction Estimate</h1>
@@ -64,14 +64,14 @@ const About = () => {
                             <p className='text-center font-normal px-4 sm:px-8 mt-5'>I am a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
                         </div>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
-                            <Image src="https://static.wixstatic.com/media/74f558_ac023650dfaf4026972886b8c33e06e9~mv2_d_4000_2983_s_4_2.jpg" alt="" width={1000} height={1000} className='w-full h-80' />
+                            <img src="https://static.wixstatic.com/media/74f558_ac023650dfaf4026972886b8c33e06e9~mv2_d_4000_2983_s_4_2.jpg" alt=""  className='w-full h-80' />
                         </div>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
                             <h1 className='text-center font-bold text-2xl px-4 sm:px-8 mt-5'>The Finishing Touches</h1>
                             <p className='text-center font-normal px-4 sm:px-8 mt-5'>I am a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
                         </div>
                         <div className='w-full sm:w-1/2 md:w-1/4 p-0'>
-                            <Image src="https://static.wixstatic.com/media/74f558_d26f60b4ce744d9c9e82426a09cd84b5~mv2_d_5616_3744_s_4_2.jpeg" alt="" width={1000} height={1000} className='w-full h-80' />
+                            <img src="https://static.wixstatic.com/media/74f558_d26f60b4ce744d9c9e82426a09cd84b5~mv2_d_5616_3744_s_4_2.jpeg" alt=""  className='w-full h-80' />
                         </div>
                     </div>
                 </div>
