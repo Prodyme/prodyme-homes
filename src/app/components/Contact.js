@@ -144,7 +144,7 @@ const Contact = () => {
                             </div>
                             <div className="mb-4">
                                 <label htmlFor="phone" className="form-label block">Phone</label>
-                                <input type="tel" name="phone" value={formData.phone}
+                                <input type="number" name="phone" value={formData.phone}
                                     onChange={handleInputChange} className={`form-control border-b border-black border-solid border-2 border-opacity-100 border-t-0 border-r-0 border-l-0 block w-full ${errors.phone ? 'border-red-500' : ''
                                         }focus:outline-none`} />
                                 {errors.phone && <span className="text-red-500">{errors.phone}</span>}
