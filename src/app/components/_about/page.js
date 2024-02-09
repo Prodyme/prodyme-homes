@@ -9,7 +9,7 @@ const About = () => {
             <section className='section-1 py-5'>
                 <div className='text-center px-4 sm:px-[410px] '>
                     <h1 className='md:text-[40px] text-[30px] font-bold text-center my-5 text-orange-400'>About M&D Remodeling</h1>
-                    <p className='font-thin'>
+                    <p className='font-normal'>
                         I am a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.
                     </p>
                 </div>
