@@ -3,8 +3,8 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { GroupedItemType, ItemDetails, step3Type } from "./_myTypes";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Image from "next/image";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import * as xlsx from "xlsx";
 
@@ -28,10 +28,9 @@ const Step3: React.FC<step3Type> = ({
     phoneNo: "",
   });
   const [info, setInfo] = useState({ desc: "", name: "" });
-  const [desc, setDesc] = useState('');
+  const [desc, setDesc] = useState("");
   const [showOptions, setShowOptions] =
     useState<{ sectionId: number; showOptions: boolean }[]>();
-
 
   useEffect(() => {
     // try {
@@ -94,10 +93,11 @@ const Step3: React.FC<step3Type> = ({
               "Content-Type": "application/json",
               // Add any additional headers if needed
             },
-            body: JSON.stringify({"email": popUpFormData.email, "phone": popUpFormData.phoneNo}),
-            
+            body: JSON.stringify({
+              email: popUpFormData.email,
+              phone: popUpFormData.phoneNo,
+            }),
           }
-          
         );
 
         if (!response.ok) {
@@ -105,22 +105,48 @@ const Step3: React.FC<step3Type> = ({
         }
 
         const responseData = await response.json();
-        toast.success('Form submitted successfully');
+        toast.success("Form submitted sucessfully!", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         // console.log("Response Data:", responseData);
 
         setStep(step + 1); // Move to the next step after successful form submission
       } catch (error) {
         console.error("Error submitting form:", error);
-        toast.error('Form submission failed');
+        toast.error("Form submittion failed!", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     } else {
-      console.log("Form validation failed");
+      toast.error("Invalid input!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
   const popUpForm = () => {
     return (
       <div className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
-      
         <form
           className="flex flex-col justify-around items-center w-[300px] h-[500px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
           onSubmit={handleSubmit}
@@ -268,8 +294,8 @@ const Step3: React.FC<step3Type> = ({
         step !== 3 ? "hidden" : ""
       }`}
     >
-      <ToastContainer/>
       {popUpFormFlag && popUpForm()}
+
       {/* <input type="file" accept=".xls,.xlsx" onChange={readUploadFile} /> */}
       <span className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">
         Step 3/5
@@ -450,10 +476,7 @@ const Step3: React.FC<step3Type> = ({
       </div>
       <div className="w-[800px] h-[0px] max-xl:w-[60vw] border border-stone-300"></div>
       <div className="justify-start items-start gap-5 inline-flex flex-wrap">
-        <ScrollLink
-          to="estimatorSection"
-          smooth={false}
-        >
+        <ScrollLink to="estimatorSection" smooth={false}>
           <button
             onClick={() => setStep(step - 1)}
             className="w-[113px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
@@ -463,11 +486,7 @@ const Step3: React.FC<step3Type> = ({
             </div>
           </button>
         </ScrollLink>
-        <ScrollLink
-          to="estimatorSection"
-          smooth={false}
-
-        >
+        <ScrollLink to="estimatorSection" smooth={false}>
           <button
             onClick={handleProceed}
             className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
