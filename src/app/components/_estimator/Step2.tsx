@@ -115,7 +115,7 @@ export const Step2: React.FC<step2Type> = ({
                             } w-[30px] h-auto  `}
                             src={
                               star[key as keyof Star]
-                                ? "   /Star2.svg"
+                                ? "images/Star2.svg"
                                 : "images/Star1.svg"
                             } // Correct path relative to the public directory
                             alt="Star Image"
