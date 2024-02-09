@@ -60,7 +60,7 @@ const Work = () => {
                                 onMouseOver={() => setHoveredService(index)}
                                 onMouseOut={() => setHoveredService(null)}
                             >
-                                <Image src={service.img} alt={service.name} width={1000} height={1000} className="w-full h-auto" />
+                                <img src={service.img} alt={service.name}  className="w-full h-auto" />
                                 {hoveredService === index && (
                                     <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50 text-white">
                                         <span className="text-center font-bold text-xl">

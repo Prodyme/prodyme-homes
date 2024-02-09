@@ -29,12 +29,11 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
       >
         <div className="">{isNaN(buildUpArea) ? 0 : buildUpArea} Sq ft.</div>
         <div className={step === 1 ? " hidden" : "w-[26px] h-[26px] relative max-sm:hidden"}>
-          <Image
+          <img
             className="w-[26px] h-[26px] left-0 top-0 object-cover absolute rounded-full border-2 border-black"
             src="images/ok.svg"
             alt="ok"
-            width={1000}
-            height={1000}
+          
           />
         </div>
       </div>
@@ -50,12 +49,11 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
 
         <div className="">{qValue} </div>
         <div className={step <= 2 ? " hidden" : "w-[26px] h-[26px] relative max-sm:hidden"}>
-          <Image
+          <img
             className="w-[26px] h-[26px] left-0 top-0 object-cover absolute rounded-full border-2 border-black"
             src="images/ok.svg"
             alt="ok"
-            width={1000}
-            height={1000}
+           
           />
         </div>
       </div>
@@ -70,12 +68,11 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
       >
         <div className="">Customize Estimator</div>
         <div className={step <= 3 ? " hidden" : "w-[26px] h-[26px] relative max-sm:hidden "}>
-          <Image
+          <img
             className="w-[26px] h-[26px] object-cover left-0 top-0 absolute rounded-full border-2 border-black"
             src="images/ok.svg"
             alt="ok"
-            width={1000}
-            height={1000}
+           
           />
         </div>
       </div>

@@ -107,7 +107,7 @@ export const Step2: React.FC<step2Type> = ({
                         }`}
                       >
                         {Array.from({ length: id + 1 }, (_, index) => (
-                          <Image
+                          <img
                             key={index}
                             style={{ left: `${8 * (index + 4)}px` }}
                             className={`absolute z-10 ${
@@ -119,9 +119,7 @@ export const Step2: React.FC<step2Type> = ({
                                 : "images/Star1.svg"
                             } // Correct path relative to the public directory
                             alt="Star Image"
-                            width="0"
-                            height="0"
-                            sizes="100vw"
+                           
                           />
                         ))}
                         <span className="text-center text-black text-sm text-nowrap font-light font-['Anek Latin']">
