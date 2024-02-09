@@ -57,7 +57,7 @@ const Navbar = () => {
                                         </li>
                                     </Link>
                                     <li>
-                                        <Image src='/images/logo.png' alt='prodyme homes' width='0' height='0' sizes='100vw' className='h-auto w-[37px]' priority />
+                                        <img src='/images/logo.png' alt='prodyme homes'   className='h-auto w-[37px]'  />
                                     </li>
                                     <li className={`text-white text-3xl`} onClick={toggleMenu}>
                                         {showMenu ? (
@@ -129,11 +129,11 @@ const Navbar = () => {
 
                             <div className='flex justify-between items-center '>
                                 <div>
-                                    <Image
+                                    <img
                                         src="/images/logo.png"
                                         alt="prodyme homes"
-                                        width='0' height='0' sizes='100vw' className='h-auto w-[50px]'
-                                        priority
+                                      className='h-auto w-[50px]'
+                                        
                                     />
                                 </div>
                                 <div>

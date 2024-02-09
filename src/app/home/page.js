@@ -120,7 +120,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 5.png" alt='' className='h-full w-full' />
+                            <img src="/images/mob-image 5.png" alt='' className='h-full w-full'  />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Total <span className='text-orange-400'>Transparency</span></h1>
@@ -180,6 +180,7 @@ const HomePage = () => {
                             <img
                                 src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
                                 alt=""
+                                
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -196,6 +197,7 @@ const HomePage = () => {
                             <img
                                 src="https://images.unsplash.com/photo-1616610269931-04d58b579ddf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFib3VyfGVufDB8fDB8fHww"
                                 alt=""
+                         
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -215,7 +217,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 7.png" alt='' className='h-full w-full' />
+                            <img src="/images/mob-image 7.png" alt=''  className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Zero <span className='text-orange-400'>Delays</span></h1>
@@ -271,6 +273,7 @@ const HomePage = () => {
                             <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                              
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -282,6 +285,7 @@ const HomePage = () => {
                             <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                               
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -298,7 +302,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <img src="/images/mob-image 6.png" alt='' className='h-full w-full'  />
+                            <img src="/images/mob-image 6.png" alt=''  className='h-full w-full'  />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'><span className='text-orange-400'>Unmatched</span> Quality</h1>
@@ -315,7 +319,7 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[65%]  h-auto '>
-                            <img src="/images/image 6.png" alt='Person standing on a concrete slab'  className='h-auto w-full object-cover' />
+                            <img src="/images/image 6.png" alt='Person standing on a concrete slab' className='h-auto w-full object-cover' />
                         </div>
                         <div className='px-10 py-5 '>
                             <h1 className='text-[22px] xl:text-[40px] font-bold'><span className='text-orange-400'>Unmatched </span>Quality</h1>
@@ -355,6 +359,7 @@ const HomePage = () => {
                             <img
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
+                                
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -368,6 +373,7 @@ const HomePage = () => {
                             <img
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
+                               
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -408,7 +414,7 @@ const HomePage = () => {
                             </button>
                         </div>
                         <div className='w-[65%] h-auto'>
-                            <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-auto w-full object-cover' />
+                            <img src="/images/image 7.png" alt='Person standing on a concrete slab'  className='h-auto w-full object-cover' />
                         </div>
                     </div>
                 )}
@@ -440,6 +446,7 @@ const HomePage = () => {
                             <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
+                                
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -448,11 +455,10 @@ const HomePage = () => {
                                 curated options for materials, ﬁnishes, and design elements. Our approach is to present clients with choices that align with their taste and preferences, minimizing decision fatigue and ensuring that the selections contribute to a cohesive and personalized aesthetic.
 
                             </p>
-                            <Image
+                            <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
-                                width={1000}
-                                height={1000}
+                              
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -469,7 +475,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <Image src="/images/mob-image 6.png" alt='' width={1000} height={1000} className='h-full w-full' />
+                            <img src="/images/mob-image 6.png" alt=''  className='h-full w-full' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'>Worry-Free<span className='text-orange-400'>Warranty</span></h1>
@@ -486,7 +492,7 @@ const HomePage = () => {
                 ) : (
                     <div className='flex col-span-2 h-full bg-[#EFEFEF] rounded-[50px] items-center'>
                         <div className='w-[75%] h-auto '>
-                            <Image src="/images/image 6.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-cover' />
+                            <img src="/images/image 6.png" alt='Person standing on a concrete slab' className='h-auto w-full object-cover' />
                         </div>
                         <div className='px-10 py-5 '>
                             <h1 className='text-[22px] xl:text-[40px] font-bold'>Worry-Free <span className='text-orange-400'>Warranty</span></h1>
@@ -523,11 +529,10 @@ const HomePage = () => {
                             }}
                         >
                             
-                            <Image
+                            <img
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
-                                width={1000}
-                                height={1000}
+                               
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -537,11 +542,10 @@ const HomePage = () => {
                                 post-construction. This warranty provides clients with tangible assurance, demonstrating our commitment to their long-term satisfaction.
 
                             </p>
-                            <Image
+                            <img
                                 src="https://media.istockphoto.com/id/609444066/vector/earthquake-resistant-structure-contrast-diagram.jpg?s=612x612&w=0&k=20&c=fLSXTQG9axuHuW_ebQPpuA9CDS59-vgj06HCXHSRGFo="
                                 alt=""
-                                width={1000}
-                                height={1000}
+                               
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -558,7 +562,7 @@ const HomePage = () => {
                 {isMobile ? (
                     <div className='flex flex-col h-full justify-center items-center bg-[#EFEFEF] rounded-[50px]'>
                         <div className='w-full h-auto'>
-                            <Image src="/images/mob-image 7.png" alt='' width={1000} height={1000} className='h-full w-full ' />
+                            <img src="/images/mob-image 7.png" alt=''  className='h-full w-full ' />
                         </div>
                         <div className='px-5 py-3 '>
                             <h1 className='text-[20px] font-bold'><span className='text-orange-400'>Earthquake-Safe </span>Homes</h1>
@@ -583,7 +587,7 @@ const HomePage = () => {
                             </button>
                         </div>
                         <div className='w-[50%] h-auto '>
-                            <Image src="/images/image 7.png" alt='Person standing on a concrete slab' width={1000} height={1000} className='h-auto w-full object-cover' />
+                            <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-auto w-full object-cover' />
                         </div>
                     </div>
                 )}
@@ -612,22 +616,20 @@ const HomePage = () => {
                             }}
                         >
                             
-                            <Image
+                            <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
-                                width={1000}
-                                height={1000}
+                                
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
                                 <span className='font-bold'>●	Seismic Expertise: </span>
                                 Our engineering team comprises specialists in earthquake-resistant design. Leveraging the latest technologies and methodologies, Prodyme Homes ensures that every home can withstand seismic forces. Our commitment to safety is grounded in expertise and ongoing research to stay at the forefront of seismic design advancements.
                             </p>
-                            <Image
+                            <img
                                 src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
                                 alt=""
-                                width={1000}
-                                height={1000}
+                           
                                 className="w-full h-full object-fill"
                             />
                             <p className="my-5 text-lg">
@@ -673,7 +675,7 @@ const HomePage = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center">
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
-                            <Image src={v.image} alt={v.title} width='0' height='0' sizes='100vw' className='mx-auto h-auto w-[100px]' />
+                            <img src={v.image} alt={v.title}  className='mx-auto h-auto w-[100px]' />
                             <h1 className="my-3 text-orange-400 font-bold text-[16px] md:text-xl">
                                 {v.title}
                             </h1>
@@ -694,7 +696,7 @@ const HomePage = () => {
 
                     {reasons.map((v, i) => (
                         <div key={i} className='text-center'>
-                            <Image src={v.image} alt={v.title} width='0' height='0' sizes='100vw' className='mx-auto h-auto w-[100px]' />
+                            <img src={v.image} alt={v.title}  className='mx-auto h-auto w-[100px]' />
                             <p className="text-[14px] md:text-xl font-normal">
                                 {v.description}
                             </p>
