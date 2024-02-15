@@ -153,7 +153,7 @@ export const Step2: React.FC<step2Type> = ({
               </span>
             </div>
             <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
-              Approximately {estimateValue.toLocaleString()} for your BUA
+              Approximately INR {estimateValue.toLocaleString()} for your BUA
               (Built-Up-Area)
             </div>
           </div>

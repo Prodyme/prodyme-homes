@@ -97,7 +97,7 @@ export const PDFFile: React.FC<step3Type> = ({
             </div>
             <div className="">
               <Text style={styles.rate2}>
-                Approximately {estimateValue.toLocaleString()} for your BUA
+                Approximately INR {estimateValue.toLocaleString()} for your BUA
                 (Built-Up-Area)
               </Text>
             </div>
