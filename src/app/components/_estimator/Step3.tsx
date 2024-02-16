@@ -1,11 +1,14 @@
 "use client";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState, useRef } from "react";
 import { GroupedItemType, ItemDetails, step3Type } from "./_myTypes";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { IoArrowBackOutline } from "react-icons/io5";
+import { FaCheck } from "react-icons/fa";
+import { FiRefreshCw } from "react-icons/fi";
+import { FaArrowUp } from "react-icons/fa";
 // import * as xlsx from "xlsx";
 
 const Step3: React.FC<step3Type> = ({
@@ -31,6 +34,17 @@ const Step3: React.FC<step3Type> = ({
   const [desc, setDesc] = useState("");
   const [showOptions, setShowOptions] =
     useState<{ sectionId: number; showOptions: boolean }[]>();
+
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Function to scroll to the top of the container
+  const scrollToTop = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop  = 0;
+    }
+  };
+
 
   useEffect(() => {
     // try {
@@ -86,7 +100,7 @@ const Step3: React.FC<step3Type> = ({
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/user/estimator",
+          "https://gwebvydn88.execute-api.ap-south-1.amazonaws.com/dev/api/user/estimator",
           {
             method: "POST",
             headers: {
@@ -290,9 +304,8 @@ const Step3: React.FC<step3Type> = ({
 
   return (
     <div
-      className={` flex-col justify-start items-start gap-[23px] flex w-[899px] max-xl:w-[90vw] h-auto p-5 pt-3 pb-6 bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg border border-orange-400  ${
-        step !== 3 ? "hidden" : ""
-      }`}
+      className={` flex-col justify-start items-start gap-[23px] flex w-[899px] max-xl:w-[90vw] h-auto p-5 pt-3 pb-6 bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg border border-orange-400  ${step !== 3 ? "hidden" : ""
+        }`}
     >
       {popUpFormFlag && popUpForm()}
 
@@ -300,162 +313,170 @@ const Step3: React.FC<step3Type> = ({
       <span className="text-center text-black md:text-sm text-xs font-normal font-['Anek Latin']">
         Step 3/5
       </span>
-      <div className="grid grid-cols-3  gap-4 max-lg:flex max-lg:flex-wrap justify-between self-start items-start ">
-        {groupedItems?.map((d, i) => {
-          return (
-            <div
-              key={i}
-              className="h-full max-sm:mx-0 max-lg:w-[300px] flex flex-col gap-2 justify-between items-start relative"
-            >
-              <div className="flex flex-col justify-start items-start">
-                <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start ">
-                  <div className="flex-col justify-start items-start inline-flex text-left">
-                    <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
-                      {d.itemName}
-                    </div>
+      <div className="scroll-container-wrapper relative">
+        <div
+          ref={containerRef}
+          className=" scroll-container grid grid-cols-3  gap-4 max-lg:flex max-lg:flex-wrap justify-between self-start items-start max-h-[300px] overflow-y-auto overflow-x-hidden">
 
-                    {/* <div className="text-black md:text-sm text-xs font-normal font-['Anek Latin']">
+          {groupedItems?.map((d, i) => {
+            return (
+              <div
+                key={i}
+                className="h-full max-sm:mx-0 max-lg:w-[300px] flex flex-col gap-2 justify-between items-start relative"
+              >
+
+                <div className="flex flex-col justify-start items-start">
+                  <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col-2 text-wrap text-left max-sm:items-start ">
+                    <div className="flex-col justify-start items-start inline-flex text-left">
+                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[65vw]">
+                        {d.itemName}
+                      </div>
+
+                      {/* <div className="text-black md:text-sm text-xs font-normal font-['Anek Latin']">
                       Rathi, Kamdhenu or equivalent
                     </div> */}
-                  </div>
-                  <div className="flex">
-                    <button
-                      onClick={() => handleOptions(d)}
-                      className="transition-transform transform hover:scale-110 w-[30px] object-contain"
-                    >
-                      <img
-                        src="images/pen.svg"
-                        alt="Detailed Description"
-                       
-                        className="w-[20px] h-auto"
-                      />
-                    </button>
-                    <button
-                      onClick={() => showDesc(d)}
-                      className="transition-transform transform hover:scale-110 w-[30px] object-contain"
-                    >
-                      <img
-                        src="images/info.svg"
-                        alt="Detailed Description"
-                      
-                        className="w-[20px] h-auto"
-                      />
-                    </button>
-                    {info.name === d.itemName && (
-                      <div
-                        className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
-                          (i + 1) % 3 === 0
+                    </div>
+                    <div className="flex">
+                      <button
+                        onClick={() => handleOptions(d)}
+                        className="transition-transform transform hover:scale-110 w-[30px] object-contain"
+                      >
+                        <img
+                          src="images/pen.svg"
+                          alt="Detailed Description"
+
+                          className="w-[20px] h-auto"
+                        />
+                      </button>
+                      <button
+                        onClick={() => showDesc(d)}
+                        className="transition-transform transform hover:scale-110 w-[30px] object-contain"
+                      >
+                        <img
+                          src="images/info.svg"
+                          alt="Detailed Description"
+
+                          className="w-[20px] h-auto"
+                        />
+                      </button>
+                      {info.name === d.itemName && (
+                        <div
+                          className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-2 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${(i + 1) % 3 === 0
                             ? "ml-[-350px] max-xl:ml-[-25vw]"
                             : ""
-                        }`}
-                      >
-                        {info.desc}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <span className="text-black md:text-sm text-xs mr-2 w-[200px] font-font-normal font-['Anek Latin']">
-                  {d.items.map((i, index) => {
-                    if (d.Category === i.Category) {
-                      return (
-                        <div key={index}>
-                          {i.Description.slice(0, 60)}{" "}
-                          {i.Description.length > 60 ? " ..." : ""}
+                            }`}
+                        >
+                          {info.desc}
                         </div>
-                      );
-                    }
-                  })}
-                </span>
-              </div>
-              <button
-                onClick={() => handleOptions(d)}
-                className="w-[240px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
-              >
-                <div className="grow shrink basis-0 ">
-                  {d.items.map((i, index) => {
-                    if (d.Category === i.Category) {
-                      return (
-                        <span key={index}>
-                          <span className="text-black md:text-sm text-xs font-bold font-['Anek Latin']">
-                            INR
-                          </span>{" "}
-                          {i.Rate}
-                          <span className="text-black md:text-sm text-xs font-font-normal font-['Anek Latin']">
-                            {" "}
-                            {i.Unit}
-                          </span>
-                        </span>
-                      );
-                    }
-                  })}
-                </div>
-              </button>
+                      )}
+                    </div>
+                  </div>
+                  <span className="text-black md:text-sm text-xs mr-2 w-full font-font-normal font-['Anek Latin'] px-2">
+                    {d.items.map((i, index) => {
+                      if (d.Category === i.Category) {
+                        return (
+                          <div key={index}>
+                            {i.Description.slice(0, 60)}{" "}
+                            {i.Description.length > 60 ? " ..." : ""}
+                          </div>
+                        );
+                      }
+                    })}
+                  </span>
 
-              <div
-                className={`${
-                  d.Selected === true
-                    ? `absolute z-50 font-normal bg-gray-50 mt-40 justify-center m-auto p-1 w-[400px] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
-                        (i + 1) % 3 === 0 ? "" : ""
-                      }`
+                </div>
+
+                <button
+                  onClick={() => handleOptions(d)}
+                  className="w-[240px] max-md:w-[280px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center  inline-flex transition-transform transform hover:shadow-md hover:shadow-orange-400"
+                >
+                  <div className="grow shrink basis-0 ">
+                    {d.items.map((i, index) => {
+                      if (d.Category === i.Category) {
+                        return (
+                          <span key={index}>
+                            <span className="text-black md:text-sm text-xs font-bold font-['Anek Latin']">
+                              INR
+                            </span>{" "}
+                            {i.Rate}
+                            <span className="text-black md:text-sm text-xs font-font-normal font-['Anek Latin']">
+                              {" "}
+                              {i.Unit}
+                            </span>
+                          </span>
+                        );
+                      }
+                    })}
+                  </div>
+
+                </button>
+
+                <div
+                  className={`${d.Selected === true
+                    ? `absolute z-50 font-normal bg-gray-50 mt-40  justify-center m-auto p-1 w-[400px] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${(i + 1) % 3 === 0 ? "" : ""
+                    }`
                     : "hidden"
-                }`}
-              >
-                {" "}
-                <span className="font-bold text-orange-500 md:text-2xl text-base">
-                  Choose product
-                </span>
-                {d.items.map((item, i) => {
-                  return (
-                    <div
-                      className="my-5  flex flex-col m-auto justify-center"
-                      key={i}
-                    >
-                      <label
-                        className="bg-gradient-to-r bg-white
+                    }`}
+                >
+                  {" "}
+                  <span className="font-bold text-orange-500 md:text-2xl text-base">
+                    Choose product
+                  </span>
+                  {d.items.map((item, i) => {
+                    return (
+                      <div
+                        className="my-5  flex flex-col m-auto justify-center"
+                        key={i}
+                      >
+                        <label
+                          className="bg-gradient-to-r bg-white
         hover:from-amber-50 hover:via-amber-100 
         hover:to-amber-50 text-[1rem] font-normal 
         justify-center m-auto p-1 w-[300px]  max-sm:m-2 max-sm:w-[80vw]
         hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)]
         shadow-[0_10px_20px_rgba(231,229,228,0.9)]
         rounded-xl text-wrap"
-                        htmlFor={i.toString()}
-                      >
-                        <span className="font-bold">Description: </span>
-                        <span>{item.Description}</span>
-                        <br />
-                        <span className="font-bold">Rate: </span>
-                        <span>INR {item.Rate}</span>
-                      </label>
-                      <input
-                        type="radio"
-                        name={item.Item}
-                        value={item.Rate}
-                        id={i.toString()}
-                        onClick={() => onChangeHandle(item)}
-                        className="hidden"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
+                          htmlFor={i.toString()}
+                        >
+                          <span className="font-bold">Description: </span>
+                          <span>{item.Description}</span>
+                          <br />
+                          <span className="font-bold">Rate: </span>
+                          <span>INR {item.Rate}</span>
+                        </label>
+                        <input
+                          type="radio"
+                          name={item.Item}
+                          value={item.Rate}
+                          id={i.toString()}
+                          onClick={() => onChangeHandle(item)}
+                          className="hidden"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
 
-              {(i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
-                <div className=" max-lg:hidden w-[0px] h-full absolute right-0 top-0 origin-top-left border border-stone-300"></div>
-              )}
-            </div>
-          );
-        })}
+                {
+                  (i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
+                    <div className=" max-lg:hidden w-[0px] h-full absolute right-0 top-0 origin-top-left border border-stone-300"></div>
+                  )
+                }
+              </div>
+            );
+          })}
+
+        </div>
+        <button
+          onClick={scrollToTop}
+          className="scroll-up-button absolute bottom-4 right-4 hover:border-2 border-2 border-orange-400 text-orange-400 text-lg p-4 rounded-full cursor-pointer"
+        >
+          <FaArrowUp/>
+        </button>
       </div>
       <div className="w-[800px] h-[0px] max-xl:w-[80vw] mt-4 border border-stone-300"></div>
 
-      <button
-        onClick={handleReset}
-        className="h-10 px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
-      >
-        <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-          Reset Estimate
-        </div>
-      </button>
+
       <div className="flex-col justify-start items-start gap-2.5 flex">
         <div>
           <span className="text-orange-400 md:text-6xl text-3xl font-bold font-['Anek Latin']">
@@ -475,23 +496,33 @@ const Step3: React.FC<step3Type> = ({
         <ScrollLink to="estimatorSection" smooth={false}>
           <button
             onClick={() => setStep(step - 1)}
-            className="w-[113px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+            className=" p-4 bg-white rounded-full border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
           >
-            <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-              Back
+            <div className="text-orange-400 text-xl font-normal font-['Anek Latin']">
+              <IoArrowBackOutline />
             </div>
           </button>
         </ScrollLink>
         <ScrollLink to="estimatorSection" smooth={false}>
           <button
             onClick={handleProceed}
-            className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+            className="p-4 bg-orange-400 rounded-full justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
           >
-            <div className="text-white text-base font-normal font-['Anek Latin']">
-              Proceed
+            <div className="text-white text-xl font-normal font-['Anek Latin']">
+              <FaCheck />
             </div>
           </button>
         </ScrollLink>
+        <section>
+          <button
+            onClick={handleReset}
+            className="p-4 bg-white rounded-full border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
+          >
+            <div className="text-orange-400 text-xl font-normal font-['Anek Latin']">
+              <FiRefreshCw />
+            </div>
+          </button>
+        </section>
       </div>
     </div>
   );

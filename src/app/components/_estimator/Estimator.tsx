@@ -25,7 +25,7 @@ const Estimator = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/estimator/getItems"
+          "https://gwebvydn88.execute-api.ap-south-1.amazonaws.com/dev/api/estimator/getItems"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
