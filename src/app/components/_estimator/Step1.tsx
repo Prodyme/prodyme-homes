@@ -2,8 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import { step1Type } from "./_myTypes";
+import Select from 'react-select';
 
-const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUpArea }) => {
+const Step1: React.FC<step1Type> = ({
+  step,
+  setStep,
+  setBasementArea,
+  setBuildUpArea,
+}) => {
   const [bUnit, setBUnit] = useState(1);
   const [aUnit, setAUnit] = useState(1);
   const [bValue, setBValue] = useState<number>(NaN);
@@ -15,6 +21,12 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
     aValue: string;
     bValue: string;
   }>({ aUnit: "", bUnit: "", aValue: "", bValue: "" });
+
+  const options = [
+    { value: 1, label: "Square Feet (Sq. ft)"},
+    { value: 1 / 0.09290304, label: "Square Meter (Sq. mt)" },
+    { value: 9, label: "Square Yard (Sq. yd)" },
+  ];
 
   useEffect(() => {
     if (basement) {
@@ -110,7 +122,7 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
                 <span className="text-red-500 pt-2">{errors.aValue}</span>
               </div>
               <div className="flex flex-col">
-                <select
+                {/* <select
                   className={`flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg justify-start items-center gap-2.5 grow shrink basis-0 text-black md:text-sm text-xs font-normal font-['Anek Latin'] ${
                     aUnit === 0 ? "opacity-50" : ""
                   }`}
@@ -120,10 +132,18 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
                   <option value={0} disabled className="hidden">
                     Unit of measurment
                   </option>
-                  <option value={1 / 0.09290304}>Square Meters (Sq m)</option>
-                  <option value={9}>Square Yards (Sq yd)</option>
-                  <option value={1}>Square Feet (Sq ft)</option>
-                </select>
+                  <option value={1 / 0.09290304}>Square Meters (Sq. mt)</option>
+                  <option value={9}>Square Yards (Sq. yd)</option>
+                  <option value={1}>Square Feet (Sq. ft)</option>
+                </select> */}
+                <Select
+                  defaultValue={options[0]}
+                  options={options}
+                  classNames={{
+                    control: (state) =>
+                      "bg-neutral-100 rounded-lg justify-start items-center text-black md:text-sm text-xs font-normal ",
+                  }}
+                />
                 <span className="text-red-500 pt-2">{errors.aUnit}</span>
               </div>
             </div>
@@ -165,22 +185,14 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
                     <span className="text-red-500 pt-2">{errors.bValue}</span>
                   </div>
                   <div className="flex flex-col">
-                    <select
-                      className={`flex w-[200px] h-[38px] p-2.5 bg-neutral-100 rounded-lg justify-start items-center gap-2.5 grow shrink basis-0 text-black md:text-sm text-xs font-normal font-['Anek Latin'] ${
-                        bUnit === 0 ? "opacity-50" : ""
-                      }`}
-                      onChange={(e) => setBUnit(parseInt(e.target.value))}
-                      defaultValue={1}
-                    >
-                      <option value={0} disabled className="hidden">
-                        Unit of measurment
-                      </option>
-                      <option value={1 / 0.09290304}>
-                        Square Meters (Sq m)
-                      </option>
-                      <option value={9}>Square Yards (Sq yd)</option>
-                      <option value={1}>Square Feet (Sq ft)</option>
-                    </select>
+                    <Select
+                      defaultValue={options[0]}
+                      options={options}
+                      classNames={{
+                        control: (state) =>
+                          "bg-neutral-100 rounded-lg justify-start items-center text-black md:text-sm text-xs font-normal ",
+                      }}
+                    />
                     <span className="text-red-500 pt-2">{errors.bUnit}</span>
                   </div>
                 </div>
@@ -189,7 +201,6 @@ const Step1: React.FC<step1Type> = ({ step, setStep, setBasementArea, setBuildUp
           </div>
           <div className="w-[800px] max-xl:w-[60vw] h-[0px] border border-stone-300"></div>
           <div className="justify-start items-start gap-5 inline-flex">
-            
             <button
               onClick={handleProceed}
               className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
