@@ -224,6 +224,7 @@ const Step3: React.FC<step3Type> = ({
 
   const onChangeHandle = (item: ItemDetails) => {
     let temp = [...groupedItems];
+    // console.log(item)
 
     temp.map((d) => {
       if (d.Selected === true) {
@@ -368,7 +369,7 @@ const Step3: React.FC<step3Type> = ({
               <div>
                 <button
                   onClick={() => handleOptions(d)}
-                  className="w-[240px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
+                  className="w-[252px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform rounded-lg"
                 >
                   <div className="grow shrink basis-0 ">
                     {d.items.map((i, index) => {
@@ -393,7 +394,7 @@ const Step3: React.FC<step3Type> = ({
                   <div
                     className={`${
                       d.Selected === true
-                        ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[300px] text-wrap ${
+                        ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${
                             (i + 1) % 3 === 0 ? "" : ""
                           }`
                         : "hidden"
@@ -406,11 +407,15 @@ const Step3: React.FC<step3Type> = ({
                     {d.items.map((item, i) => {
                       return (
                         <div
-                          className="my-2  flex flex-col m-auto justify-center"
+                          className="  flex flex-col m-auto justify-center"
                           key={i}
                         >
                           <label
-                            className="bg-gradient-to-r bg-white hover:from-amber-50 hover:via-amber-100 hover:to-amber-50 text-[1rem] font-normal justify-center m-auto p-1 w-[298px] hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)] shadow-[0_10px_20px_rgba(231,229,228,0.9)] text-wrap"
+                            className={`border border-orange-400 bg-gradient-to-r text-[1rem] font-normal justify-center m-auto p-1 w-[250px]  text-wrap ${
+                              item.Category === d.Category
+                                ? "bg-orange-400 text-white"
+                                : "bg-white text-black hover:from-amber-50 hover:via-amber-100 hover:to-amber-50"
+                            } ${i+1 === d.items.length ? 'rounded-b-lg': ''}`}
                             htmlFor={i.toString()}
                           >
                             <span className="font-bold">Description: </span>
@@ -423,6 +428,7 @@ const Step3: React.FC<step3Type> = ({
                             type="radio"
                             name={item.Item}
                             value={item.Rate}
+                            checked={item.Category === d.Category}
                             id={i.toString()}
                             onClick={() => onChangeHandle(item)}
                             className="hidden"
@@ -456,7 +462,7 @@ const Step3: React.FC<step3Type> = ({
             INR {costPerSqft.toLocaleString()}{" "}
           </span>
           <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
-            per sqft
+            per sq. ft
           </span>
         </div>
         <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">

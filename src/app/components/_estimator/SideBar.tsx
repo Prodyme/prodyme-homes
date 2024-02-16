@@ -27,7 +27,7 @@ export const SideBar: React.FC<stepType> = ({ step, setStep, buildUpArea, qualit
         }`}
       >
         <div className="">
-          {isNaN(buildUpArea) ? 0 : buildUpArea.toLocaleString()} Sq ft.
+          {isNaN(buildUpArea) ? 0 : buildUpArea.toLocaleString()} Sq. ft
         </div>
         <div
           className={

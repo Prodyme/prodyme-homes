@@ -149,7 +149,7 @@ export const Step2: React.FC<step2Type> = ({
                 INR {costPerSqft.toLocaleString()}{" "}
               </span>
               <span className="text-black md:text-3xl text-base font-normal font-['Anek Latin']">
-                per sqft
+                per sq. ft
               </span>
             </div>
             <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
