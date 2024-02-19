@@ -10,8 +10,8 @@ const Step1: React.FC<step1Type> = ({
   setBasementArea,
   setBuildUpArea,
 }) => {
-  const [bUnit, setBUnit] = useState(1);
-  const [aUnit, setAUnit] = useState(1);
+  const [bUnit, setBUnit] = useState<number>(1);
+  const [aUnit, setAUnit] = useState<number>(1);
   const [bValue, setBValue] = useState<number>(NaN);
   const [aValue, setAValue] = useState<number>(NaN);
   const [basement, setBasement] = useState(true);
@@ -138,7 +138,10 @@ const Step1: React.FC<step1Type> = ({
                 </select> */}
                 <Select
                   defaultValue={options[0]}
+                  onChange={(e) => setAUnit(parseInt(e?.value))}
                   options={options}
+                  instanceId="unique-instance-id" // Add a unique instanceId
+                  inputId="my-select-input-id" // Set a unique ID for the input element
                   classNames={{
                     control: (state) =>
                       "bg-neutral-100 rounded-lg justify-start items-center text-black md:text-sm text-xs font-normal ",
@@ -188,6 +191,9 @@ const Step1: React.FC<step1Type> = ({
                     <Select
                       defaultValue={options[0]}
                       options={options}
+                      onChange={(e) => setBUnit(parseInt(e?.value))}
+                      instanceId="unique-instance-id" // Add a unique instanceId
+                      inputId="my-select-input-id" // Set a unique ID for the input element
                       classNames={{
                         control: (state) =>
                           "bg-neutral-100 rounded-lg justify-start items-center text-black md:text-sm text-xs font-normal ",
