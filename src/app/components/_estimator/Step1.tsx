@@ -138,7 +138,15 @@ const Step1: React.FC<step1Type> = ({
                 </select> */}
                 <Select
                   defaultValue={options[0]}
-                  onChange={(e) => setAUnit(parseInt(e?.value))}
+                  onChange={(selectedOption) => {
+                    if (
+                      selectedOption &&
+                      typeof selectedOption.value === "number"
+                    ) {
+                      const selectedValue = selectedOption.value;
+                      setAUnit(selectedValue);
+                    }
+                  }}
                   options={options}
                   instanceId="unique-instance-id" // Add a unique instanceId
                   inputId="my-select-input-id" // Set a unique ID for the input element
@@ -191,7 +199,15 @@ const Step1: React.FC<step1Type> = ({
                     <Select
                       defaultValue={options[0]}
                       options={options}
-                      onChange={(e) => setBUnit(parseInt(e?.value))}
+                      onChange={(selectedOption) => {
+                        if (
+                          selectedOption &&
+                          typeof selectedOption.value === "number"
+                        ) {
+                          const selectedValue = selectedOption.value;
+                          setBUnit(selectedValue);
+                        }
+                      }}
                       instanceId="unique-instance-id" // Add a unique instanceId
                       inputId="my-select-input-id" // Set a unique ID for the input element
                       classNames={{
