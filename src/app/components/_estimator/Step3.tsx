@@ -41,7 +41,7 @@ const Step3: React.FC<step3Type> = ({
   // Function to scroll to the top of the container
   const scrollToTop = () => {
     if (containerRef.current) {
-      containerRef.current.scrollTop  = 0;
+      containerRef.current.scrollTop = 0;
     }
   };
 
@@ -238,6 +238,7 @@ const Step3: React.FC<step3Type> = ({
 
   const onChangeHandle = (item: ItemDetails) => {
     let temp = [...groupedItems];
+    // console.log(item)
 
     temp.map((d) => {
       if (d.Selected === true) {
@@ -322,13 +323,12 @@ const Step3: React.FC<step3Type> = ({
             return (
               <div
                 key={i}
-                className="h-full max-sm:mx-0 max-lg:w-[300px] flex flex-col gap-2 justify-between items-start relative"
+                className="h-full max-sm:mx-0 max-lg:w-[300px] max-sm:w-auto flex flex-col gap-2 justify-between items-start relative"
               >
-
-                <div className="flex flex-col justify-start items-start">
-                  <div className="self-stretch justify-between items-center inline-flex max-sm:flex-col-2 text-wrap text-left max-sm:items-start ">
+                <div className="flex flex-col justify-center items-start">
+                  <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start ">
                     <div className="flex-col justify-start items-start inline-flex text-left">
-                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[65vw]">
+                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
                         {d.itemName}
                       </div>
 
@@ -336,7 +336,7 @@ const Step3: React.FC<step3Type> = ({
                       Rathi, Kamdhenu or equivalent
                     </div> */}
                     </div>
-                    <div className="flex">
+                    <div className="flex relative right-0">
                       <button
                         onClick={() => handleOptions(d)}
                         className="transition-transform transform hover:scale-110 w-[30px] object-contain"
@@ -410,52 +410,51 @@ const Step3: React.FC<step3Type> = ({
                   </div>
 
                 </button>
-
-                <div
-                  className={`${d.Selected === true
-                    ? `absolute z-50 font-normal bg-gray-50 mt-40  justify-center m-auto p-1 w-[400px] max-sm:mx-2 max-sm:w-[85vw] max-sm:left-[2vw]  rounded-xl text-wrap ${(i + 1) % 3 === 0 ? "" : ""
-                    }`
-                    : "hidden"
-                    }`}
-                >
-                  {" "}
-                  <span className="font-bold text-orange-500 md:text-2xl text-base">
-                    Choose product
-                  </span>
-                  {d.items.map((item, i) => {
-                    return (
-                      <div
-                        className="my-5  flex flex-col m-auto justify-center"
-                        key={i}
-                      >
-                        <label
-                          className="bg-gradient-to-r bg-white
-        hover:from-amber-50 hover:via-amber-100 
-        hover:to-amber-50 text-[1rem] font-normal 
-        justify-center m-auto p-1 w-[300px]  max-sm:m-2 max-sm:w-[80vw]
-        hover:shadow-[0_10px_20px_rgba(255,193,150,0.9)]
-        shadow-[0_10px_20px_rgba(231,229,228,0.9)]
-        rounded-xl text-wrap"
-                          htmlFor={i.toString()}
+                <div className="relative">
+                  <div
+                    className={`${d.Selected === true
+                        ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${(i + 1) % 3 === 0 ? "" : ""
+                        }`
+                        : "hidden"
+                      }`}
+                  >
+                    {" "}
+                    <span className="font-bold text-orange-500 md:text-2xl text-base">
+                      Choose product
+                    </span>
+                    {d.items.map((item, i) => {
+                      return (
+                        <div
+                          className="  flex flex-col m-auto justify-center"
+                          key={i}
                         >
-                          <span className="font-bold">Description: </span>
-                          <span>{item.Description}</span>
-                          <br />
-                          <span className="font-bold">Rate: </span>
-                          <span>INR {item.Rate}</span>
-                        </label>
-                        <input
-                          type="radio"
-                          name={item.Item}
-                          value={item.Rate}
-                          id={i.toString()}
-                          onClick={() => onChangeHandle(item)}
-                          className="hidden"
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
+                          <label
+                            className={`border border-orange-400 bg-gradient-to-r text-[1rem] font-normal justify-center m-auto p-1 w-[250px]  text-wrap ${item.Category === d.Category
+                                ? "bg-orange-400 text-white"
+                                : "bg-white text-black hover:from-amber-50 hover:via-amber-100 hover:to-amber-50"
+                              } ${i + 1 === d.items.length ? 'rounded-b-lg' : ''}`}
+                            htmlFor={i.toString()}
+                          >
+                            <span className="font-bold">Description: </span>
+                            <span>{item.Description}</span>
+                            <br />
+                            <span className="font-bold">Rate: </span>
+                            <span>INR {item.Rate}</span>
+                          </label>
+                          <input
+                            type="radio"
+                            name={item.Item}
+                            value={item.Rate}
+                            checked={item.Category === d.Category}
+                            id={i.toString()}
+                            onClick={() => onChangeHandle(item)}
+                            className="hidden"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>{" "}
 
                 {
                   (i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
@@ -471,7 +470,7 @@ const Step3: React.FC<step3Type> = ({
           onClick={scrollToTop}
           className="scroll-up-button absolute bottom-4 right-4 hover:border-2 border-2 border-orange-400 text-orange-400 text-lg p-4 rounded-full cursor-pointer"
         >
-          <FaArrowUp/>
+          <FaArrowUp />
         </button>
       </div>
       <div className="w-[800px] h-[0px] max-xl:w-[80vw] mt-4 border border-stone-300"></div>
@@ -483,11 +482,11 @@ const Step3: React.FC<step3Type> = ({
             INR {costPerSqft.toLocaleString()}{" "}
           </span>
           <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
-            per sqft
+            per sq. ft
           </span>
         </div>
         <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin']">
-          Approximately {estimateValue.toLocaleString()} for your BUA
+          Approximately INR {estimateValue.toLocaleString()} for your BUA
           (Built-Up-Area)
         </div>
       </div>
