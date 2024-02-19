@@ -326,9 +326,9 @@ const Step3: React.FC<step3Type> = ({
                 className="h-full max-sm:mx-0 max-lg:w-[300px] max-sm:w-auto flex flex-col gap-2 justify-between items-start relative"
               >
                 <div className="flex flex-col justify-center items-start">
-                  <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col-2 text-wrap text-left max-sm:items-start ">
+                  <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start ">
                     <div className="flex-col justify-start items-start inline-flex text-left">
-                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[65vw]">
+                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
                         {d.itemName}
                       </div>
 
@@ -344,7 +344,6 @@ const Step3: React.FC<step3Type> = ({
                         <img
                           src="images/pen.svg"
                           alt="Detailed Description"
-
                           className="w-[20px] h-auto"
                         />
                       </button>
@@ -355,23 +354,23 @@ const Step3: React.FC<step3Type> = ({
                         <img
                           src="images/info.svg"
                           alt="Detailed Description"
-
                           className="w-[20px] h-auto"
                         />
                       </button>
                       {info.name === d.itemName && (
                         <div
-                          className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-2 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${(i + 1) % 3 === 0
-                            ? "ml-[-350px] max-xl:ml-[-25vw]"
-                            : ""
-                            }`}
+                          className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
+                            (i + 1) % 3 === 0
+                              ? "ml-[-350px] max-xl:ml-[-25vw]"
+                              : ""
+                          }`}
                         >
                           {info.desc}
                         </div>
                       )}
                     </div>
                   </div>
-                  <span className="text-black md:text-sm text-xs mr-2 w-full font-font-normal font-['Anek Latin'] px-2">
+                  <span className="text-black md:text-sm text-xs mr-2 w-[200px] font-font-normal font-['Anek Latin']">
                     {d.items.map((i, index) => {
                       if (d.Category === i.Category) {
                         return (
@@ -383,85 +382,85 @@ const Step3: React.FC<step3Type> = ({
                       }
                     })}
                   </span>
-
                 </div>
-
-                <button
-                  onClick={() => handleOptions(d)}
-                  className="w-[240px] max-md:w-[280px] h-[50px] p-2.5 bg-neutral-100 rounded-lg border border-orange-400 justify-start items-center  inline-flex transition-transform transform hover:shadow-md hover:shadow-orange-400"
-                >
-                  <div className="grow shrink basis-0 ">
-                    {d.items.map((i, index) => {
-                      if (d.Category === i.Category) {
-                        return (
-                          <span key={index}>
-                            <span className="text-black md:text-sm text-xs font-bold font-['Anek Latin']">
-                              INR
-                            </span>{" "}
-                            {i.Rate}
-                            <span className="text-black md:text-sm text-xs font-font-normal font-['Anek Latin']">
-                              {" "}
-                              {i.Unit}
-                            </span>
-                          </span>
-                        );
-                      }
-                    })}
-                  </div>
-
-                </button>
-                <div className="relative">
-                  <div
-                    className={`${d.Selected === true
-                      ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${(i + 1) % 3 === 0 ? "" : ""
-                      }`
-                      : "hidden"
-                      }`}
+                <div>
+                  <button
+                    onClick={() => handleOptions(d)}
+                    className="w-[252px] max-sm:w-[200px] h-[50px] p-2.5 bg-neutral-100 border border-orange-400 justify-start items-center gap-2.5 inline-flex transition-transform transform rounded-lg"
                   >
-                    {" "}
-                    <span className="font-bold text-orange-500 md:text-2xl text-base">
-                      Choose product
-                    </span>
-                    {d.items.map((item, i) => {
-                      return (
-                        <div
-                          className="  flex flex-col m-auto justify-center"
-                          key={i}
-                        >
-                          <label
-                            className={`border border-orange-400 bg-gradient-to-r text-[1rem] font-normal justify-center m-auto p-1 w-[250px]  text-wrap ${item.Category === d.Category
-                              ? "bg-orange-400 text-white"
-                              : "bg-white text-black hover:from-amber-50 hover:via-amber-100 hover:to-amber-50"
-                              } ${i + 1 === d.items.length ? 'rounded-b-lg' : ''}`}
-                            htmlFor={i.toString()}
+                    <div className="grow shrink basis-0 ">
+                      {d.items.map((i, index) => {
+                        if (d.Category === i.Category) {
+                          return (
+                            <span key={index}>
+                              <span className="text-black md:text-sm text-xs font-bold font-['Anek Latin']">
+                                INR
+                              </span>{" "}
+                              {i.Rate}
+                              <span className="text-black md:text-sm text-xs font-font-normal font-['Anek Latin']">
+                                {" "}
+                                {i.Unit}
+                              </span>
+                            </span>
+                          );
+                        }
+                      })}
+                    </div>
+                  </button>
+                  <div className="relative">
+                    <div
+                      className={`${
+                        d.Selected === true
+                          ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${
+                              (i + 1) % 3 === 0 ? "" : ""
+                            }`
+                          : "hidden"
+                      }`}
+                    >
+                      {" "}
+                      <span className="font-bold text-orange-500 md:text-2xl text-base">
+                        Choose product
+                      </span>
+                      {d.items.map((item, i) => {
+                        return (
+                          <div
+                            className="  flex flex-col m-auto justify-center"
+                            key={i}
                           >
-                            <span className="font-bold">Description: </span>
-                            <span>{item.Description}</span>
-                            <br />
-                            <span className="font-bold">Rate: </span>
-                            <span>INR {item.Rate}</span>
-                          </label>
-                          <input
-                            type="radio"
-                            name={item.Item}
-                            value={item.Rate}
-                            checked={item.Category === d.Category}
-                            id={i.toString()}
-                            onChange={() => onChangeHandle(item)}
-                            className="hidden"
-                          />
-
-                        </div>
-                      );
-                    })}
+                            <label
+                              className={`border border-orange-400 bg-gradient-to-r text-[1rem] font-normal justify-center m-auto p-1 w-[250px]  text-wrap ${
+                                item.Category === d.Category
+                                  ? "bg-orange-400 text-white"
+                                  : "bg-white text-black hover:from-amber-50 hover:via-amber-100 hover:to-amber-50"
+                              } ${
+                                i + 1 === d.items.length ? "rounded-b-lg" : ""
+                              }`}
+                              htmlFor={i.toString()}
+                            >
+                              <span className="font-bold">Description: </span>
+                              <span>{item.Description}</span>
+                              <br />
+                              <span className="font-bold">Rate: </span>
+                              <span>INR {item.Rate}</span>
+                            </label>
+                            <input
+                              type="radio"
+                              name={item.Item}
+                              value={item.Rate}
+                              checked={item.Category === d.Category}
+                              id={i.toString()}
+                              onClick={() => onChangeHandle(item)}
+                              className="hidden"
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>{" "}
-
-                {
-                  (i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
-                    <div className=" max-lg:hidden w-[0px] h-full absolute right-0 top-0 origin-top-left border border-stone-300"></div>
-                  )
-                }
+                {(i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
+                  <div className=" max-lg:hidden w-[0px] h-full absolute right-0 top-0 origin-top-left border border-stone-300"></div>
+                )}
               </div>
             );
           })}
