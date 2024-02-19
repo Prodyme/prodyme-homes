@@ -79,13 +79,15 @@ const Step3: React.FC<step3Type> = ({
     let valid = true;
     const newErrors = { email: "", phoneNo: "" };
 
-    // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popUpFormData.email)) {
-    //   newErrors.email = "Invalid email format";
-    //   valid = false;
+    // if(popUpFormData.email !== ""){
+    //   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popUpFormData.email)) {
+    //     newErrors.email = "If entering email please enter valid email!";
+    //     valid = false;
+    //   }
     // }
 
     if (!/^\d{10}$/.test(popUpFormData.phoneNo)) {
-      newErrors.phoneNo = "Invalid phone number format";
+      newErrors.phoneNo = "Invalid phone number format!";
       valid = false;
     }
 
@@ -162,7 +164,7 @@ const Step3: React.FC<step3Type> = ({
     return (
       <div className="fixed top-10 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
         <form
-          className="flex flex-col justify-around items-center w-[300px] h-[400px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
+          className="flex flex-col justify-around items-center w-[300px] h-[400px] gap-[23px] bg-gray-950 text-white font-normal text-lg border border-orange-400 rounded-lg"
           onSubmit={handleSubmit}
         >
           <div className="justify-center items-center flex flex-col m-3 ">
@@ -183,7 +185,7 @@ const Step3: React.FC<step3Type> = ({
 
           <div className="justify-center items-center flex flex-col m-3">
             <label className="my-1" htmlFor="phoneNo">
-              Phone Number:{" "}
+              Phone Number<span className="text-red-500">*</span>:{" "}
             </label>
             <input
               placeholder="Phone Number"
@@ -326,9 +328,9 @@ const Step3: React.FC<step3Type> = ({
                 className="h-full max-sm:mx-0 max-lg:w-[300px] max-sm:w-auto flex flex-col gap-2 justify-between items-start relative"
               >
                 <div className="flex flex-col justify-center items-start">
-                  <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col text-wrap text-left max-sm:items-start ">
+                  <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col-2 text-wrap text-left max-sm:items-start ">
                     <div className="flex-col justify-start items-start inline-flex text-left">
-                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[80vw]">
+                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[65vw]">
                         {d.itemName}
                       </div>
 
@@ -359,7 +361,7 @@ const Step3: React.FC<step3Type> = ({
                       </button>
                       {info.name === d.itemName && (
                         <div
-                          className={`absolute z-50 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
+                          className={`absolute z-20 font-normal bg-orange-50 mt-8 justify-center m-auto p-1 w-[400px]   max-xl:ml-[-25vw] max-sm:mx-2 max-sm:w-[90vw] max-sm:left-[2vw]  rounded-xl text-wrap ${
                             (i + 1) % 3 === 0
                               ? "ml-[-350px] max-xl:ml-[-25vw]"
                               : ""
@@ -411,7 +413,7 @@ const Step3: React.FC<step3Type> = ({
                     <div
                       className={`${
                         d.Selected === true
-                          ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${
+                          ? `absolute top-0 left-0   z-20 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${
                               (i + 1) % 3 === 0 ? "" : ""
                             }`
                           : "hidden"
@@ -449,7 +451,7 @@ const Step3: React.FC<step3Type> = ({
                               value={item.Rate}
                               checked={item.Category === d.Category}
                               id={i.toString()}
-                              onClick={() => onChangeHandle(item)}
+                              onChange={() => onChangeHandle(item)}
                               className="hidden"
                             />
                           </div>
