@@ -41,7 +41,7 @@ const Step3: React.FC<step3Type> = ({
   // Function to scroll to the top of the container
   const scrollToTop = () => {
     if (containerRef.current) {
-      containerRef.current.scrollTop  = 0;
+      containerRef.current.scrollTop = 0;
     }
   };
 
@@ -324,13 +324,13 @@ const Step3: React.FC<step3Type> = ({
               <div
                 key={i}
                 className="h-full max-sm:mx-0 max-lg:w-[300px] max-sm:w-auto flex flex-col gap-2 justify-between items-start relative"
-                >
-                  <div className="flex flex-col justify-center items-start">
-                    <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col-2 text-wrap text-left max-sm:items-start ">
-                      <div className="flex-col justify-start items-start inline-flex text-left">
-                        <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[65vw]">
-                          {d.itemName}
-                        </div>
+              >
+                <div className="flex flex-col justify-center items-start">
+                  <div className="self-stretch justify-between w-[280px] inline-flex max-sm:flex-col-2 text-wrap text-left max-sm:items-start ">
+                    <div className="flex-col justify-start items-start inline-flex text-left">
+                      <div className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] max-sm:w-[65vw]">
+                        {d.itemName}
+                      </div>
 
                       {/* <div className="text-black md:text-sm text-xs font-normal font-['Anek Latin']">
                       Rathi, Kamdhenu or equivalent
@@ -409,16 +409,14 @@ const Step3: React.FC<step3Type> = ({
                     })}
                   </div>
 
-                  </button>
+                </button>
                 <div className="relative">
                   <div
-                    className={`${
-                      d.Selected === true
-                        ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${
-                            (i + 1) % 3 === 0 ? "" : ""
-                          }`
-                        : "hidden"
-                    }`}
+                    className={`${d.Selected === true
+                      ? `absolute top-0 left-0   z-50 font-normal bg-gray-100 border-orange-400 border justify-center m-auto w-[252px] text-wrap rounded-lg ${(i + 1) % 3 === 0 ? "" : ""
+                      }`
+                      : "hidden"
+                      }`}
                   >
                     {" "}
                     <span className="font-bold text-orange-500 md:text-2xl text-base">
@@ -431,11 +429,10 @@ const Step3: React.FC<step3Type> = ({
                           key={i}
                         >
                           <label
-                            className={`border border-orange-400 bg-gradient-to-r text-[1rem] font-normal justify-center m-auto p-1 w-[250px]  text-wrap ${
-                              item.Category === d.Category
-                                ? "bg-orange-400 text-white"
-                                : "bg-white text-black hover:from-amber-50 hover:via-amber-100 hover:to-amber-50"
-                            } ${i+1 === d.items.length ? 'rounded-b-lg': ''}`}
+                            className={`border border-orange-400 bg-gradient-to-r text-[1rem] font-normal justify-center m-auto p-1 w-[250px]  text-wrap ${item.Category === d.Category
+                              ? "bg-orange-400 text-white"
+                              : "bg-white text-black hover:from-amber-50 hover:via-amber-100 hover:to-amber-50"
+                              } ${i + 1 === d.items.length ? 'rounded-b-lg' : ''}`}
                             htmlFor={i.toString()}
                           >
                             <span className="font-bold">Description: </span>
@@ -450,14 +447,15 @@ const Step3: React.FC<step3Type> = ({
                             value={item.Rate}
                             checked={item.Category === d.Category}
                             id={i.toString()}
-                            onClick={() => onChangeHandle(item)}
+                            onChange={() => onChangeHandle(item)}
                             className="hidden"
                           />
+
                         </div>
                       );
                     })}
                   </div>
-              </div>{" "}
+                </div>{" "}
 
                 {
                   (i + 1) % 3 !== 0 && i !== groupedItems.length - 1 && (
@@ -473,7 +471,7 @@ const Step3: React.FC<step3Type> = ({
           onClick={scrollToTop}
           className="scroll-up-button absolute bottom-4 right-4 hover:border-2 border-2 border-orange-400 text-orange-400 text-lg p-4 rounded-full cursor-pointer"
         >
-          <FaArrowUp/>
+          <FaArrowUp />
         </button>
       </div>
       <div className="w-[800px] h-[0px] max-xl:w-[80vw] mt-4 border border-stone-300"></div>
