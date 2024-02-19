@@ -79,10 +79,10 @@ const Step3: React.FC<step3Type> = ({
     let valid = true;
     const newErrors = { email: "", phoneNo: "" };
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popUpFormData.email)) {
-      newErrors.email = "Invalid email format";
-      valid = false;
-    }
+    // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(popUpFormData.email)) {
+    //   newErrors.email = "Invalid email format";
+    //   valid = false;
+    // }
 
     if (!/^\d{10}$/.test(popUpFormData.phoneNo)) {
       newErrors.phoneNo = "Invalid phone number format";
@@ -160,9 +160,9 @@ const Step3: React.FC<step3Type> = ({
   };
   const popUpForm = () => {
     return (
-      <div className="fixed top-0 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
+      <div className="fixed top-10 left-0 flex justify-center items-center w-full h-full bg-opacity-50 bg-gray-950 z-40">
         <form
-          className="flex flex-col justify-around items-center w-[300px] h-[500px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
+          className="flex flex-col justify-around items-center w-[300px] h-[400px] gap-[23px] bg-gray-950 text-white font-medium text-lg border border-orange-400 rounded-lg"
           onSubmit={handleSubmit}
         >
           <div className="justify-center items-center flex flex-col m-3 ">
@@ -199,7 +199,7 @@ const Step3: React.FC<step3Type> = ({
 
           <button
             type="submit"
-            className="w-[135px] px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+            className="w-[135px]  px-10 py-2.5 bg-orange-400 rounded-[20px] justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
           >
             <div className="text-white text-base font-medium font-['Anek Latin']">
               Submit
@@ -207,7 +207,7 @@ const Step3: React.FC<step3Type> = ({
           </button>
         </form>
         <button
-          className="text-red-500 bg-white font-bold text-lg mt-[-500px] ml-[-20px] rounded-full border border-red-400 px-2 "
+          className="text-red-500 bg-white font-bold text-lg mt-[-400px] ml-[-20px] rounded-full border border-red-400 px-2 "
           onClick={() => setPopUpFormFlag(false)}
         >
           X
