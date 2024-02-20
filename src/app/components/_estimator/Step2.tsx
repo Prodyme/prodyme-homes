@@ -2,6 +2,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { step2Type } from "./_myTypes";
 import Image from "next/image";
+import { IoArrowBackOutline } from "react-icons/io5";
 
 export const Step2: React.FC<step2Type> = ({
   step,
@@ -92,7 +93,7 @@ export const Step2: React.FC<step2Type> = ({
             <span className="text-black md:text-2xl text-base font-normal font-['Anek Latin'] ">
               Select the degree of premium quality:
             </span>
-            <div className="flex flex-col">
+            <div className="flex flex-co3">
               <div className="justify-start items-end gap-5 inline-flex flex-wrap">
                 {Object.keys(star)?.map((key: string, id: number) => {
                   return (
@@ -102,7 +103,7 @@ export const Step2: React.FC<step2Type> = ({
                       className="w-[88px] h-[69px] mr-10 flex-col justify-start items-start inline-flex  transition-transform transform hover:scale-110"
                     >
                       <div
-                        className={`w-[120px] h-[69px] p-2.5 rounded-[10px] border flex-col justify-end items-center gap-1 flex relative ${
+                        className={`w-[120px] h-[69px] p-2 rounded-[10px] border flex-col justify-end items-center gap-1 flex relative ${
                           star[key as keyof Star] ? "border-orange-400" : ""
                         }`}
                       >
@@ -112,7 +113,7 @@ export const Step2: React.FC<step2Type> = ({
                             style={{ left: `${8 * (index + 4)}px` }}
                             className={`absolute z-10 ${
                               index % 2 === 0 ? "top-2" : "top-3"
-                            } w-[30px] h-auto  `}
+                            } w-[20px] h-auto  `}
                             src={
                               star[key as keyof Star]
                                 ? "images/Star2.svg"
@@ -161,15 +162,15 @@ export const Step2: React.FC<step2Type> = ({
           <div className="justify-start items-start gap-5 inline-flex flex-wrap">
             <button
               onClick={() => setStep(step - 1)}
-              className="w-[113px] px-10 py-2.5 bg-white rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
+              className="p-4 bg-white rounded-full border border-orange-400 justify-center items-center gap-2.5 flex transition-transform transform hover:scale-110"
             >
-              <div className="text-orange-400 text-base font-normal font-['Anek Latin']">
-                Back
+              <div className="text-orange-400 text-xl font-normal font-['Anek Latin']">
+                <IoArrowBackOutline/>
               </div>
             </button>
             <button
               onClick={validateEstimate}
-              className="h-10 px-10 py-2.5 bg-orange-400 rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
+              className=" px-10 py-4 bg-orange-400 rounded-[20px] border border-orange-400 justify-center items-center gap-2.5 inline-flex transition-transform transform hover:scale-110"
             >
               <div className="text-white text-base font-normal font-['Anek Latin']">
                 Customize Estimate

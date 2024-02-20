@@ -27,32 +27,23 @@ const Footer = () => {
                             <div>
                                 <div className='flex justify-start items-center'>
                                     <div>
-                                        <img src="/images/logo.png" alt=""  className='w-[100px] h-auto' />
+                                        <img src="/images/logo.png" alt="" className='w-[100px] h-auto' />
                                     </div>
                                     <div>
-                                        <h1 className='text-white  text-center py-5 text-xl font-roboto'>Prodyme homes</h1>
+                                        <h3 className='text-white  text-center py-5 text-xl font-roboto'>Prodyme homes</h3>
                                     </div>
                                 </div>
                             </div>
-                            <div className="mt-4 mx-2">
-                                <p className="text-white text-sm">
-                                    501, Colony name,
-                                    <br />
-                                    Lane name road,
-                                    <br />
-                                    City of office
-                                    <br />
-                                    Pin code
-                                </p>
+                            <div className="mt-4 mx-1">
+                                
                             </div>
-                            <div className="my-2">
+                            <div className=" mx-1 my-2">
                                 <p className="text-white text-sm">
                                     care@prodyme.in
-                                    <br />
-                                    +91 8920804195
+
                                 </p>
                             </div>
-                            <div className="my-2">
+                            <div className="mx-1 my-2">
                                 <p className="text-white text-sm">
                                     Prodym footer text like all rights reserved etc.
                                 </p>
@@ -101,7 +92,7 @@ const Footer = () => {
                                         src="/images/facebook.png"
                                         alt="prodyme homes"
                                         className='h-auto w-[38px]'
-                                        priority
+
                                     />
                                 </li>
                                 <li className="mx-5 ">
@@ -109,7 +100,7 @@ const Footer = () => {
                                         src="/images/instagram.png"
                                         alt="prodyme homes"
                                         className='h-auto w-[38px]'
-                                        priority
+
                                     />
                                 </li>
                                 <li className="mx-5 ">
@@ -117,7 +108,7 @@ const Footer = () => {
                                         src="/images/Vector.png"
                                         alt="prodyme homes"
                                         className='h-auto w-[38px]'
-                                        priority
+
                                     />
                                 </li>
                             </ul>
@@ -163,34 +154,23 @@ const Footer = () => {
                                 <div className="absolute top-0 bottom-0 h-full w-0.5 bg-white left-[50%]"></div>
                             </div> */}
 
-                            <div className=''>
-                                <div>
-                                    <img src="/images/logo.png" alt=""  className='w-[200px] h-auto object-cover' />
-                                    <h1 className='text-white mx-5 py-5 font-roboto text-xl font-bold'>Prodyme Homes</h1>
+                            <div className='flex flex-col '>
+                                <div className='mx-5'>
+                                    <img src="/images/logo.png" alt="prodyme homes" className='w-[100px] h-auto object-cover' />
+                                    
                                 </div>
 
                                 <div>
-                                    
+                                <h3 className='text-white mx-5 py-5 font-roboto text-xl font-bold'>Prodyme Homes</h3>
                                 </div>
                             </div>
 
-                            <div className='flex flex-col justify-between font-normal text-[14px]'>
-                                <div className="my-2">
-                                    <p className="text-white text-lg">
-                                        501, Colony name,
-                                        <br />
-                                        Lane name road,
-                                        <br />
-                                        City of office
-                                        <br />
-                                        Pin code
-                                    </p>
-                                </div>
+                            <div className='flex flex-col justify-evenly font-normal text-[14px]'>
+                                
                                 <div className="my-2">
                                     <p className="text-white text-lg">
                                         care@prodyme.in
-                                        <br />
-                                        +91 8920804195
+
                                     </p>
                                 </div>
                                 <div className="my-2">

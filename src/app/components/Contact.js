@@ -34,7 +34,7 @@ const Contact = () => {
 
         const formErrors = validateForm();
         if (Object.keys(formErrors).length === 0) {
-            await axios.post('http://localhost:5000/api/user/contactus',formData)
+            await axios.post('https://gwebvydn88.execute-api.ap-south-1.amazonaws.com/dev/api/user/contactus',formData)
             toast.success('Form submitted successfully!', { position: 'top-center' });
             setFormData({
                 firstName: '',
@@ -83,23 +83,22 @@ const Contact = () => {
             <section className="py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="px-4 md:px-0">
-                        <h1 className="font-semibold text-3xl md:text-5xl mb-4">
+                        <h2 className="font-semibold text-3xl md:text-5xl mb-4">
                             Lets Discuss <br />
                             Your Next Project
-                        </h1>
+                        </h2>
                         <p className="mb-4">
                             Fill out the form, or call us to set up a free in-home consultation.
                         </p>
                         <div>
-                            <h1 className="text-blue-500 font-semibold">Service Areas:</h1>
+                            <h3 className="text-blue-500 font-semibold">Service Areas:</h3>
                             <p className="mt-2">
-                                San Francisco, Santa Clara, Alameda, San Mateo
+                            Delhi NCR, Bengaluru, Kolkata,
                             </p>
                             <p className="mt-4">
-                                500 Terry Francine Street San Francisco, CA 94158
+                            Patna, Amritsar, Chandigarh, Meerut
                             </p>
-                            <p className="mt-4">info@mysite.com</p>
-                            <p className="mt-4">123-456-7890</p>
+                            <p className="mt-8">care@prodyme.in</p>
                         </div>
                     </div>
                     <div>
