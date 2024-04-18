@@ -251,8 +251,17 @@ const HomePage = () => {
 
                                 <button onClick={openModal1} className=' text-white text-[12px] xl:text-[20px] px-[40px] py-[10px] rounded-2xl btn-background font-semibold'>See More</button>
                             </div>
-                            <div className='w-[30%]  h-auto'>
-                                <img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-auto w-full object-cover' />
+                            <div className=''>
+                                {/*<img src="/images/image 7.png" alt='Person standing on a concrete slab' className='h-auto w-full object-cover' />*/}
+                                <video
+                                    className="h-auto w-full object-cover"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                >
+                                    <source src="/videos/total_transparency.mp4" type="video/mp4"/>
+                                </video>
                             </div>
 
                         </div>

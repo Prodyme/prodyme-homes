@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 
-const Navbar = () => {
+const  Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
