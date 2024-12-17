@@ -43,12 +43,14 @@ const Banner = () => {
                                 <source src="/videos/prodyme-video.mp4" type="video/mp4" />
                             </video>
                             <div className='flex justify-start items-center h-screen'>
-                                <div className='home_bg pl-[22px] pr-[80px] py-5'>
-                                    <h1 className='font-semibold text-white text-[30px] md:text-[60px] '>The most<br /> <span className='text-orange-400'>professional</span> <br /> way to build <br />your home</h1>
+                                <div className='home_bg pl-20 w-full px-20 py-5'>
+
+                                    <h1 className='w-full font-semibold text-white text-[25px]'>The most <span className='text-orange-400'>professional <br/></span> way to build your home</h1>
+
                                     <hr className='border-2 my-5 bg-white' />
 
                                     <ScrollLink to="estimatorSection" smooth={true} onClick={scrollToEstimator}>
-                                        <button className='btn-background hover:shadow-lg hover:shadow-orange-400 text-white rounded-[30px] px-5 py-[8px] text-[16px] md:text-[30px] lg:text-md'>Try Smart Estimator</button>
+                                        <button className='btn-background hover:shadow-lg hover:shadow-orange-400 text-white rounded-[30px] px-5 py-[8px] text-[12px]'>Try Smart Estimator</button>
                                     </ScrollLink>
 
                                 </div>
@@ -72,7 +74,7 @@ const Banner = () => {
                             </video>
                             <div className='flex  justify-start items-center h-screen'>
                                 <div className='home_bg pl-20 pr-[400px] py-5 '>
-                                    <h1 className='heading  text-white text-[50px] '>The most <span className='text-orange-400 font-semibold'>professional</span>  way to build  your home</h1>
+                                    <h1 className='heading  text-white md:text-[30px] lg:text-[50px] '>The most <span className='text-orange-400 font-semibold'>professional</span>  way to build  your home</h1>
                                     <hr className='border-2 my-5 bg-white' />
 
                                     <ScrollLink to="estimatorSection" smooth={true} onClick={scrollToEstimator}>
@@ -86,8 +88,8 @@ const Banner = () => {
                 )
                 }
 
-            </section >
-        </div >
+            </section>
+        </div>
     )
 }
 

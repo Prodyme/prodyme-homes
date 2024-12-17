@@ -135,7 +135,7 @@ const HomePage = () => {
                         <section data-aos={`${index % 2 !== 0 ? 'fade-left' : 'fade-right'}`} className='section-1 mx-5 md:mx-[71px] my-10 scroll-element'>
 
                             {/* mobile view */}
-                            <div className='block md:hidden'>
+                            <div className='block lg:hidden'>
                                 <div className='flex flex-col h-full  bg-[#EFEFEF] rounded-[40px]'>
 
                                     <div className='w-full h-auto'>
@@ -166,9 +166,9 @@ const HomePage = () => {
 
                                     </div>
 
-                                    <div className='px-10 py-3 '>
+                                    <div className='px-10 py-5 '>
 
-                                        <h3 className='text-base font-bold' dangerouslySetInnerHTML={{ __html: feature.content.title }}></h3>
+                                        <h3 className='md:text-[30px] text-base font-bold' dangerouslySetInnerHTML={{ __html: feature.content.title }}></h3>
 
                                         <p className='text-lg font-normal my-3' dangerouslySetInnerHTML={{ __html: feature.content.snippet }}></p>
 
@@ -183,12 +183,12 @@ const HomePage = () => {
                             </div>
 
                             {/* desktop view */}
-                            <div className='hidden md:block'>
+                            <div className='hidden lg:block'>
                                 <div className={`flex col-span-2 justify-between h-full bg-[#EFEFEF] rounded-[50px] items-center ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}>
 
                                     <div className='px-10 py-5 lg:w-[calc(60%-20px)]'>
 
-                                        <h3 className='text-[30px] xl:text-[60px] font-bold' dangerouslySetInnerHTML={{ __html: feature.content.title }}></h3>
+                                        <h3 className='text-[30px] xl:text-[50px] font-bold' dangerouslySetInnerHTML={{ __html: feature.content.title }}></h3>
 
                                         <p className='text-[18px] xl:text-[30px] font-normal my-4 xl:my-5' dangerouslySetInnerHTML={{ __html: feature.content.snippet }}></p>
 
@@ -222,22 +222,8 @@ const HomePage = () => {
                                             </>
                                         )}
                                     </div>
-
-                                    {/* <div >
-                                        <video
-                                            autoPlay
-                                            loop
-                                            muted
-                                            width={1000}
-                                            height={1000}
-                                            className='h-[400px] w-[100%] object-cover rounded-r-[50px]'
-                                        >
-                                            <source src={feature.media} alt='' />
-                                        </video>
-                                    </div> */}
                                 </div>
                             </div>
-
 
                             <div>
                                 {currentFeature !== null && (
@@ -365,6 +351,12 @@ const HomePage = () => {
                             <div key={i} className='text-center'>
                                 <Image src={v.image} width={1000} height={1000} alt={v.title} className='mx-auto h-auto w-[100px]' />
                                 <div className="flex flex-col justify-center items-center">
+                                    <h4 className="my-5 text-orange-400 font-bold text-[16px] md:text-xl h-[50px] ">
+                                        {v.title}
+                                    </h4>
+                                    <p className="text-[14px] md:text-[16px] my-8 font-normal ">
+                                        {v.description}
+                                    </p>
 
                                 </div>
                             </div>
@@ -385,12 +377,13 @@ const HomePage = () => {
                                 <div key={i} className='text-center px-8'>
                                     <Image src={v.image} width={1000} height={1000} alt={v.title} className='mx-auto h-auto w-[100px] my-4' />
                                     <div className="flex flex-col justify-center items-center">
-                                        <p className="text-[14px] md:text-[16px] font-normal ">
-                                            {v.description}
-                                        </p>
-                                        <h4 className="my-3 text-orange-400 font-bold text-[16px] md:text-xl h-[50px] ">
+                                        <h4 className="my-5 text-orange-400 font-bold text-[16px] md:text-xl h-[50px] ">
                                             {v.title}
                                         </h4>
+                                        <p className="text-[14px] md:text-[16px] my-2 font-normal ">
+                                            {v.description}
+                                        </p>
+
                                     </div>
                                 </div>
                             ))}

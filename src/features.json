@@ -1,6 +1,6 @@
 [
   {
-    "media": "/videos/1. Transparency home_-_31290 (Original).mp4",
+    "media": "https://media.prodyme.in/assets/videos/total_transparency.mp4",
     "content": {
       "title": "Total <strong style='color: #fb923c;'>Transparency</strong>",
       "snippet": "In quotations, in payments, 24X7 on-site cameras access",
@@ -17,7 +17,7 @@
           },
           {
             "media": [
-              "/videos/1.1 Quotations pexels-rodnae-productions-7841860 (1080p).mp4"
+              "https://media.prodyme.in/assets/videos/quotations_trans.mp4"
             ]
           },
           {
@@ -27,7 +27,7 @@
           },
           {
             "media": [
-              "/videos/1.2 Payment pexels-gabby-k-5849645 (1080p).mp4"
+           "https://media.prodyme.in/assets/videos/payment_trans.mp4"
             ]
           },
           {
@@ -37,7 +37,7 @@
           },
           {
             "media": [
-              "/videos/1.3 Surveillence camera_-_107773 (Original).mp4"
+              "https://media.prodyme.in/assets/videos/surveillence_trans.mp4"
             ]
           }
         ]
@@ -45,7 +45,7 @@
     }
   },
   {
-    "media": "/videos/2. Zero Delays time_-_3965 (Original).mp4",
+    "media": "https://media.prodyme.in/assets/videos/zero_delays.mp4",
     "content": {
       "title": "Zero <strong style='color: #fb923c;'>Delays</strong>",
       "snippet": "or we pay twice the rent",
@@ -57,7 +57,7 @@
           },
           {
             "media": [
-              "/videos/2.1 Strict Timeline pexels-artem-podrez-6824265 (Original).mp4"
+              "https://media.prodyme.in/assets/videos/strict_timeline-zero_delay.mp4"
             ]
           },
           {
@@ -67,7 +67,7 @@
           },
           {
             "media": [
-              "/videos/2.2 Rent Gurantee pexels-rodnae-productions-8293009 (Original).mp4"
+               "https://media.prodyme.in/assets/videos/rent-guarentee-zero_delay.mp4"
             ]
           },
           {
@@ -80,7 +80,7 @@
     }
   },
   {
-    "media": "/videos/3. Unmatched Quality pexels-laura-tancredi-7078227.jpg",
+    "media": "https://media.prodyme.in/assets/videos/unmatched_quality.mp4",
     "content": {
       "title": "<strong style='color: #fb923c;'>Unmatched</strong> Quality",
       "snippet": "In both, what you can see and what you can’t",
@@ -92,16 +92,31 @@
           },
           {
             "media": [
-              "/videos/3.1 Visible Aesthetic pexels-polina-kovaleva-5644671 (1080p).mp4",
-              "/videos/3.2 Structural Integrity construction_-_40296 (Original).mp4",
-              "/videos/3.3 Quality Assurance 139333 (Original).mp4"
+             "https://media.prodyme.in/assets/videos/visible_aesthetic.mp4"
             ]
           },
           {
             "content": [
-              "<strong>● Visible Aesthetics: </strong> Prodyme Homes prioritizes visible excellence with an unwavering commitment to luxurious ﬁnishes, premium materials, and meticulous design. Our selection of materials, from ﬂooring to countertops, reﬂects a dedication to craftsmanship and aesthetic appeal.",
-              "<strong>● Structural Integrity: </strong> Our commitment to quality goes beyond surface-level aesthetics. Prodyme employs cutting-edge construction techniques, using the ﬁnest materials to guarantee the structural integrity of every home. Rigorous quality assurance checks at every stage ensure that our homes not only meet but exceed industry standards.",
-              "quality-assurance.mp4",
+              "<strong>● Visible Aesthetics: </strong> Prodyme Homes prioritizes visible excellence with an unwavering commitment to luxurious ﬁnishes, premium materials, and meticulous design. Our selection of materials, from ﬂooring to countertops, reﬂects a dedication to craftsmanship and aesthetic appeal."
+            ]
+          },
+          {
+            "media": [
+              "https://media.prodyme.in/assets/videos/structural_integrity.mp4"
+            ]
+          },
+          {
+            "content": [
+ "<strong>● Structural Integrity: </strong> Our commitment to quality goes beyond surface-level aesthetics. Prodyme employs cutting-edge construction techniques, using the ﬁnest materials to guarantee the structural integrity of every home. Rigorous quality assurance checks at every stage ensure that our homes not only meet but exceed industry standards."
+            ]
+          },
+          {
+            "media": [
+"https://media.prodyme.in/assets/videos/quality_assurance.mp4"
+            ]
+          },
+          {
+            "content":[
               "<strong>● Quality Assurance: </strong> Prodyme Homes integrates a stringent quality assurance process into every construction project. Our team conducts thorough checks at various stages, involving third-party inspections when necessary, to ensure that industry standards are not just met but surpassed. This commitment to quality assurance is our pledge to deliver homes that meet the highest standards of excellence."
             ]
           }
@@ -110,7 +125,7 @@
     }
   },
   {
-    "media": "clutter.png",
+    "media": "https://media.prodyme.in/assets/videos/decluttering_the_clutter.mp4",
     "content": {
       "title": "De cluttering the <strong style='color: #fb923c;'>Clutter</strong>",
       "snippet": "Curated options for streamlined decisions",
@@ -122,7 +137,7 @@
           },
           {
             "media": [
-              "clutter-1.png"
+              "https://media.prodyme.in/assets/videos/curated_options.mp4"
             ]
           },
           {
@@ -132,7 +147,7 @@
           },
           {
             "media": [
-              "clutter-2.png"
+               "https://media.prodyme.in/assets/videos/guided_decision.mp4"
             ]
           },
           {
@@ -145,7 +160,7 @@
     }
   },
   {
-    "media": "warranty.mp4",
+    "media": "https://media.prodyme.in/assets/videos/worry-free_warranty.mp4",
     "content": {
       "title": "Worry-Free <strong style='color: #fb923c;'>Warranty</strong> of 1 Year. 10 years on Structure",
       "snippet": "No questions asked. No fine print",
@@ -157,7 +172,7 @@
           },
           {
             "media": [
-              "earthquake-resistant-structure_2.mp4"
+              "https://media.prodyme.in/assets/videos/1-year_comprehensive_warranty.mp4"
             ]
           },
           {
@@ -167,7 +182,7 @@
           },
           {
             "media": [
-              "earthquake-resistant-structure_3.mp4"
+            "https://media.prodyme.in/assets/videos/10-year_structural_warranty.mp4"
             ]
           },
           {
@@ -180,7 +195,7 @@
     }
   },
   {
-    "media": "safe.mp4",
+    "media": "https://media.prodyme.in/assets/videos/earthquake_safe_homes.mp4",
     "content": {
       "title": "<strong style='color: #fb923c;'>Earthquake-Safe</strong> Homes",
       "snippet": "'No compromise' structural design for your family protection. Guaranteed.",
@@ -191,18 +206,8 @@
             "heading": "Safety is a non-negotiable aspect of every Prodyme home, especially in regions prone to seismic activity."
           },
           {
-            "media": [
-              "safe-2.mp4"
-            ]
-          },
-          {
             "content": [
               "<strong>● Seismic Expertise: </strong> Our engineering team comprises specialists in earthquake-resistant design. Leveraging the latest technologies and methodologies, Prodyme Homes ensures that every home can withstand seismic forces. Our commitment to safety is grounded in expertise and ongoing research to stay at the forefront of seismic design advancements."
-            ]
-          },
-          {
-            "media": [
-              "seismic.mp4"
             ]
           },
           {
